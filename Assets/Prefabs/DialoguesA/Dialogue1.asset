@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada421966f3b97949bfb0fa5075385b1, type: 3}
+  m_Name: Dialogue1
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Agora que est\xE1 em posse das partituras m\xE1gicas voc\xEA deve encontras
+      as "
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Isso significa que voc\xEA est\xE1 encarregado de comandar as \"Magic
+      Music Girls\" no combate pela m\xFAsica e alegria das pessoas!"
+  - _character: {fileID: 11400000, guid: 69a21a492eb7e9a41936fef31abe72f0, type: 2}
+    _text: O que
+  _event:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

@@ -54,6 +54,7 @@ public class DialogueController
         _eventBus.Publish(new DialogueFinishedEvent(_currentDialogue));
         _currentDialogue = null;
         _input.Remove(_dialogueActions);
+        _input.SetInputContext(InputContext.Player);
     }
 
     private void OnSkip(InputAction.CallbackContext _)
