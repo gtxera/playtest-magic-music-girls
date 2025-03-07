@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada421966f3b97949bfb0fa5075385b1, type: 3}
+  m_Name: Dialogue 0
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Meu neto, voc\xEA foi escolhido para receber as partituras m\xE1gicas,
+      voc\xEA deve liderar as musas m\xE1gicas na luta contra o mal."
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "O mundo ta cinza e a m\xFAsica ta morrendo, voc\xEA deve encontrar as
+      musas e trazer a m\xFAscia e alegria de volta ao mundo coma banda m\xE1gica."
+  - _character: {fileID: 11400000, guid: 69a21a492eb7e9a41936fef31abe72f0, type: 2}
+    _text: "V\xE1, ajude as pesoas e colore o mundo novamente."
+  _event:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
