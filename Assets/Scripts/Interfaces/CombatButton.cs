@@ -10,7 +10,7 @@ public class CombatButton : MonoBehaviour
     private void Awake()
     {
         btn = GetComponent<Button>();
-        if(battleUIController == null) battleUIController = FindObjectOfType<BattleUIController>();
+        if(battleUIController == null) battleUIController = FindFirstObjectByType<BattleUIController>();
     }
 
     public void ChangeDescription()

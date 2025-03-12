@@ -9,14 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cd8bcde2b6570548a1440a0febfe97b, type: 3}
+  m_Script: {fileID: 11500000, guid: 13b75dfa72fd46a6a931755349153ad9, type: 3}
   m_Name: "Vozer\xE3o"
   m_EditorClassIdentifier: 
-  skillBaseName: "Vozer\xE3o"
-  skillBaseDescription: Uma voz alta pra cacete
-  damage: 10
-  heal: 0
-  skillEvolvedName: 
-  skillEvolvedDescription: 
-  evolvedDamage: 0
-  evolvedHeal: 0
+  <BaseName>k__BackingField: "Vozer\xE3o"
+  <BaseDescription>k__BackingField: Uma voz alta pra cacete
+  <BaseValue>k__BackingField: 0
+  <MaxTargets>k__BackingField: 1
+  _baseScalings: []
+  <EvolvedSkill>k__BackingField: {fileID: 0}

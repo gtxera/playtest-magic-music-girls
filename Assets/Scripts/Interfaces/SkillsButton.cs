@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SkillsButton : CombatButton
 {
-    public SkillsScript skill;
+    public Skill skill;
     [SerializeField] TextMeshProUGUI attackName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,12 +15,12 @@ public class SkillsButton : CombatButton
 
     public void UpdateButtonvalues()
     {
-        buttonDescription = skill.skillBaseDescription;
-        attackName.text = skill.skillBaseName;
+        buttonDescription = skill.BaseDescription;
+        attackName.text = skill.BaseName;
     } 
 
     public void UseSkill()
     {
-        battleUIController.IncrementEnergyBarValue(skill.damage);
+        battleUIController.IncrementEnergyBarValue(skill.BaseValue);
     }
 }

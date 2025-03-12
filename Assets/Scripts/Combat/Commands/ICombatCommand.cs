@@ -1,4 +1,6 @@
+using System.Collections.Generic;
+
 public interface ICombatCommand
 {
-    void Execute();
+    void Execute(Unit unit, IEnumerable<Unit> targets);
 }

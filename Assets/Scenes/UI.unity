@@ -3257,7 +3257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleUIController: {fileID: 841185876}
   buttonDescription: 
-  skill: {fileID: 11400000, guid: c89996e475121de4c8b8f624af2c9201, type: 2}
+  skill: {fileID: 11400000, guid: a87aab42bea5d6048a96ead8203d03c1, type: 2}
   attackName: {fileID: 1980227583}
 --- !u!114 &1560877533
 MonoBehaviour:

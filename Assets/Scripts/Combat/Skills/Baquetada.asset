@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75dfa72fd46a6a931755349153ad9, type: 3}
-  m_Name: MelodiaLouca
+  m_Name: Baquetada
   m_EditorClassIdentifier: 
-  <BaseName>k__BackingField: "Melodia alucin\xF3gena"
-  <BaseDescription>k__BackingField: Mais poderosa que maconha, faz viajar na maionese
-  <BaseValue>k__BackingField: 0
+  <BaseName>k__BackingField: Baquetada
+  <BaseDescription>k__BackingField: "\"Baterista joga a baqueta na fu\xE7a dele\""
+  <BaseValue>k__BackingField: 7
   <MaxTargets>k__BackingField: 1
   _baseScalings: []
   <EvolvedSkill>k__BackingField: {fileID: 0}
