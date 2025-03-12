@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class EventBus
+public class EventBus : PersistentSingletonBehaviour<EventBus>
 {
     private readonly List<IEventListener> _listeners = new();
     

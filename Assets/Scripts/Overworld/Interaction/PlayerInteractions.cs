@@ -11,16 +11,15 @@ public class PlayerInteractions : MonoBehaviour
 
     private Interactable _interactable;
 
-    [Inject]
-    private void Inject(Input input, EventBus eventBus)
+    private void Start()
     {
-        _input = input;
+        _input = Input.Instance;
         _playerActions = new PlayerActionsCallbacks.Builder()
             .OnInteract(OnInteract, InputActionPhase.Performed)
             .Build();
         _input.Add(_playerActions);
 
-        _eventBus = eventBus;
+        _eventBus = EventBus.Instance;
     }
 
     private void OnInteract(InputAction.CallbackContext _)

@@ -1,12 +1,14 @@
+using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Input
+public class Input : PersistentSingletonBehaviour<Input>
 {
-    private readonly InputActions _inputActions;
+    private InputActions _inputActions;
 
+    [SerializeField]
     private InputContext _inputContext;
 
-    public Input()
+    protected override void Awake()
     {
         _inputActions = new InputActions();
     }

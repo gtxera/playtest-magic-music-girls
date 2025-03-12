@@ -2,21 +2,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class Inventory
+public class Inventory : PersistentSingletonBehaviour<Inventory>
 {
-    private Dictionary<Item, int> _iventory;
+    private Dictionary<Item, int> _inventory;
+
+    public float Money { get; private set; }
 
     public void Add(Item item, int count)
     {
-        if (_iventory.TryGetValue(item, out var currentCount))
-            _iventory[item] = currentCount + count;
+        if (_inventory.TryGetValue(item, out var currentCount))
+            _inventory[item] = currentCount + count;
         else
-            _iventory[item] = count;
+            _inventory[item] = count;
     }
 
     public bool TryRemove(Item item, int amount)
     {
-        if (!_iventory.TryGetValue(item, out var currentCount))
+        if (!_inventory.TryGetValue(item, out var currentCount))
             return false;
 
         if (currentCount < amount)
@@ -25,17 +27,32 @@ public class Inventory
         var newAmount = currentCount - amount;
 
         if (newAmount == 0)
-            _iventory.Remove(item);
+            _inventory.Remove(item);
         else
-            _iventory[item] = currentCount - amount;
+            _inventory[item] = currentCount - amount;
         
         
         return true; 
     }
 
-    public IEnumerable<(T Item, int Count)> GetInventory<T>(SortMode sortMode, bool ascending = true) where T : Item
+    public bool TrySell(Item item, int amount)
     {
-        var category = _iventory
+        if (!TryRemove(item, amount))
+            return false;
+
+        var sellValue = item.SellValue * amount;
+        AddMoney(sellValue);
+        return true;
+    }
+
+    public void AddMoney(float amount)
+    {
+        Money += amount;
+    }
+
+    public IEnumerable<InventorySlot> GetInventory<T>(SortMode sortMode = SortMode.Name, bool ascending = true) where T : Item
+    {
+        var category = _inventory
             .Where(kvp => kvp.Key is T);
 
         var filtered = sortMode switch
@@ -46,7 +63,7 @@ public class Inventory
             _ => throw new ArgumentOutOfRangeException(nameof(sortMode), sortMode, null)
         };
 
-        return filtered.Select(kvp => (kvp.Key as T, kvp.Value));
+        return filtered.Select(kvp => new InventorySlot(kvp.Key, kvp.Value));
     }
     
     public enum SortMode
@@ -54,5 +71,38 @@ public class Inventory
         Name,
         Value,
         Count,
+    }
+}
+
+public class InventorySlot
+{
+    public readonly Item Item;
+    public readonly int Count;
+
+    public InventorySlot(Item item, int count)
+    {
+        Item = item;
+        Count = count;
+    }
+
+    public InventorySlot(Item item)
+    {
+        Item = item;
+        Count = 1;
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is not InventorySlot slot || this is null)
+        {
+            return false;
+        }
+
+        return Item.Equals(slot.Item);
+    }
+
+    public override int GetHashCode()
+    {
+        return Item.GetHashCode();
     }
 }

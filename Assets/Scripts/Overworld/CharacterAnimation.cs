@@ -16,7 +16,7 @@ public class CharacterAnimation : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetFloat("X", _inputProvider.Input.x);
-        _animator.SetFloat("Y", _inputProvider.Input.y);
+        _animator.SetFloat("X", _inputProvider.AnimationInput.x);
+        _animator.SetFloat("Y", _inputProvider.AnimationInput.y);
     }
 }

@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PauseManager
+public class PauseManager : PersistentSingletonBehaviour<PauseManager>
 {
-    private readonly EventBus _eventBus;
-    private readonly Input _input;
+    private Input _input;
     
     private bool _paused;
 
@@ -20,10 +19,9 @@ public class PauseManager
         }
     }
 
-    public PauseManager(EventBus eventBus, Input input)
+    private void Start()
     {
-        _eventBus = eventBus;
-        _input = input;
+        _input = Input.Instance;
         _input.EnablePause();
         _input.Add(new PauseActionsCallbacks.Builder().OnPause(TogglePause, InputActionPhase.Performed).Build());
     }
@@ -46,7 +44,7 @@ public class PauseManager
 
     private void PublishPausedEvent()
     {
-        _eventBus.Publish(new PausedEvent(_paused));
+        EventBus.Instance.Publish(new PausedEvent(_paused));
     }
 
     private void SetTimeScale()

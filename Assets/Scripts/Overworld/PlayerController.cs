@@ -16,12 +16,11 @@ public class PlayerController : MonoBehaviour, ICharacterAnimatorInputProvider
 
     private Rigidbody2D _rigidbody2D;
 
-    public Vector2 Input => _inputDirection;
+    public Vector2 AnimationInput => _inputDirection;
     
-    [Inject]
-    private void Inject(Input input)
+    private void SetupInput()
     {
-        _input = input;
+        _input = Input.Instance;
         _playerActions = new PlayerActionsCallbacks.Builder()
             .OnMove(OnMovePerformed, InputActionPhase.Performed)
             .OnMove(OnMoveCanceled, InputActionPhase.Canceled)
@@ -45,6 +44,8 @@ public class PlayerController : MonoBehaviour, ICharacterAnimatorInputProvider
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         _rigidbody2D.freezeRotation = true;
+
+        SetupInput();
     }
 
     private void OnDestroy()

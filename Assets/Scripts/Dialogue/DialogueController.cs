@@ -2,26 +2,35 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class DialogueController 
+public class DialogueController : SingletonBehaviour<DialogueController>
 {
-    private readonly EventBus _eventBus;
-    private readonly DialoguePresenter _dialoguePresenter;
-    private readonly Input _input;
-    private readonly InputActions.IDialogueActions _dialogueActions;
+    [SerializeField]
+    private DialoguePresenter _dialoguePresenter;
+
+    private InputActions.IDialogueActions _dialogueActions;
 
     private Dialogue _currentDialogue;
     private int _currentLineIndex;
+
+    private EventBus _eventBus;
+    private Input _input;
     
-    public DialogueController(EventBus eventBus, DialoguePresenter dialoguePresenter, Input input)
+    protected override void Awake()
     {
-        _eventBus = eventBus;
-        _dialoguePresenter = dialoguePresenter;
-        _input = input;
+        base.Awake();
+
+        _eventBus = EventBus.Instance;
+        _input = Input.Instance;
         _dialogueActions = new DialogueActionsCallbacks.Builder()
             .AddOnSkip(OnSkip, InputActionPhase.Performed)
             .Build();
         
         _input.Add(_dialogueActions);
+    }
+
+    private void OnDestroy()
+    {
+        _input.Remove(_dialogueActions);
     }
 
     public void StartDialogue(Dialogue dialogue)

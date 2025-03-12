@@ -16,6 +16,8 @@ public abstract class Item : ScriptableObject
     [field: SerializeField]
     public float Value { get; private set; }
 
+    public float SellValue => Value * 0.2f;
+
     public override bool Equals(object other)
     {
         if (other is not Item item || ReferenceEquals(this, null))

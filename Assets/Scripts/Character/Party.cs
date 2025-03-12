@@ -4,8 +4,6 @@ public class Party
 {
     private HashSet<Character> _characters = new HashSet<Character>();
 
-    private EventBus _eventBus;
-
     public float Experience { get; private set; }
 
     public int Level
@@ -42,10 +40,13 @@ public class Party
         var experienceBefore = Experience;
         var levelBefore = Level;
         Experience += xp;
-        _eventBus.Publish(new ExperienceGainedEvent(experienceBefore, Experience));
+
+        var eventBus = EventBus.Instance;
+
+        eventBus.Publish(new ExperienceGainedEvent(experienceBefore, Experience));
         if (levelBefore != Level)
         {
-            _eventBus.Publish(new LevelGainedEvent(levelBefore, Level));
+            eventBus.Publish(new LevelGainedEvent(levelBefore, Level));
         }
     }
 }

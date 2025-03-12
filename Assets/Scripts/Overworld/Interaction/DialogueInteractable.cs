@@ -9,8 +9,7 @@ public class DialogueInteractable : Interactable
     
     public override void Interact()
     {
-        var controller = LifetimeScope.Find<BaseLifetimeScope>().Container.Resolve<DialogueController>();
-        controller.StartDialogue(_dialogue);
+        DialogueController.Instance.StartDialogue(_dialogue);
     }
 
     public override string InteractionText => "Falar com fulano";
