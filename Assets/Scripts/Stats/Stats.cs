@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class Stats
 {
-    private readonly StatsMediator _statsMediator;
     private readonly BaseStats _baseStats;
-    
-    public Stats(StatsMediator statsMediator, BaseStats baseStats)
+    private readonly Modifiers<StatModifier> _modifiers;
+
+    public Stats(BaseStats baseStats)
     {
-        _statsMediator = statsMediator;
         _baseStats = baseStats;
     }
 
