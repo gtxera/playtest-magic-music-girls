@@ -3,6 +3,9 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour
 {
     protected Character Character;
+
+    public Stats Stats => Character.Stats;
+    public Health Health => Character.Health;
     
     public void DealDamage(Unit target, float initialDamage)
     {

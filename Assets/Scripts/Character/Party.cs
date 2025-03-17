@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-public class Party
+public class Party : PersistentSingletonBehaviour<Party>
 {
-    private HashSet<Character> _characters = new HashSet<Character>();
+    private HashSet<PartyCharacter> _characters = new HashSet<PartyCharacter>();
 
     public float Experience { get; private set; }
 
@@ -23,14 +23,14 @@ public class Party
         }
     }
 
-    public IReadOnlyCollection<Character> Characters => _characters;
+    public IReadOnlyCollection<PartyCharacter> Characters => _characters;
 
-    public void AddCharacter(Character character)
+    public void AddCharacter(PartyCharacter character)
     {
         _characters.Add(character);
     }
 
-    public void RemoveCharacter(Character character)
+    public void RemoveCharacter(PartyCharacter character)
     {
         _characters.Remove(character);
     }

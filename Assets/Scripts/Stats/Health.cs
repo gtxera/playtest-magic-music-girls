@@ -16,7 +16,9 @@ public class Health
     }
 
     public event Action<HealthChangedEventArgs> HealthChanged = delegate { };
-    public event Action HealthDepleted = delegate { };
+    public event Action Died = delegate { };
+
+    public event Action Revived = delegate { };
     
     public float MaxHealth => _stats.Health;
 
@@ -26,7 +28,7 @@ public class Health
         _health = Mathf.Max(0f, _health - damage);
         
         if (_health == 0f)
-            HealthDepleted.Invoke();
+            Died.Invoke();
         
         HealthChanged.Invoke(new HealthChangedEventArgs(_health, previous));
     }
@@ -35,6 +37,10 @@ public class Health
     {
         var previous = _health;
         _health = Mathf.Min(_health + heal, MaxHealth);
+        
+        if (previous == 0f)
+            Revived.Invoke();
+        
         HealthChanged.Invoke(new HealthChangedEventArgs(_health, previous));
     }
 }
