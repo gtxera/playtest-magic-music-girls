@@ -25,9 +25,26 @@ public class CombatTurnManager
         {
             _turnOrder.Add(unit);
         }
+
+        CreateRemainingTurnOrder();
     }
 
-    public Unit NextTurn()
+    public void AddToOrder(Unit unit)
+    {
+        _turnOrder.Add(unit);
+    }
+
+    public void RemoveFromOrder(Unit unit)
+    {
+        _turnOrder.Remove(unit);
+
+        if (_remainingTurnOrder.Contains(unit))
+        {
+            _remainingTurnOrder.Remove(unit);
+        }
+    }
+
+    public void NextTurn()
     {
         var previous = _remainingTurnOrder.Min;
         _remainingTurnOrder.Remove(previous);
@@ -40,7 +57,6 @@ public class CombatTurnManager
 
         var next = _remainingTurnOrder.Min;
         EventBus.Instance.Publish(new CombatTurnPassedEvent(next, CurrentTurn));
-        return next;
     }
 
     private void CreateRemainingTurnOrder() => _remainingTurnOrder = new SortedSet<Unit>(_turnOrder, new UnitTurnOrderComparer());

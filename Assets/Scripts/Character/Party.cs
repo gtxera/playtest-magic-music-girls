@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 
-public class Party : PersistentSingletonBehaviour<Party>
+public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatEndedEvent>
 {
     private HashSet<PartyCharacter> _characters = new HashSet<PartyCharacter>();
 
@@ -25,6 +26,11 @@ public class Party : PersistentSingletonBehaviour<Party>
 
     public IReadOnlyCollection<PartyCharacter> Characters => _characters;
 
+    public PartyCharacter GetFromData(CharacterData data)
+    {
+        return _characters.First(c => c.CharacterData == data);
+    }
+
     public void AddCharacter(PartyCharacter character)
     {
         _characters.Add(character);
@@ -48,5 +54,13 @@ public class Party : PersistentSingletonBehaviour<Party>
         {
             eventBus.Publish(new LevelGainedEvent(levelBefore, Level));
         }
+    }
+
+    public void Handle(CombatEndedEvent @event)
+    {
+        if (!@event.PlayerVictory)
+            return;
+
+        AddXp(@event.ExperienceReward);
     }
 }

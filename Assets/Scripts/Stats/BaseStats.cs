@@ -19,6 +19,17 @@ public class BaseStats
     [field: SerializeField]
     public int Health { get; private set; }
 
+    public void SetForLevel(int level, BaseStats baseStats, BaseStats growth)
+    {
+        var actualLevel = level - 1;
+
+        Emotion = baseStats.Emotion + growth.Emotion * level;
+        Virtuosity = baseStats.Virtuosity + growth.Virtuosity * level;
+        Endurance = baseStats.Endurance + growth.Endurance * level;
+        Tempo = baseStats.Tempo + growth.Tempo * level;
+        Health = baseStats.Health + growth.Health * level;
+    }
+
     public static BaseStats operator +(BaseStats lhr, BaseStats rhs)
     {
         var sum = new BaseStats

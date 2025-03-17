@@ -14,4 +14,7 @@ public class CharacterData : ScriptableObject
     
     [field: SerializeField]
     public BaseStats StatsGrowth { get; private set; }
+
+    [field: SerializeField]
+    public Unit CombatPrefab { get; private set; }
 }

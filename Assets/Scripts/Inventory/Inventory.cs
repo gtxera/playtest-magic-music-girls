@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class Inventory : PersistentSingletonBehaviour<Inventory>
+public class Inventory : PersistentSingletonBehaviour<Inventory>, IEventListener<CombatEndedEvent>
 {
     private Dictionary<Item, int> _inventory;
 
@@ -65,7 +65,20 @@ public class Inventory : PersistentSingletonBehaviour<Inventory>
 
         return filtered.Select(kvp => new InventorySlot(kvp.Key, kvp.Value));
     }
-    
+
+    public void Handle(CombatEndedEvent @event)
+    {
+        if (!@event.PlayerVictory)
+            return;
+
+        AddMoney(@event.MoneyReward);
+
+        foreach (var loot in @event.Loot)
+        {
+            Add(loot.Item, loot.Count);
+        }
+    }
+
     public enum SortMode
     {
         Name,
