@@ -29,7 +29,19 @@ public class InventoryInterfaceController : MonoBehaviour
     private int currentPanelIndex;
 
     [Header("Character Screen Elements")]
-    [SerializeField] GameObject character1Screen;
+    [SerializeField] GameObject characterInfosPanel;
+    [SerializeField] Button characterInfoBtn;
+    [SerializeField] GameObject charAbilityTreePanel;
+    [SerializeField] Button charAbilityTreeBtn;
+    [SerializeField] Transform characterSelectionContent;
+    [SerializeField] GameObject equippedItemImage;
+    [SerializeField] Image characterSplash;
+    [SerializeField] TextMeshProUGUI charNameTxt;
+    [SerializeField] TextMeshProUGUI charDescriptionTxt;
+    [SerializeField] TextMeshProUGUI statsTxt;
+    [SerializeField] TextMeshProUGUI lifeTxt;
+    [SerializeField] TextMeshProUGUI speedTxt;
+    [SerializeField] TextMeshProUGUI expTxt;
 
 
 
@@ -37,6 +49,7 @@ public class InventoryInterfaceController : MonoBehaviour
     {
         currentPanelIndex = 0;
         UpdateInventoryPanel(currentPanelIndex);
+        ChangeInfoPanel(true);
         ChangeScreen(0);
     }
 
@@ -96,5 +109,25 @@ public class InventoryInterfaceController : MonoBehaviour
     }
     #endregion
 
+    #region CharacterScreenSettings
+    public void ChangeInfoPanel(bool isToInfoPanel)
+    {
+        characterInfosPanel.SetActive(isToInfoPanel);
+        characterInfoBtn.interactable = !isToInfoPanel;
+        charAbilityTreePanel.SetActive(!isToInfoPanel);
+        charAbilityTreeBtn.interactable = isToInfoPanel;
+    }
+
+    public void UpdateCharactersInfos(Sprite _charSplash, string _charName, string _charDescription, string _charStats, string _charLife, string _charSpeed, string _charExp)
+    {
+        characterSplash.sprite = _charSplash;
+        charNameTxt.text = "Nome: " + _charName;
+        charDescriptionTxt.text = "Descrição: " + _charDescription;
+        statsTxt.text = "Status: " + _charStats;
+        lifeTxt.text = "Vida: " + _charLife;
+        speedTxt.text = "Velocidade: " + _charSpeed;
+        expTxt.text = "Experiência: " + _charExp;
+    }
+    #endregion
 
 }
