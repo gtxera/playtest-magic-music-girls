@@ -6,7 +6,7 @@
 
     public const string STAT_PARAMETER_KEY = "stat";
 
-    public StatModifier(Stat stat, float modifyValue, ModifierType type) : base(type)
+    public StatModifier(string identifier, ModifierType type, Stat stat, float modifyValue) : base(identifier, type)
     { 
         Stat = stat;
         ModifyValue = modifyValue;
@@ -19,11 +19,11 @@
         if (modifiedStat != Stat)
             return currentValue;
 
-        if (Type == ModifierType.Additive)
-            return currentValue + ModifyValue;
-        else if (Type == ModifierType.Multiplicative)
-            return currentValue + ModifyValue;
-
-        return currentValue;
+        return Type switch
+        {
+            ModifierType.Additive => currentValue + ModifyValue,
+            ModifierType.Multiplicative => currentValue * ModifyValue,
+            _ => currentValue
+        };
     }
 }

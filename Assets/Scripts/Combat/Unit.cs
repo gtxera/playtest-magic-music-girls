@@ -3,8 +3,13 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour
 {
     protected Character Character;
-
-    public void TakeDamage(float damage)
+    
+    public void DealDamage(Unit target, float initialDamage)
+    {
+        Character.DealDamage(target.Character, initialDamage);
+    }
+    
+    private void TakeDamage(float damage)
     {
         Character.TakeDamage(damage);
     }
@@ -12,5 +17,10 @@ public abstract class Unit : MonoBehaviour
     public void Heal(float heal)
     {
         Character.Heal(heal);
+    }
+
+    public void AddModifier(Modifier modifier)
+    {
+        Character.AddModifier(modifier);
     }
 }

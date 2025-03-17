@@ -16,7 +16,7 @@ public class DamageSkill : Skill
 
         foreach (var target in units)
         {
-            target.TakeDamage(BaseValue);
+            unit.DealDamage(target, BaseValue);
         }
     }
 }

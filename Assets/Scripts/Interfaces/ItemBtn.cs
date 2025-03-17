@@ -8,7 +8,7 @@ public class ItemBtn : MonoBehaviour
 
     private void Awake()
     {
-        inventory = FindObjectOfType<InventoryInterfaceController>();
+        inventory = FindFirstObjectByType<InventoryInterfaceController>();
     }
 
     private void Start()

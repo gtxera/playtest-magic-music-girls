@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Stats
@@ -8,11 +9,27 @@ public class Stats
     public Stats(BaseStats baseStats)
     {
         _baseStats = baseStats;
+        _modifiers = new Modifiers<StatModifier>();
     }
 
-    public int Emotion => _baseStats.Emotion;
-    public int Virtuosity => _baseStats.Virtuosity;
-    public int Endurance => _baseStats.Endurance;
-    public int Tempo => _baseStats.Tempo;
-    public int Health => _baseStats.Health;
+    public int Emotion => GetModified(Stat.Emotion, _baseStats.Emotion);
+    public int Virtuosity => GetModified(Stat.Virtuosity, _baseStats.Virtuosity);
+    public int Endurance => GetModified(Stat.Endurance, _baseStats.Endurance);
+    public int Tempo => GetModified(Stat.Tempo, _baseStats.Tempo);
+    public int Health => GetModified(Stat.Health, _baseStats.Health);
+
+    public void AddModifier(StatModifier modifier)
+    {
+        _modifiers.Add(modifier);
+    }
+
+    private int GetModified(Stat stat, int initialValue)
+    {
+        var parametes = new Dictionary<string, object>
+        {
+            {StatModifier.STAT_PARAMETER_KEY, stat}
+        };
+
+        return Mathf.FloorToInt(_modifiers.GetModified(initialValue, parametes));
+    }
 }

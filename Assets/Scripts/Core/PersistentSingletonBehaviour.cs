@@ -2,33 +2,18 @@ using UnityEngine;
 
 public abstract class PersistentSingletonBehaviour<T> : PersistentSingletonBehaviour where T : PersistentSingletonBehaviour<T>
 {
-    private static T _instance;
-
-    public static T Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = Singleton.Get<T>();
-            }
-
-            return _instance;
-        }
-    }
+    public static T Instance { get; private set; }
     
     protected virtual void Awake()
     {
-        if (_instance == null)
-        {
-            _instance = (T)this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (_instance != this)
+        if (Instance != null)
         {
             Debug.LogErrorFormat("Singleton do tipo {0} duplicado!", typeof(T));
-            Destroy(gameObject);
+            Destroy(this);
+            return;
         }
+
+        Instance = (T)this;
     }
 
     public static void Clear()
