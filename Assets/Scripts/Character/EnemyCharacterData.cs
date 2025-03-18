@@ -1,12 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyCharacterData", menuName = "Scriptable Objects/EnemyCharacterData")]
-public class EnemyCharacterData : ScriptableObject
+public class EnemyCharacterData : CharacterData
 {
     [field: SerializeField]
-    public CharacterData CharacterData { get; private set; }
+    public int Level { get; private set; }
 
-    [field: SerializeField]
+[field: SerializeField]
     public float ExperienceReward { get; private set; }
 
     [field: SerializeField]

@@ -6,6 +6,8 @@ public class EventBus : PersistentSingletonBehaviour<EventBus>
     
     public void Publish<TEvent>(TEvent @event) where TEvent : class, IEvent
     {
+        _listeners.RemoveAll(l => l == null);
+        
         foreach (var listener in _listeners)
         {
             if (listener is IEventListener<TEvent> typedListener)

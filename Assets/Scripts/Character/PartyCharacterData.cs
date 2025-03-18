@@ -11,4 +11,7 @@ public class PartyCharacterData : CharacterData
     public Sprite characterSelectionFrame;
 
     public string description;
+    
+    [field: SerializeField]
+    public PartyUnit CombatPrefab { get; private set; }
 }

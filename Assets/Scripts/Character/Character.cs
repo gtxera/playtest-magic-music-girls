@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Character
@@ -8,7 +9,8 @@ public abstract class Character
     protected Character(CharacterData characterData)
     {
         CharacterData = characterData;
-        Stats = new Stats(CharacterData.BaseStats);
+        BaseStats = characterData.BaseStats.Copy();
+        Stats = new Stats(BaseStats);
         Health = new Health(Stats);
 
         _damageMitigator = new DamageMitigator(Stats);
@@ -16,13 +18,14 @@ public abstract class Character
     }
 
     public CharacterData CharacterData { get; }
+    protected BaseStats BaseStats { get; }
     public Stats Stats { get; }
     public Health Health { get; }
     public abstract int Level { get; }
 
-    public void DealDamage(Character target, float initialDamage)
+    public void DealDamage(Character target, float initialDamage, IEnumerable<StatScaling> scalings)
     {
-        target.TakeDamage(_damageDealer.CalculateDamage(initialDamage));
+        target.TakeDamage(_damageDealer.CalculateDamage(initialDamage, scalings));
     }
 
     public void TakeDamage(float damage)

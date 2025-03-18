@@ -8,7 +8,6 @@ public class PartyUnit : Unit, IEventListener<CombatTurnPassedEvent>
 
     public void Handle(CombatTurnPassedEvent @event)
     {
-        throw new System.NotImplementedException();
     }
 
     private void Awake()

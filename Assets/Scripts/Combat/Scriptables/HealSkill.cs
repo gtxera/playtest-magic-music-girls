@@ -4,9 +4,9 @@ using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DamageSkill", menuName = "Scriptable Objects/DamageSkill")]
-public class DamageSkill : Skill
+public class HealSkill : Skill
 {
-    public override TargetType TargetType => TargetType.Opposite;
+    public override TargetType TargetType => TargetType.Ally;
 
     public override void Execute(Unit unit, IEnumerable<Unit> targets)
     {
@@ -18,7 +18,7 @@ public class DamageSkill : Skill
 
         foreach (var target in units)
         {
-            unit.DealDamage(target, BaseValue, BaseScalings);
+            target.Heal(BaseValue);
         }
     }
 }

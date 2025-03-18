@@ -16,5 +16,5 @@ public class CharacterData : ScriptableObject
     public BaseStats StatsGrowth { get; private set; }
 
     [field: SerializeField]
-    public Unit CombatPrefab { get; private set; }
+    public Skill[] Skills;
 }

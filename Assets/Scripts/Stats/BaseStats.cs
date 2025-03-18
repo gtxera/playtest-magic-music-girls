@@ -57,4 +57,16 @@ public class BaseStats
 
         return product;
     }
+
+    public BaseStats Copy()
+    {
+        return new BaseStats
+        {
+            Emotion = this.Emotion,
+            Virtuosity = this.Virtuosity,
+            Endurance = this.Endurance,
+            Tempo = this.Tempo,
+            Health = this.Health
+        };
+    }
 }

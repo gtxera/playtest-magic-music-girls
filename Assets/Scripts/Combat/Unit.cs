@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
@@ -27,9 +28,9 @@ public abstract class Unit : MonoBehaviour
         Health.Revived -= Revived;
     }
 
-    public void DealDamage(Unit target, float initialDamage)
+    public void DealDamage(Unit target, float initialDamage, IEnumerable<StatScaling> scalings)
     {
-        Character.DealDamage(target.Character, initialDamage);
+        Character.DealDamage(target.Character, initialDamage, scalings);
     }
 
     public void Heal(float heal)

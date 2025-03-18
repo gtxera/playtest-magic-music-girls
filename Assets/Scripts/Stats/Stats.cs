@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,25 @@ public class Stats
     {
         _baseStats = baseStats;
         _modifiers = new Modifiers<StatModifier>();
+    }
+
+    public int Get(Stat stat)
+    {
+        switch (stat)
+        {
+            case Stat.Emotion:
+                return Emotion;
+            case Stat.Virtuosity:
+                return Virtuosity;
+            case Stat.Endurance:
+                return Endurance;
+            case Stat.Tempo:
+                return Tempo;
+            case Stat.Health:
+                return Health;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(stat), stat, null);
+        }
     }
 
     public int Emotion => GetModified(Stat.Emotion, _baseStats.Emotion);
