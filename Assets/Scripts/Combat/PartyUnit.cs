@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PartyUnit : Unit, IEventListener<CombatTurnPassedEvent>
 {
     [SerializeField]
-    private CharacterData characterData;
+    private CharacterData _characterData;
 
     public void Handle(CombatTurnPassedEvent @event)
     {
@@ -12,6 +13,6 @@ public class PartyUnit : Unit, IEventListener<CombatTurnPassedEvent>
 
     private void Awake()
     {
-        Character = Party.Instance.GetFromData(characterData);
+        Character = Party.Instance.GetFromData(_characterData);
     }
 }
