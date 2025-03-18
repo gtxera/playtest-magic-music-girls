@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class CharInventrorySelectionBtn : MonoBehaviour
 {
     private InventoryInterfaceController interfaceController;
-    public CharacterData characterData;
+    public PartyCharacterData characterData;
 
     private void Awake()
     {

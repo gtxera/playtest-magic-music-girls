@@ -42,6 +42,16 @@ public class InventoryInterfaceController : MonoBehaviour
     [SerializeField] TextMeshProUGUI lifeTxt;
     [SerializeField] TextMeshProUGUI speedTxt;
     [SerializeField] TextMeshProUGUI expTxt;
+    //objetos de mudança na visual da interface
+    [SerializeField] Image inventoryPanelFrame;
+    [SerializeField] Image inventoryPanelTittleFrame;
+    [SerializeField] Image inventoryPanelBackground;
+    [SerializeField] Image characterPortraitFrame;
+    [SerializeField] Image characterPortraitBackground;
+    [SerializeField] Image itemsPanelBackground;
+    [SerializeField] Image itemsPanelFrame;
+    [SerializeField] Image charSelectionFrame;
+
 
 
 
@@ -118,15 +128,24 @@ public class InventoryInterfaceController : MonoBehaviour
         charAbilityTreeBtn.interactable = isToInfoPanel;
     }
 
-    public void UpdateCharactersInfos(Sprite _charSplash, string _charName, string _charDescription, string _charStats, string _charLife, string _charSpeed, string _charExp)
+    public void UpdateCharactersInfos(PartyCharacterData _character)
     {
-        characterSplash.sprite = _charSplash;
-        charNameTxt.text = "Nome: " + _charName;
-        charDescriptionTxt.text = "Descrição: " + _charDescription;
-        statsTxt.text = "Status: " + _charStats;
-        lifeTxt.text = "Vida: " + _charLife;
-        speedTxt.text = "Velocidade: " + _charSpeed;
-        expTxt.text = "Experiência: " + _charExp;
+        characterSplash.sprite = _character.Icon;
+        charNameTxt.text = "Nome: " + _character.name;
+        charDescriptionTxt.text = "Descrição: " + _character.description;
+        statsTxt.text = "Status: ";// + _charStats;
+        lifeTxt.text = "Vida: ";// +  _charLife;
+        speedTxt.text = "Velocidade: ";// + _charSpeed;
+        expTxt.text = "Experiência: ";// + _charExp;
+
+        inventoryPanelFrame.sprite = _character.interfaceSmallFrame;
+        inventoryPanelTittleFrame.sprite = _character.interfaceSmallFrame;
+        inventoryPanelBackground.sprite = _character.interfaceBigBackground;
+        characterPortraitFrame.sprite = _character.interfaceBigFrame;
+        characterPortraitBackground.sprite = _character.interfaceBigBackground;
+        itemsPanelBackground.sprite = _character.interfaceSmallBackground;
+        itemsPanelFrame.sprite = _character.interfaceThinFrame;
+        charSelectionFrame.sprite = _character.characterSelectionFrame;
     }
     #endregion
 
