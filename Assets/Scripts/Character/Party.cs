@@ -1,8 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatEndedEvent>
 {
+    [SerializeField]
+    private PartyCharacterData[] _initialCharacters;
+    
     private HashSet<PartyCharacter> _characters = new HashSet<PartyCharacter>();
 
     public float Experience { get; private set; }
@@ -31,14 +36,15 @@ public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatE
         return _characters.First(c => c.CharacterData == data);
     }
 
-    public void AddCharacter(PartyCharacter character)
+    public void AddCharacter(PartyCharacterData characterData)
     {
+        var character = new PartyCharacter(characterData, this);
         _characters.Add(character);
     }
 
-    public void RemoveCharacter(PartyCharacter character)
+    public void RemoveCharacter(PartyCharacterData characterData)
     {
-        _characters.Remove(character);
+        _characters.RemoveWhere(c => c.CharacterData == characterData);
     }
 
     public void AddXp(float xp)
@@ -62,5 +68,13 @@ public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatE
             return;
 
         AddXp(@event.ExperienceReward);
+    }
+
+    private void Start()
+    {
+        foreach (var data in _initialCharacters)
+        {
+            AddCharacter(data);
+        }
     }
 }

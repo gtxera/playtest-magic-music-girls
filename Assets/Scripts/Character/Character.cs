@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Character
@@ -25,7 +26,7 @@ public abstract class Character
 
     public void DealDamage(Character target, float initialDamage, IEnumerable<StatScaling> scalings)
     {
-        target.TakeDamage(_damageDealer.CalculateDamage(initialDamage, scalings));
+        target.TakeDamage(_damageDealer.CalculateDamage(initialDamage));
     }
 
     public void TakeDamage(float damage)
@@ -77,4 +78,6 @@ public abstract class Character
     {
         return CharacterData.GetHashCode();
     }
+
+    public abstract IEnumerable<Skill> GetSkills();
 }

@@ -14,4 +14,7 @@ public class PartyCharacterData : CharacterData
     
     [field: SerializeField]
     public PartyUnit CombatPrefab { get; private set; }
+    
+    [field: SerializeField]
+    public BaseStats StatsGrowth { get; private set; }
 }

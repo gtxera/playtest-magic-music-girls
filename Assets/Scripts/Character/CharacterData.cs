@@ -11,9 +11,6 @@ public class CharacterData : ScriptableObject
     
     [field: SerializeField]
     public BaseStats BaseStats { get; private set; }
-    
-    [field: SerializeField]
-    public BaseStats StatsGrowth { get; private set; }
 
     [field: SerializeField]
     public Skill[] Skills;

@@ -11,5 +11,7 @@ public class CombatAction
     public async UniTask Do()
     {
         _command.Execute(_unit, _targets);
+
+        await UniTask.CompletedTask;
     }
 }

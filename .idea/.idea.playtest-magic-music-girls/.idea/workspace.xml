@@ -5,8 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4c57ee-39ac-4ba5-ac9e-9c0dad4f2d0e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/StatScaling.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/StatScaling.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.playtest-magic-music-girls/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.playtest-magic-music-girls/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/PartyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/PartyUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlaytestObjects/EnemiesZone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlaytestObjects/EnemiesZone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestScenes/SceneA.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestScenes/SceneA.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/DamageDealer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/DamageDealer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/EnemyCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/EnemyCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/Modifiers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/Modifiers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Party.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Party.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PartyCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PartyCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PartyCharacterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PartyCharacterData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/DamageSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/DamageSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/Skill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/CharInventrorySelectionBtn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/CharInventrorySelectionBtn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/CharacterSpriteSheets/animação.maestro (1).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/CharacterSpriteSheets/animação.maestro (1).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/CharacterSpriteSheets/lyra finalizada (1).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/CharacterSpriteSheets/lyra finalizada (1).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/CharacterSpriteSheets/sprite sheet maestro compelto.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/CharacterSpriteSheets/sprite sheet maestro compelto.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/CharacterSpriteSheets/vovo sprite sheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/CharacterSpriteSheets/vovo sprite sheet.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/morcego (1).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/morcego (1).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/inicial.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/inicial.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +49,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifierFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Modifier/ModifierType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/EnemyUnit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/gabri/OneDrive/Documentos/Unity Projects/playtest-magic-music-girls/Assets/Scripts/Combat/PartyUnit.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealSkill.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -114,6 +140,8 @@
       <workItem from="1742172099580" duration="3315000" />
       <workItem from="1742222491599" duration="2809000" />
       <workItem from="1742312932749" duration="657000" />
+      <workItem from="1742338108642" duration="1744000" />
+      <workItem from="1742391011696" duration="4812000" />
     </task>
     <servers />
   </component>

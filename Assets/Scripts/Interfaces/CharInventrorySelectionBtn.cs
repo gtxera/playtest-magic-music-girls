@@ -8,7 +8,7 @@ public class CharInventrorySelectionBtn : MonoBehaviour
 
     private void Awake()
     {
-        interfaceController = FindObjectOfType<InventoryInterfaceController>();
+        interfaceController = FindFirstObjectByType<InventoryInterfaceController>();
     }
 
     private void Start()

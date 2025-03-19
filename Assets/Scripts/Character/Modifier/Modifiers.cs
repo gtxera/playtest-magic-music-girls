@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Diagnostics;
 
 public class Modifiers<T> : IEventListener<CombatTurnPassedEvent>, IEventListener<CombatEndedEvent> where T : Modifier
 {

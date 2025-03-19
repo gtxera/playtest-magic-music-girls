@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCharacter : Character
@@ -10,4 +11,9 @@ public class EnemyCharacter : Character
     }
 
     public override int Level => _level;
+    
+    public override IEnumerable<Skill> GetSkills()
+    {
+        return CharacterData.Skills;
+    }
 }

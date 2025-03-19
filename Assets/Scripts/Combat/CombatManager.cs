@@ -27,6 +27,10 @@ public class CombatManager : PersistentSingletonBehaviour<CombatManager>
 
     public void StartCombat(EncounterData encounterData)
     {
+        LevelRoot.Instance.Disable();
+
+        enabled = true;
+        
         _encounterData = encounterData;
 
         foreach (var enemyUnitPrefab in encounterData.Enemies)
@@ -44,7 +48,7 @@ public class CombatManager : PersistentSingletonBehaviour<CombatManager>
         foreach (var partyCharacter in Party.Instance.Characters)
         {
             var freePosition = _partyPositions.First(x => !x.IsOccupied);
-            var partyUnit = Instantiate(partyCharacter.PartyUnit, freePosition.transform.position, Quaternion.identity);
+            var partyUnit = Instantiate(partyCharacter.PartyUnitPrefab, freePosition.transform.position, Quaternion.identity);
             freePosition.Occupy(partyUnit);
 
             partyUnit.Died += () => RemoveDeadUnit(partyUnit);

@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 485360245019388331}
   - component: {fileID: 8752212883859632714}
   - component: {fileID: 1132610140472846328}
-  - component: {fileID: 5769775702774591738}
+  - component: {fileID: 6532062627725895895}
   m_Layer: 0
   m_Name: EnemiesZone
   m_TagString: Untagged
@@ -213,7 +213,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &5769775702774591738
+--- !u!114 &6532062627725895895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5822361660180269067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8af840628e68e84c9b44a217072992f, type: 3}
+  m_Script: {fileID: 11500000, guid: e6e63dd8c23822d4e99ec3ff82bf2706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _encounterData: {fileID: 0}

@@ -18,7 +18,7 @@ public class HealSkill : Skill
 
         foreach (var target in units)
         {
-            target.Heal(BaseValue);
+            target.Heal(GetScaledValue(unit.Stats));
         }
     }
 }

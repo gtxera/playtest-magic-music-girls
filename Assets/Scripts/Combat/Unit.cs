@@ -43,6 +43,11 @@ public abstract class Unit : MonoBehaviour
         Character.AddModifier(modifier);
     }
 
+    public IEnumerable<Skill> GetSkills()
+    {
+        return Character.GetSkills();
+    }
+
     protected virtual void Start()
     {
         RegisterHealthCallbacks();

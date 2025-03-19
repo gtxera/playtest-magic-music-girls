@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,30 +21,19 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     
     public IEnumerable<StatScaling> BaseScalings => _baseScalings;
 
+    public float GetScaledValue(Stats stats)
+    {
+        var finalValue = BaseValue;
+
+        foreach (var scaling in _baseScalings)
+        {
+            finalValue += scaling.GetValue(stats);
+        }
+
+        return finalValue;
+    }
+
     public abstract void Execute(Unit unit, IEnumerable<Unit> targets);
-}
-
-[Serializable]
-public class StatScaling : Modifier
-{
-    [field: SerializeField]
-    public Stat Stat { get; private set; }
-    
-    [field: SerializeField]
-    public float Scaling { get; private set; }
-    
-    [field: SerializeField]
-    public ModifierType ScalingType { get; private set; }
-
-    public StatScaling(string identifier, ModifierType type) : base(identifier, type)
-    {
-        identifier = $"{Stat}-{Scaling}-{ScalingType}";
-    }
-
-    public override float Modify(float currentValue, ModifyParameters parameters)
-    {
-        throw new NotImplementedException();
-    }
 }
 
 public enum TargetType
