@@ -1,10 +1,20 @@
 using System;
 using UnityEngine;
 
-public class EncounterStarter : MonoBehaviour
+public class EncounterStarter : MonoBehaviour, IEventListener<CombatEndedEvent>
 {
     [SerializeField]
     private EncounterData _encounterData;
+
+    private void Start()
+    {
+        EventBus.Instance.Subscribe(this);
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.Instance.Unsubscribe(this);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,5 +22,11 @@ public class EncounterStarter : MonoBehaviour
             return;
         
         CombatManager.Instance.StartCombat(_encounterData);
+    }
+
+    public void Handle(CombatEndedEvent @event)
+    {
+        if (@event.PlayerVictory)
+            Destroy(gameObject);
     }
 }

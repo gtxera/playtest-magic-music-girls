@@ -6,11 +6,11 @@ public class DamageDealer
     public DamageDealer(Stats stats)
     {
         _stats = stats;
+        _modifiers = new Modifiers<DamageDealerModifier>();
     }
     
     public float CalculateDamage(float initialDamage)
     {
-        
         return _modifiers.GetModified(initialDamage, null);
     }
 

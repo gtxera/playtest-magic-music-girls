@@ -8,6 +8,13 @@ public class CombatAction
     private readonly IEnumerable<Unit> _targets;
     private readonly ICombatCommand _command;
 
+    public CombatAction(Unit unit, IEnumerable<Unit> targets, ICombatCommand command)
+    {
+        _unit = unit;
+        _targets = targets;
+        _command = command;
+    }
+
     public async UniTask Do()
     {
         _command.Execute(_unit, _targets);

@@ -1,17 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PartyUnit : Unit, IEventListener<CombatTurnPassedEvent>
+public class PartyUnit : Unit
 {
     [SerializeField]
-    private CharacterData _characterData;
+    private PartyCharacterData _characterData;
 
-    public void Handle(CombatTurnPassedEvent @event)
-    {
-    }
+    public Sprite Icon => _characterData.Icon;
 
     private void Awake()
     {
         Character = Party.Instance.GetFromData(_characterData);
+    }
+    
+    protected override void OnTurnPassed(Unit currentUnit)
+    {
+        if (currentUnit != this)
+            return;
     }
 }

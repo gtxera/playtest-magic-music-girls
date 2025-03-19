@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BatEncounter
   m_EditorClassIdentifier: 
   _enemies:
-  - {fileID: 0}
+  - {fileID: 9207906587870085129, guid: 9586f8ebc84470d458d11b94132a5f89, type: 3}
   <LootTable>k__BackingField:
     _loot: []

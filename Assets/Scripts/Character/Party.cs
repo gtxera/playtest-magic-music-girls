@@ -31,7 +31,7 @@ public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatE
 
     public IReadOnlyCollection<PartyCharacter> Characters => _characters;
 
-    public PartyCharacter GetFromData(CharacterData data)
+    public PartyCharacter GetFromData(PartyCharacterData data)
     {
         return _characters.First(c => c.CharacterData == data);
     }

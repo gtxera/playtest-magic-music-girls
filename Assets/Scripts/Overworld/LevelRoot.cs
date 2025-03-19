@@ -5,13 +5,13 @@ public class LevelRoot : SingletonBehaviour<LevelRoot>
 {
     public void Enable()
     {
-        enabled = true;
+        gameObject.SetActive(true);
         Input.Instance.SetInputContext(InputContext.Player);
     }
 
     public void Disable()
     {
-        enabled = false;
+        gameObject.SetActive(false);
         Input.Instance.SetInputContext(InputContext.UI);
     }
 }

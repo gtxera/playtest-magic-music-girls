@@ -1,26 +1,31 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillsButton : CombatButton
 {
-    public Skill skill;
+    [SerializeField]
+    private Skill _skill;
     [SerializeField] TextMeshProUGUI attackName;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Unit _unit;
+    
+    public void Initialize(Skill skill, Unit unit)
     {
-        UpdateButtonvalues();
+        _skill = skill;
+        _unit = unit;
+        
+        Button = GetComponent<Button>();
+        battleUIController = FindFirstObjectByType<BattleUIController>();
+        
+        buttonDescription = _skill.BaseDescription;
+        attackName.text = _skill.BaseName;
+        Button.onClick.AddListener(OnClick);
     }
 
-
-    public void UpdateButtonvalues()
+    private void OnClick()
     {
-        buttonDescription = skill.BaseDescription;
-        attackName.text = skill.BaseName;
-    } 
-
-    public void UseSkill()
-    {
-        battleUIController.IncrementEnergyBarValue(skill.BaseValue);
+        CombatTargetSelector.Instance.StartSelection(_skill, _unit);
+        battleUIController.ChangeOptionsPanel(CombatPanel.Selection);
     }
 }

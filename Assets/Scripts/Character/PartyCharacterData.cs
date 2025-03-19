@@ -17,4 +17,5 @@ public class PartyCharacterData : CharacterData
     
     [field: SerializeField]
     public BaseStats StatsGrowth { get; private set; }
+    
 }

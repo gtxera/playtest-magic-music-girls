@@ -1,9 +1,20 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public abstract class Unit : MonoBehaviour
+public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent>
 {
+    [SerializeField]
+    private SpriteRenderer _selectionIndicator;
+    
+    [SerializeField]
+    private SpriteRenderer _selectedIndicator;
+
+    private bool _isHovering;
+
+    private InputActions.ICombatActions _combatActionsCallbacks;
+    
     protected Character Character;
 
     public Stats Stats => Character.Stats;
@@ -28,17 +39,17 @@ public abstract class Unit : MonoBehaviour
         Health.Revived -= Revived;
     }
 
-    public void DealDamage(Unit target, float initialDamage, IEnumerable<StatScaling> scalings)
+    public virtual void DealDamage(Unit target, float initialDamage, IEnumerable<StatScaling> scalings)
     {
-        Character.DealDamage(target.Character, initialDamage, scalings);
+        Debug.Log(Character.DealDamage(target.Character, initialDamage, scalings));
     }
 
-    public void Heal(float heal)
+    public virtual void Heal(float heal)
     {
         Character.Heal(heal);
     }
 
-    public void AddModifier(Modifier modifier)
+    public virtual void AddModifier(Modifier modifier)
     {
         Character.AddModifier(modifier);
     }
@@ -48,13 +59,75 @@ public abstract class Unit : MonoBehaviour
         return Character.GetSkills();
     }
 
-    protected virtual void Start()
+    public void Initialize()
     {
+        _selectionIndicator.enabled = false;
+        _selectedIndicator.enabled = false;
+        
+        EventBus.Instance.Subscribe(this);
         RegisterHealthCallbacks();
+        
+        _combatActionsCallbacks = new CombatActionsCallbacks.Builder()
+            .AddOnSelect(OnSelect, InputActionPhase.Performed)
+            .AddOnDeselect(OnDeselect, InputActionPhase.Performed)
+            .Build();
+        
+        Input.Instance.Add(_combatActionsCallbacks);
     }
 
     protected virtual void OnDestroy()
     {
+        EventBus.Instance.Unsubscribe(this);
         DeregisterHealthCallbacks();
+        Input.Instance.Remove(_combatActionsCallbacks);
     }
+
+    private void OnMouseEnter()
+    {
+        var combatTargetSelector = CombatTargetSelector.Instance;
+        
+        _isHovering = true;
+        
+        if (!combatTargetSelector.IsSelectable(this) || combatTargetSelector.IsSelected(this)) 
+            return;
+        
+        _selectionIndicator.enabled = true;
+    }
+
+    private void OnMouseExit()
+    {
+        _isHovering = false;
+        _selectionIndicator.enabled = false;
+    }
+    
+    private void OnSelect(InputAction.CallbackContext _)
+    {
+        if (!_isHovering)
+            return;
+        
+        if (!CombatTargetSelector.Instance.TryAddToSelection(this))
+            return;
+
+        _selectionIndicator.enabled = false;
+        _selectedIndicator.enabled = true;
+    }
+
+    private void OnDeselect(InputAction.CallbackContext _)
+    {
+        if (!_isHovering)
+            return;
+        
+        if (!CombatTargetSelector.Instance.TryRemoveFromSelection(this))
+            return;
+
+        _selectedIndicator.enabled = false;
+        _selectionIndicator.enabled = true;
+    }
+
+    public void Handle(CombatTurnPassedEvent @event)
+    {
+        OnTurnPassed(@event.Unit);
+    }
+
+    protected abstract void OnTurnPassed(Unit currentUnit);
 }

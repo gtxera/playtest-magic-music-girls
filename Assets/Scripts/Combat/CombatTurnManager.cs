@@ -73,6 +73,6 @@ public class UnitTurnOrderComparer : IComparer<Unit>
         if (y == null)
             return 1;
 
-        return x.Stats.Tempo.CompareTo(y.Stats.Tempo) * -1;
+        return x.Stats.Tempo.CompareTo(y.Stats.Tempo);
     }
 }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public abstract class Character
@@ -24,14 +23,16 @@ public abstract class Character
     public Health Health { get; }
     public abstract int Level { get; }
 
-    public void DealDamage(Character target, float initialDamage, IEnumerable<StatScaling> scalings)
+    public float DealDamage(Character target, float initialDamage, IEnumerable<StatScaling> scalings)
     {
-        target.TakeDamage(_damageDealer.CalculateDamage(initialDamage));
+        return target.TakeDamage(_damageDealer.CalculateDamage(initialDamage));
     }
 
-    public void TakeDamage(float damage)
+    private float TakeDamage(float damage)
     {
-        Health.Damage(_damageMitigator.Mitigate(damage));
+        var actualDamage = _damageMitigator.Mitigate(damage);
+        Health.Damage(actualDamage);
+        return actualDamage;
     }
 
     public void TakeRawDamage(float damage)

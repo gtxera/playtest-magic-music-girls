@@ -10,6 +10,8 @@ public class Input : PersistentSingletonBehaviour<Input>
 
     protected override void Awake()
     {
+        base.Awake();
+        
         _inputActions = new InputActions();
     }
 
@@ -29,6 +31,7 @@ public class Input : PersistentSingletonBehaviour<Input>
         UpdatePlayerMap();
         UpdateUIMap();
         UpdateDialogueMap();
+        UpdateCombatMap();
     }
 
     public void Add(InputActions.IPlayerActions playerActions)
@@ -71,6 +74,16 @@ public class Input : PersistentSingletonBehaviour<Input>
         _inputActions.Pause.RemoveCallbacks(pauseActions);
     }
     
+    public void Add(InputActions.ICombatActions combatActions)
+    {
+        _inputActions.Combat.AddCallbacks(combatActions);
+    }
+    
+    public void Remove(InputActions.ICombatActions combatActions)
+    {
+        _inputActions.Combat.RemoveCallbacks(combatActions);
+    }
+    
     private void UpdatePlayerMap()
     {
         switch (_inputContext)
@@ -81,6 +94,7 @@ public class Input : PersistentSingletonBehaviour<Input>
             case InputContext.None:
             case InputContext.UI:
             case InputContext.Dialogue:
+            case InputContext.Combat:
             default:
                 _inputActions.Player.Disable();
                 break;
@@ -97,6 +111,7 @@ public class Input : PersistentSingletonBehaviour<Input>
             case InputContext.None:
             case InputContext.Player:
             case InputContext.Dialogue:
+            case InputContext.Combat:
             default:
                 _inputActions.UI.Disable();
                 break;
@@ -113,8 +128,26 @@ public class Input : PersistentSingletonBehaviour<Input>
             case InputContext.None:
             case InputContext.UI:
             case InputContext.Player:
+            case InputContext.Combat:
             default:
                 _inputActions.Dialogue.Disable();
+                break;
+        }
+    }
+
+    private void UpdateCombatMap()
+    {
+        switch (_inputContext)
+        {
+            case InputContext.Combat:
+                _inputActions.Combat.Enable();
+                break;
+            case InputContext.None:
+            case InputContext.UI:
+            case InputContext.Player:
+            case InputContext.Dialogue:
+            default:
+                _inputActions.Combat.Disable();
                 break;
         }
     }

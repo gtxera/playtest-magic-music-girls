@@ -14,6 +14,7 @@ public abstract class PersistentSingletonBehaviour<T> : PersistentSingletonBehav
         }
 
         Instance = (T)this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public static void Clear()
