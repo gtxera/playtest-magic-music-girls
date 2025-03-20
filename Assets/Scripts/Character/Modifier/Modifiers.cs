@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class Modifiers<T> : IEventListener<CombatTurnPassedEvent>, IEventListener<CombatEndedEvent> where T : Modifier
 {
-    private readonly SortedSet<T> _modifiers = new();
+    private readonly HashSet<T> _modifiers = new();
 
     public void Add(T modifier)
     {
@@ -16,21 +17,15 @@ public class Modifiers<T> : IEventListener<CombatTurnPassedEvent>, IEventListene
 
     public float GetModified(float initialValue, ModifyParameters parameters)
     {
-        var finalValue = initialValue;
-
-        foreach (var modifier in _modifiers)
-        {
-            finalValue = modifier.Modify(finalValue, parameters);
-        }
-
-        return finalValue;
+        return initialValue + _modifiers.Select(m => m.GetValueToAdd(initialValue, parameters))
+            .Aggregate((total, next) => total + next);
     }
 
     public void Handle(CombatTurnPassedEvent @event)
     {
         foreach (var modifier in _modifiers)
         {
-            if (modifier is not ICombatModifier combatModifier)
+            if (modifier is not CombatModifier combatModifier)
                 continue;
 
             if (combatModifier.Finished(@event.Unit, @event.Turn))
@@ -42,7 +37,7 @@ public class Modifiers<T> : IEventListener<CombatTurnPassedEvent>, IEventListene
     public void Handle(CombatEndedEvent @event)
     {
         foreach (var modifier in _modifiers)
-            if (modifier is ICombatModifier)
+            if (modifier is CombatModifier)
                 _modifiers.Remove(modifier);
     }
 }

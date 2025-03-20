@@ -16,6 +16,12 @@ MonoBehaviour:
   <BaseDescription>k__BackingField: "\"Baterista joga a baqueta na fu\xE7a dele\""
   <BaseValue>k__BackingField: 4
   <MaxTargets>k__BackingField: 1
-  _baseScalings: []
+  _baseScalings:
+  - <Stat>k__BackingField: 0
+    <Scaling>k__BackingField: 1
   <EvolvedSkill>k__BackingField: {fileID: 0}
   <DeadTarget>k__BackingField: 0
+  <CooldownInTurns>k__BackingField: 0
+  <PriorityType>k__BackingField: 0
+  <Priority>k__BackingField: 0
+  <TargetSelectionStrategy>k__BackingField: {fileID: 0}

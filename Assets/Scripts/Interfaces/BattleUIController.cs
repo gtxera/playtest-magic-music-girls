@@ -130,6 +130,12 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     public void Handle(SelectionChangedEvent @event)
     {
         _confirmButton.interactable = @event.TargetsCount != 0;
+
+        if (!@event.HasTargets)
+        {
+            descriptionTxt.SetText("Não existem alvos disponíveis para essa habilidade");
+            return;
+        }
         
         if (@event.FinishedSelecting)
             descriptionTxt.SetText("Seleção completa!");
@@ -173,7 +179,7 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     {
         attackSelection.transform.DestroyAllChildren();
 
-        foreach (var skill in unit.GetSkills())
+        foreach (var skill in unit.GetSkillsCooldowns())
         {
             var skillButton = Instantiate(_skillsButtonPrefab, attackSelection.transform);
             skillButton.Initialize(skill, unit);

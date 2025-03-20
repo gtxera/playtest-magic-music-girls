@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,9 +18,12 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     
     protected Character Character;
 
+    private SkillCooldowns _skillCooldowns;
+
     public abstract Sprite Icon { get; }
     public Stats Stats => Character.Stats;
     public float CurrentHealth => Health.CurrentHealth;
+    public float HealthPercentage => Health.HealthPercentage;
     public bool IsDead => Health.IsDead;
     protected Health Health => Character.Health;
 
@@ -42,9 +46,9 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         Health.Revived -= OnRevived;
     }
 
-    public virtual void DealDamage(Unit target, float initialDamage, IEnumerable<StatScaling> scalings)
+    public virtual void DealDamage(Unit target, float initialDamage)
     {
-        Debug.Log(Character.DealDamage(target.Character, initialDamage, scalings));
+        Debug.Log(Character.DealDamage(target.Character, initialDamage));
     }
 
     public virtual void Heal(float heal)
@@ -57,7 +61,11 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         Character.AddModifier(modifier);
     }
 
-    public IEnumerable<Skill> GetSkills()
+    public IEnumerable<SkillCooldown> GetSkillsCooldowns() => _skillCooldowns.GetSkills();
+
+    protected IEnumerable<Skill> GetAvailableSkills() => _skillCooldowns.GetAvailableSkills();
+
+    private IEnumerable<Skill> GetSkills()
     {
         return Character.GetSkills();
     }
@@ -76,6 +84,8 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
             .Build();
         
         Input.Instance.Add(_combatActionsCallbacks);
+
+        _skillCooldowns = new SkillCooldowns(GetSkills());
     }
 
     protected virtual void OnDestroy()
@@ -91,7 +101,7 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         
         _isHovering = true;
         
-        if (!combatTargetSelector.IsSelectable(this) || combatTargetSelector.IsSelected(this)) 
+        if (!combatTargetSelector.IsSelectable(this)) 
             return;
         
         _selectionIndicator.enabled = true;
@@ -102,17 +112,36 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         _isHovering = false;
         _selectionIndicator.enabled = false;
     }
+
+    public void Select()
+    {
+        if (!CombatTargetSelector.Instance.TryAddToSelection(this))
+            return;
+
+        _selectionIndicator.enabled = false;
+        _selectedIndicator.enabled = true;
+    }
+    
+    public void Deselect()
+    {
+        if (!CombatTargetSelector.Instance.TryRemoveFromSelection(this))
+            return;
+
+        _selectedIndicator.enabled = false;
+    }
+
+    public void HideSelection()
+    {
+        _selectionIndicator.enabled = false;
+        _selectedIndicator.enabled = false;
+    }
     
     private void OnSelect(InputAction.CallbackContext _)
     {
         if (!_isHovering)
             return;
         
-        if (!CombatTargetSelector.Instance.TryAddToSelection(this))
-            return;
-
-        _selectionIndicator.enabled = false;
-        _selectedIndicator.enabled = true;
+        Select();
     }
 
     private void OnDeselect(InputAction.CallbackContext _)
@@ -120,16 +149,17 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         if (!_isHovering)
             return;
         
-        if (!CombatTargetSelector.Instance.TryRemoveFromSelection(this))
-            return;
-
-        _selectedIndicator.enabled = false;
+        Deselect();
         _selectionIndicator.enabled = true;
     }
 
     public void Handle(CombatTurnPassedEvent @event)
     {
-        OnTurnPassed(@event.Unit);
+        if (@event.Unit != this)
+            return;
+        
+        _skillCooldowns.UpdateCooldowns();
+        UniTask.RunOnThreadPool(OnUnitTurn);
     }
 
     private void OnHealthChanged(HealthChangedEventArgs args) => HealthChanged.Invoke(args);
@@ -137,5 +167,5 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     private void OnRevived() => Revived.Invoke();
 
 
-    protected abstract void OnTurnPassed(Unit currentUnit);
+    protected abstract UniTask OnUnitTurn();
 }

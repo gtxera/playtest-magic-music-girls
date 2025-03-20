@@ -2,6 +2,7 @@ using UnityEngine;
 
 public enum ModifierType
 {
-    Additive,
-    Multiplicative
+    Simple,
+    PercentageOfBaseValue,
+    FromParameter
 }

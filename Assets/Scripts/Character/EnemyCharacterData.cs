@@ -6,7 +6,7 @@ public class EnemyCharacterData : CharacterData
     [field: SerializeField]
     public int Level { get; private set; }
 
-[field: SerializeField]
+    [field: SerializeField]
     public float ExperienceReward { get; private set; }
 
     [field: SerializeField]

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2525fbb1565c85045ae9693a242cbfa8, type: 3}
+  m_Name: ModifierSkill
+  m_EditorClassIdentifier: 
+  <BaseName>k__BackingField: 
+  <BaseDescription>k__BackingField: 
+  <BaseValue>k__BackingField: 0
+  <MaxTargets>k__BackingField: 1
+  _baseScalings: []
+  <EvolvedSkill>k__BackingField: {fileID: 0}
+  <DeadTarget>k__BackingField: 0
+  <CooldownInTurns>k__BackingField: 0
+  <PriorityType>k__BackingField: 0
+  <Priority>k__BackingField: 0
+  <TargetSelectionStrategy>k__BackingField: {fileID: 0}
+  _modifierType: 0
+  _targetType: 0
+  _durationInTurns: 0
+  _combatStatModifier:
+    <Identifier>k__BackingField: 
+    <Type>k__BackingField: 0
+    <ModifyValue>k__BackingField: 0
+    <Stat>k__BackingField: 0
+    _durationInTurns: 0
+    _turnOfCreation: 0
+    _createdBy: {fileID: 0}

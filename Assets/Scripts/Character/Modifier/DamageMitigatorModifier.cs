@@ -1,8 +1,7 @@
-using UnityEngine;
+using System;
 
-public abstract class DamageMitigatorModifier : Modifier
-{
-    protected DamageMitigatorModifier(string identifier, ModifierType type) : base(identifier, type)
-    {
-    }
+[Serializable]
+public class DamageMitigatorModifier : Modifier
+{ 
+    protected override bool ShouldModify(ModifyParameters parameters) => true;
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class CombatAction
     public CombatAction(Unit unit, IEnumerable<Unit> targets, ICombatCommand command)
     {
         _unit = unit;
-        _targets = targets;
+        _targets = targets.ToArray();
         _command = command;
     }
 

@@ -1,31 +1,43 @@
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SkillsButton : CombatButton
 {
-    [SerializeField]
-    private Skill _skill;
+    private SkillCooldown _skillCooldown;
+    
     [SerializeField] TextMeshProUGUI attackName;
-
+    
     private Unit _unit;
     
-    public void Initialize(Skill skill, Unit unit)
+    public void Initialize(SkillCooldown skillCooldown, Unit unit)
     {
-        _skill = skill;
+        _skillCooldown = skillCooldown;
         _unit = unit;
         
         Button = GetComponent<Button>();
         battleUIController = FindFirstObjectByType<BattleUIController>();
         
-        buttonDescription = _skill.BaseDescription;
-        attackName.text = _skill.BaseName;
+        buttonDescription = GetDescription();
+        attackName.text = _skillCooldown.Skill.BaseName;
         Button.onClick.AddListener(OnClick);
+        Button.enabled = _skillCooldown.Available;
     }
 
     private void OnClick()
     {
-        CombatTargetSelector.Instance.StartSelection(_skill, _unit, _skill.DeadTarget);
+        CombatTargetSelector.Instance.TryStartSelection(_skillCooldown.Skill, _unit);
         battleUIController.ChangeOptionsPanel(CombatPanel.Selection);
+    }
+
+    private string GetDescription()
+    {
+        var builder = new StringBuilder(_skillCooldown.Skill.BaseDescription);
+        builder.AppendLine();
+
+        builder.Append(_skillCooldown.GetUseIntervalText());
+        
+        return builder.ToString();
     }
 }

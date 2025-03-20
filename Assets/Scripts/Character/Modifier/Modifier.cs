@@ -1,16 +1,38 @@
+using System;
+using UnityEngine;
+
+[Serializable]
 public abstract class Modifier
 {
-    public readonly string Identifier;
+    [field: SerializeField]
+    public string Identifier { get; private set; }
 
+    [field: SerializeField]
     public ModifierType Type { get; private set; }
+    
+    [field: SerializeField]
+    public float ModifyValue { get; private set; }
 
-    public Modifier(string identifier, ModifierType type)
+    public float GetValueToAdd(float valueToModify, ModifyParameters parameters)
     {
-        identifier = Identifier;
-        Type = type;
+        if (!ShouldModify(parameters))
+            return 0;
+
+        return Type switch
+        {
+            ModifierType.Simple => ModifyValue,
+            ModifierType.PercentageOfBaseValue => valueToModify * ModifyValue,
+            ModifierType.FromParameter => GetValueFromParameter(valueToModify, parameters),
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
 
-    public abstract float Modify(float currentValue, ModifyParameters parameters);
+    protected virtual float GetValueFromParameter(float initialValue, ModifyParameters parameters)
+    {
+        return 0;
+    }
+
+    protected abstract bool ShouldModify(ModifyParameters parameters);
 
     public override bool Equals(object obj)
     {

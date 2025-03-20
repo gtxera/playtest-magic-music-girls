@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Skill : ScriptableObject, ICombatCommand
@@ -19,9 +21,20 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     
     [field: SerializeField]
     public bool DeadTarget { get; private set; }
+
+    [field: SerializeField]
+    public int CooldownInTurns { get; private set; }
+    
+    [field: SerializeField]
+    public SkillPriorityType PriorityType { get; private set; }
+    
+    [field: SerializeField]
+    public int Priority { get; private set; }
     
     public abstract TargetType TargetType { get; }
     
+    [field: SerializeField]
+    public TargetSelectionStrategy TargetSelectionStrategy { get; private set; }
     
     public IEnumerable<StatScaling> BaseScalings => _baseScalings;
 
@@ -37,11 +50,31 @@ public abstract class Skill : ScriptableObject, ICombatCommand
         return finalValue;
     }
 
-    public abstract void Execute(Unit unit, IEnumerable<Unit> targets);
+    public void Execute(Unit unit, IEnumerable<Unit> targets)
+    {
+        var targetsArray = targets as Unit[] ?? targets.ToArray();
+        var targetsCount = targetsArray.Length;
+        if (targetsCount > MaxTargets)
+            throw new InvalidOperationException(
+                $"A habilidade {BaseName} foi chamada com {targetsCount} alvos e possui um maximo de {MaxTargets}");
+
+        foreach (var target in targetsArray)
+        {
+            ExecuteForTarget(unit, target);
+        }
+    }
+
+    public abstract void ExecuteForTarget(Unit unit, Unit target);
 }
 
 public enum TargetType
 {
     Ally,
     Opposite
+}
+
+public enum SkillPriorityType
+{
+    ChanceFromPriority,
+    UseWhenAvailable
 }

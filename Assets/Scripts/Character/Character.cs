@@ -23,7 +23,7 @@ public abstract class Character
     public Health Health { get; }
     public abstract int Level { get; }
 
-    public float DealDamage(Character target, float initialDamage, IEnumerable<StatScaling> scalings)
+    public float DealDamage(Character target, float initialDamage)
     {
         return target.TakeDamage(_damageDealer.CalculateDamage(initialDamage));
     }

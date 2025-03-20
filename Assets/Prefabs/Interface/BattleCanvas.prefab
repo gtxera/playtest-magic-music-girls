@@ -2170,6 +2170,7 @@ MonoBehaviour:
   backBtn: {fileID: 8281646959966218847}
   descriptionTxt: {fileID: 4884120987032638496}
   characterPortrait: {fileID: 8125536634276681691}
+  _skipButton: {fileID: 8531834184794885839}
   energyBar: {fileID: 2034715243244844506}
   energyBarSpeed: 0.005
   RoundOrderContent: {fileID: 4116677564789495599}

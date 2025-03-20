@@ -25,6 +25,7 @@ public class Health
 
     public bool IsDead => _health <= 0f;
     public float CurrentHealth => _health;
+    public float HealthPercentage => _health / MaxHealth;
 
     public void Damage(float damage)
     {

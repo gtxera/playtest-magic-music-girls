@@ -1,29 +1,20 @@
-﻿public class StatModifier : Modifier
-{
-    public Stat Stat { get; private set; }
+﻿using System;
+using UnityEngine;
 
-    public float ModifyValue { get; private set; }
+[Serializable]
+public class StatModifier : Modifier
+{
+    [field: SerializeField]
+    public Stat Stat { get; private set; }
 
     public const string STAT_PARAMETER_KEY = "stat";
 
-    public StatModifier(string identifier, ModifierType type, Stat stat, float modifyValue) : base(identifier, type)
-    { 
-        Stat = stat;
-        ModifyValue = modifyValue;
-    }
+    protected override bool ShouldModify(ModifyParameters parameters) => ShouldModify(parameters, Stat);
 
-    public override float Modify(float currentValue, ModifyParameters parameters)
+    public static bool ShouldModify(ModifyParameters parameters, Stat stat)
     {
         var modifiedStat = parameters.Get<Stat>(STAT_PARAMETER_KEY);
 
-        if (modifiedStat != Stat)
-            return currentValue;
-
-        return Type switch
-        {
-            ModifierType.Additive => currentValue + ModifyValue,
-            ModifierType.Multiplicative => currentValue * ModifyValue,
-            _ => currentValue
-        };
+        return modifiedStat == stat;
     }
 }

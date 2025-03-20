@@ -1,11 +1,11 @@
-﻿public class CombatStatModifier : StatModifier, ICombatModifier
+﻿using System;
+using UnityEngine;
+
+[Serializable]
+public class CombatStatModifier : CombatModifier
 {
-    public CombatStatModifier(string identifier, ModifierType type, Stat stat, float modifyValue) : 
-        base(identifier, type, stat, modifyValue) { }
+    [field: SerializeField]
+    public Stat Stat { get; private set; }
     
-    int ICombatModifier.DurationInTurns { get; set; }
-
-    int ICombatModifier.TurnOfCreation { get; set; }
-
-    Unit ICombatModifier.CreatedBy { get; set; }
+    protected override bool ShouldModify(ModifyParameters parameters) => StatModifier.ShouldModify(parameters, Stat);
 }

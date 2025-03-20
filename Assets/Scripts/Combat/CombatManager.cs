@@ -22,6 +22,8 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
     public IEnumerable<Unit> TurnOrder => _combatTurnManager.TurnOrder;
     public IEnumerable<Unit> RemainingTurnOrder => _combatTurnManager.RemainingTurnOrder;
+
+    public int CurrentTurn => _combatTurnManager.CurrentTurn;
     
     protected override void Awake()
     {
@@ -72,10 +74,9 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
     public async UniTask ExecuteAction(CombatAction action)
     {
-        await UniTask.SwitchToMainThread();
-
         await UniTask.WaitForSeconds(0.5f);
-        
+     
+        await UniTask.SwitchToMainThread();
         await action.Do();
         
         if (CheckCombatEnded(out var playerVictory))

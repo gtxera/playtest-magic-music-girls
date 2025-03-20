@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class PartyUnit : Unit
@@ -14,9 +15,8 @@ public class PartyUnit : Unit
         Character = Party.Instance.GetFromData(_characterData);
     }
     
-    protected override void OnTurnPassed(Unit currentUnit)
+    protected override UniTask OnUnitTurn()
     {
-        if (currentUnit != this)
-            return;
+        return UniTask.CompletedTask;
     }
 }

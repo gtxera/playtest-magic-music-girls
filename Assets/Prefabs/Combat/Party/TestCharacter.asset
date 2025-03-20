@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Teste
   <Icon>k__BackingField: {fileID: 5852147411353632952, guid: 0f39454ee25243a4cac206f8a987746c, type: 3}
   <BaseStats>k__BackingField:
-    <Emotion>k__BackingField: 0
+    <Emotion>k__BackingField: 2
     <Virtuosity>k__BackingField: 0
     <Endurance>k__BackingField: 0
     <Tempo>k__BackingField: 10
