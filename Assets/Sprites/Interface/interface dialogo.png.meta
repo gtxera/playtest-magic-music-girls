@@ -273,7 +273,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      interface dialogo_0: 5075577577431565736
+      interface dialogo_1: 2069119276877907279
+      interface dialogo_2: 5743139565009548931
+      interface dialogo_3: -6891567604108399763
+      interface dialogo_4: 1392480849359894635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

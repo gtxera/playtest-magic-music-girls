@@ -1,5 +1,4 @@
-using System;
-using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +14,9 @@ public class UnitHealthIndicador : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _healthText;
 
+    [SerializeField]
+    private float _healthUpdateDuration;
+
     private void Start()
     {
         _unit.HealthChanged += OnHealthChanged;
@@ -25,8 +27,19 @@ public class UnitHealthIndicador : MonoBehaviour
 
     private void OnHealthChanged(HealthChangedEventArgs args)
     {
-        _healthBar.value = args.To;
-        _healthText.SetText(GetHealthText(args.To));
+        var toHealth = args.To;
+        var fromHealth = args.From;
+        var animationHealth = fromHealth;
+
+        _healthBar.DOValue(toHealth, _healthUpdateDuration);
+        DOTween.To(() => animationHealth, health => animationHealth = health, toHealth, _healthUpdateDuration)
+            .SetEase(Ease.OutCirc)
+            .OnUpdate(() =>
+            {
+                _healthText.SetText(GetHealthText(animationHealth));
+            });
+
+        CombatAnimationsController.Instance.AddAnimation(new CombatAnimation(_healthUpdateDuration));
     }
 
     private string GetHealthText(float health) => Mathf.CeilToInt(health).ToString();

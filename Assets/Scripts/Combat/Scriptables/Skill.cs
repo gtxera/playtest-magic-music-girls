@@ -18,9 +18,6 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     private StatScaling[] _baseScalings;
     [field: SerializeField]
     public Skill EvolvedSkill { get; private set; }
-    
-    [field: SerializeField]
-    public bool DeadTarget { get; private set; }
 
     [field: SerializeField]
     public int CooldownInTurns { get; private set; }
@@ -32,7 +29,11 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     public int Priority { get; private set; }
     
     public abstract TargetType TargetType { get; }
-    
+
+    public abstract SelectionFlags SelectionFlags { get; }
+
+    public abstract SelectionFlags UnselectableFlags { get; }
+
     [field: SerializeField]
     public TargetSelectionStrategy TargetSelectionStrategy { get; private set; }
     
@@ -77,4 +78,12 @@ public enum SkillPriorityType
 {
     ChanceFromPriority,
     UseWhenAvailable
+}
+
+[Flags]
+public enum SelectionFlags
+{
+    Alive = 1 << 0,
+    Dead = 1 << 1,
+    FullHealth = 1 << 2
 }

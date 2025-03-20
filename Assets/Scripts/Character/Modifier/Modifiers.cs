@@ -5,6 +5,11 @@ public class Modifiers<T> : IEventListener<CombatTurnPassedEvent>, IEventListene
 {
     private readonly HashSet<T> _modifiers = new();
 
+    public Modifiers()
+    {
+        EventBus.Instance.Subscribe(this);
+    }
+
     public void Add(T modifier)
     {
         if (_modifiers.Contains(modifier))
@@ -17,6 +22,9 @@ public class Modifiers<T> : IEventListener<CombatTurnPassedEvent>, IEventListene
 
     public float GetModified(float initialValue, ModifyParameters parameters)
     {
+        if (_modifiers.Count == 0)
+            return initialValue;
+
         return initialValue + _modifiers.Select(m => m.GetValueToAdd(initialValue, parameters))
             .Aggregate((total, next) => total + next);
     }

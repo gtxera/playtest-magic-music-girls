@@ -78,6 +78,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
      
         await UniTask.SwitchToMainThread();
         await action.Do();
+        await CombatAnimationsController.Instance.WaitForAnimations();
         
         if (CheckCombatEnded(out var playerVictory))
             FinishCombat(playerVictory);

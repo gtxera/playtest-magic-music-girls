@@ -14,6 +14,10 @@ public class ModifierSkill : Skill
     
     public override TargetType TargetType => _targetType;
 
+    public override SelectionFlags SelectionFlags => SelectionFlags.Alive;
+
+    public override SelectionFlags UnselectableFlags => throw new System.NotImplementedException();
+
     [SerializeField]
     private CombatStatModifier _combatStatModifier;
 

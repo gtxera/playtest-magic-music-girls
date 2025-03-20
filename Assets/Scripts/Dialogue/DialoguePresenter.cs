@@ -53,6 +53,6 @@ public class DialoguePresenter : MonoBehaviour
 
     private TweenerCore<string, string, StringOptions> GetTextTween(DialogueLine line)
     {
-        return DOTween.To(() => _lineTextMesh.text, text => _lineTextMesh.SetText(text), line.Text, line.GetLineDuration(_charactersPerSecond));
+        return DOTween.To(() => _lineTextMesh.text, text => _lineTextMesh.SetText(text), line.Text, line.GetLineDuration(_charactersPerSecond)).SetEase(Ease.Linear);
     }
 }

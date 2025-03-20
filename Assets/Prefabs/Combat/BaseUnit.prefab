@@ -604,6 +604,7 @@ MonoBehaviour:
   _unit: {fileID: 0}
   _healthBar: {fileID: 6571638251318028056}
   _healthText: {fileID: 5386186914399931126}
+  _healthUpdateDuration: 2
 --- !u!1 &5520016255972982489
 GameObject:
   m_ObjectHideFlags: 0

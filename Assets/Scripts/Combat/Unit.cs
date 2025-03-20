@@ -24,6 +24,7 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     public Stats Stats => Character.Stats;
     public float CurrentHealth => Health.CurrentHealth;
     public float HealthPercentage => Health.HealthPercentage;
+    public bool IsAtFullHealth => Health.CurrentHealth == Health.MaxHealth;
     public bool IsDead => Health.IsDead;
     protected Health Health => Character.Health;
 

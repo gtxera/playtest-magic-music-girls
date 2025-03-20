@@ -9,7 +9,9 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
     private Skill _skill;
     private Unit _unit;
     private Type _unitType;
+
     private bool _deadUnitSelection;
+    private bool _canSelectFullHealth;
 
     private bool _selecting;
 
