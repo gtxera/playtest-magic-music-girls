@@ -19,7 +19,7 @@ MonoBehaviour:
     <Virtuosity>k__BackingField: 0
     <Endurance>k__BackingField: 0
     <Tempo>k__BackingField: 10
-    <Health>k__BackingField: 0
+    <Health>k__BackingField: 50
   Skills:
   - {fileID: 11400000, guid: a87aab42bea5d6048a96ead8203d03c1, type: 2}
   interfaceBigBackground: {fileID: 0}

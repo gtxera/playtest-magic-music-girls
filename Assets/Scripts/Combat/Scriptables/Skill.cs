@@ -17,7 +17,11 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     [field: SerializeField]
     public Skill EvolvedSkill { get; private set; }
     
+    [field: SerializeField]
+    public bool DeadTarget { get; private set; }
+    
     public abstract TargetType TargetType { get; }
+    
     
     public IEnumerable<StatScaling> BaseScalings => _baseScalings;
 

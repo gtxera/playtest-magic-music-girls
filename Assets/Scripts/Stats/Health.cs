@@ -13,6 +13,7 @@ public class Health
     {
         _stats = stats;
         _health = MaxHealth;
+        _stats.StatModified += OnStatModified;
     }
 
     public event Action<HealthChangedEventArgs> HealthChanged = delegate { };
@@ -22,6 +23,9 @@ public class Health
     
     public float MaxHealth => _stats.Health;
 
+    public bool IsDead => _health <= 0f;
+    public float CurrentHealth => _health;
+
     public void Damage(float damage)
     {
         var previous = _health;
@@ -30,7 +34,7 @@ public class Health
         if (_health == 0f)
             Died.Invoke();
         
-        HealthChanged.Invoke(new HealthChangedEventArgs(_health, previous));
+        HealthChanged.Invoke(new HealthChangedEventArgs(previous, _health));
     }
 
     public void Heal(float heal)
@@ -41,7 +45,20 @@ public class Health
         if (previous == 0f)
             Revived.Invoke();
         
-        HealthChanged.Invoke(new HealthChangedEventArgs(_health, previous));
+        HealthChanged.Invoke(new HealthChangedEventArgs(previous, _health));
+    }
+
+    private void OnStatModified(StatModifiedEventArgs args)
+    {
+        if (args.ModifiedStat != Stat.Health)
+            return;
+
+        if (!(_health > MaxHealth)) 
+            return;
+        
+        var previous = _health;
+        _health = MaxHealth;
+        HealthChanged.Invoke(new HealthChangedEventArgs(previous, _health));
     }
 }
 

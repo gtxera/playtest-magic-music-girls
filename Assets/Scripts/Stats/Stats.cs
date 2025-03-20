@@ -6,7 +6,9 @@ public class Stats
 {
     private readonly BaseStats _baseStats;
     private readonly Modifiers<StatModifier> _modifiers;
-
+    
+    public event Action<StatModifiedEventArgs> StatModified = delegate { };
+    
     public Stats(BaseStats baseStats)
     {
         _baseStats = baseStats;
@@ -41,6 +43,10 @@ public class Stats
     public void AddModifier(StatModifier modifier)
     {
         _modifiers.Add(modifier);
+
+        var args = new StatModifiedEventArgs(modifier.Stat, Get(modifier.Stat));
+        
+        StatModified.Invoke(args);
     }
 
     private int GetModified(Stat stat, int initialValue)
@@ -51,5 +57,17 @@ public class Stats
         };
 
         return Mathf.FloorToInt(_modifiers.GetModified(initialValue, parametes));
+    }
+}
+
+public class StatModifiedEventArgs
+{
+    public readonly Stat ModifiedStat;
+    public readonly int NewValue;
+
+    public StatModifiedEventArgs(Stat modifiedStat, int newValue)
+    {
+        ModifiedStat = modifiedStat;
+        NewValue = newValue;
     }
 }

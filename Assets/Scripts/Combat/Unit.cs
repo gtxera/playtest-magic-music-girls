@@ -17,7 +17,10 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     
     protected Character Character;
 
+    public abstract Sprite Icon { get; }
     public Stats Stats => Character.Stats;
+    public float CurrentHealth => Health.CurrentHealth;
+    public bool IsDead => Health.IsDead;
     protected Health Health => Character.Health;
 
     public event Action<HealthChangedEventArgs> HealthChanged = delegate { };
@@ -27,16 +30,16 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
 
     private void RegisterHealthCallbacks()
     {
-        Health.HealthChanged += HealthChanged;
-        Health.Died += Died;
-        Health.Revived += Revived;
+        Health.HealthChanged += OnHealthChanged;
+        Health.Died += OnDied;
+        Health.Revived += OnRevived;
     }
 
     private void DeregisterHealthCallbacks()
     {
-        Health.HealthChanged -= HealthChanged;
-        Health.Died -= Died;
-        Health.Revived -= Revived;
+        Health.HealthChanged -= OnHealthChanged;
+        Health.Died -= OnDied;
+        Health.Revived -= OnRevived;
     }
 
     public virtual void DealDamage(Unit target, float initialDamage, IEnumerable<StatScaling> scalings)
@@ -128,6 +131,11 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     {
         OnTurnPassed(@event.Unit);
     }
+
+    private void OnHealthChanged(HealthChangedEventArgs args) => HealthChanged.Invoke(args);
+    private void OnDied() => Died.Invoke();
+    private void OnRevived() => Revived.Invoke();
+
 
     protected abstract void OnTurnPassed(Unit currentUnit);
 }

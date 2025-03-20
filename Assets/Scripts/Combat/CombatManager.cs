@@ -20,6 +20,9 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
     public IEnumerable<Unit> Units => _enemyUnits.Select(e => e as Unit).Concat(_partyUnits.Select(p => p as Unit));
 
+    public IEnumerable<Unit> TurnOrder => _combatTurnManager.TurnOrder;
+    public IEnumerable<Unit> RemainingTurnOrder => _combatTurnManager.RemainingTurnOrder;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -64,22 +67,27 @@ public class CombatManager : SingletonBehaviour<CombatManager>
             _partyUnits.Add(partyUnit);
         }
         
-        _combatTurnManager.PopulateUnits(Units);
-        
-        _combatTurnManager.NextTurn();
+        _combatTurnManager.Start(Units);
     }
 
     public async UniTask ExecuteAction(CombatAction action)
     {
-        await action.Do();
-
         await UniTask.SwitchToMainThread();
 
+        await UniTask.WaitForSeconds(0.5f);
+        
+        await action.Do();
+        
         if (CheckCombatEnded(out var playerVictory))
             FinishCombat(playerVictory);
 
         else
             _combatTurnManager.NextTurn();
+    }
+
+    public void SkipTurn()
+    {
+        _combatTurnManager.NextTurn();
     }
 
     private void FinishCombat(bool playerVictory)

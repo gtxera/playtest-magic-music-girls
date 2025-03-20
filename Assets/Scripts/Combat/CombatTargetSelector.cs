@@ -1,24 +1,25 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
 {
     private Skill _skill;
     private Unit _unit;
     private Type _unitType;
+    private bool _deadUnitSelection;
 
     private bool _selecting;
 
     private HashSet<Unit> _selection = new();
     private int _targetCount;
 
-    public void StartSelection(Skill skill, Unit unit)
+    public void StartSelection(Skill skill, Unit unit, bool dead)
     {
         _selecting = true;
         _skill = skill;
         _unit = unit;
+        _deadUnitSelection = dead;
         _unitType = skill.TargetType == TargetType.Ally ? typeof(PartyUnit) : typeof(EnemyUnit);
         _targetCount = skill.MaxTargets;
         
@@ -30,7 +31,7 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
         if (!_selecting)
             return false;
 
-        return unit.GetType() == _unitType;
+        return unit.GetType() == _unitType && unit.IsDead == _deadUnitSelection;
     }
 
     public bool IsSelected(Unit unit)

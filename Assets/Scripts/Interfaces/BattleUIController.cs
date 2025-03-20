@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -18,6 +20,9 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     [SerializeField] TextMeshProUGUI descriptionTxt;
     [SerializeField] Image characterPortrait;
 
+    [SerializeField]
+    private Button _skipButton;
+
     [Header("Energy Bar Controls")]
     [SerializeField] Slider energyBar;
     [SerializeField] float energyBarSpeed;
@@ -26,7 +31,17 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     [Header("Round Order Variables")]
     private List<GameObject> portraitsOnRoundOrder;
     [SerializeField] Transform RoundOrderContent;
+
+    [SerializeField]
+    private TextMeshProUGUI _turnText;
+    
     [SerializeField] GameObject portraitObject;
+
+    [SerializeField]
+    private GameObject _turnSeparator;
+    
+    [SerializeField]
+    private int _maximumPortraits;
 
     [Header("Target Selection")]
     [SerializeField]
@@ -52,6 +67,8 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         _confirmButton.onClick.AddListener(ConfirmSelection);
         
         descriptionTxt.SetText(string.Empty);
+        
+        _skipButton.onClick.AddListener(CombatManager.Instance.SkipTurn);
     }
 
     #region EnergyBar Update Methods
@@ -139,6 +156,8 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     {
         var isAllyTurn = @event.Unit.GetType() == typeof(PartyUnit);
         _combatPanel.SetActive(isAllyTurn);
+        
+        GenerateTurnVisualization(@event.Turn);
 
         if (!isAllyTurn) 
             return;
@@ -152,14 +171,56 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
 
     private void GenerateSkillsButtons(Unit unit)
     {
-        foreach (GameObject child in attackSelection.transform)
-            Destroy(child);
+        attackSelection.transform.DestroyAllChildren();
 
         foreach (var skill in unit.GetSkills())
         {
             var skillButton = Instantiate(_skillsButtonPrefab, attackSelection.transform);
             skillButton.Initialize(skill, unit);
         }
+    }
+
+    private void GenerateTurnVisualization(int currentTurn)
+    {
+        RoundOrderContent.DestroyAllChildren();
+        
+        _turnText.SetText($"TURNO {currentTurn}");
+
+        var portraitCount = 0;
+        
+        foreach (var unit in CombatManager.Instance.RemainingTurnOrder)
+        {
+            if (portraitCount > _maximumPortraits)
+                return;
+
+            InstantiatePortrait(unit, portraitCount, out portraitCount);
+        }
+
+        Instantiate(_turnSeparator, RoundOrderContent);
+
+        var order = CombatManager.Instance.TurnOrder.ToArray();
+        var orderSize = order.Length;
+        var positionInOrder = 0;
+        
+        while (portraitCount < _maximumPortraits)
+        {
+            InstantiatePortrait(order[positionInOrder], portraitCount, out portraitCount);
+            positionInOrder++;
+            
+            if (positionInOrder == orderSize)
+            {
+                positionInOrder = 0;
+                Instantiate(_turnSeparator, RoundOrderContent);
+            }
+        }
+    }
+
+    private void InstantiatePortrait(Unit unit, int portraitCount, out int newPortraitCount)
+    {
+        newPortraitCount = portraitCount;
+        var portrait = Instantiate(portraitObject, RoundOrderContent);
+        portrait.GetComponent<Image>().sprite = unit.Icon;
+        newPortraitCount++;
     }
 }
 

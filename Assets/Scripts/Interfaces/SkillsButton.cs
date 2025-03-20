@@ -25,7 +25,7 @@ public class SkillsButton : CombatButton
 
     private void OnClick()
     {
-        CombatTargetSelector.Instance.StartSelection(_skill, _unit);
+        CombatTargetSelector.Instance.StartSelection(_skill, _unit, _skill.DeadTarget);
         battleUIController.ChangeOptionsPanel(CombatPanel.Selection);
     }
 }

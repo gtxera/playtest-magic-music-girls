@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <BaseName>k__BackingField: Baquetada
   <BaseDescription>k__BackingField: "\"Baterista joga a baqueta na fu\xE7a dele\""
-  <BaseValue>k__BackingField: 100
+  <BaseValue>k__BackingField: 4
   <MaxTargets>k__BackingField: 1
   _baseScalings: []
   <EvolvedSkill>k__BackingField: {fileID: 0}
+  <DeadTarget>k__BackingField: 0

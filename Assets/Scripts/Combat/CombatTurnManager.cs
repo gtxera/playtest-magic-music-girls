@@ -16,7 +16,7 @@ public class CombatTurnManager
         _remainingTurnOrder = new SortedSet<Unit>(new UnitTurnOrderComparer());
     }
 
-    public void PopulateUnits(IEnumerable<Unit> units)
+    public void Start(IEnumerable<Unit> units)
     {
         _turnOrder.Clear();
         CurrentTurn = 1;
@@ -27,6 +27,8 @@ public class CombatTurnManager
         }
 
         CreateRemainingTurnOrder();
+        
+        EventBus.Instance.Publish(new CombatTurnPassedEvent(_remainingTurnOrder.Min, CurrentTurn));
     }
 
     public void AddToOrder(Unit unit)
@@ -73,6 +75,6 @@ public class UnitTurnOrderComparer : IComparer<Unit>
         if (y == null)
             return 1;
 
-        return x.Stats.Tempo.CompareTo(y.Stats.Tempo);
+        return x.Stats.Tempo.CompareTo(y.Stats.Tempo) * -1;
     }
 }
