@@ -59,10 +59,10 @@ PrefabInstance:
     - target: {fileID: 7387667646220860913, guid: a353ae23d21b1264799015df74bc9d6c, type: 3}
       propertyPath: <Data>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 36546614b3673ce49b0c876809ec5282, type: 2}
+      objectReference: {fileID: 11400000, guid: de2d930ba8a16924ebb365d10e61765b, type: 2}
     - target: {fileID: 7926944750729328270, guid: a353ae23d21b1264799015df74bc9d6c, type: 3}
       propertyPath: m_Name
-      value: Red Bat Unit
+      value: Yellow Bat Unit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
