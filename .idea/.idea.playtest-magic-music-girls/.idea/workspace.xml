@@ -5,43 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4c57ee-39ac-4ba5-ac9e-9c0dad4f2d0e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ReviveSkill.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ReviveSkill.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/SelectionFlags.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/SelectionFlags.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.playtest-magic-music-girls/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.playtest-magic-music-girls/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Medium SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Medium SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-SemiBold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-SemiBold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/TestCharacter 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/TestCharacter 1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/TestCharacter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/TestCharacter.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RedBat.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RedBat.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interface/BattleCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interface/BattleCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestScenes/SceneA.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestScenes/SceneA.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/EnemyCharacterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/EnemyCharacterData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifierFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifierFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatStatModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatStatModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifier.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifier.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifierFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifierFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatStatModifier.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatStatModifier.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/DamageDealerModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/DamageDealerModifier.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/DamageMitigatorModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/DamageMitigatorModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/ICombatModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/ICombatModifier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifier.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/Modifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/Modifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/ModifierType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/ModifierType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/Modifiers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/Modifiers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/StatModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Modifier/StatModifier.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatTargetSelector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatTargetSelector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatTurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatTurnManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/EnemyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/EnemyUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Events/SelectionChangedEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Events/SelectionChangedEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/PartyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/PartyUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Events/CombatEndedEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Events/CombatEndedEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Events/CombatTurnPassedEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Events/CombatTurnPassedEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/DamageSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/DamageSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealingSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealSkill.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealingSkill.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealingSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealingSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ModifierSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ModifierSkill.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/Skill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Selection/ByHealthSelectionStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Selection/ByHealthSelectionStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Selection/CombatTargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Selection/CombatTargetSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SkillCooldowns.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/SkillCooldowns.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/Baquetada.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/Baquetada.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/ModifierSkill.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/ModifierSkill.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/Mordida.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/Mordida.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitHealthIndicador.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitHealthIndicador.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/BattleUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/BattleUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/CombatButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/CombatButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/SkillsButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/SkillsButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Overworld/Enemy/EncounterStarter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Overworld/Enemy/EncounterStarter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,14 +64,26 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45b9485b4ba64564b30d91e935218d549b6e00/24/79f99ed0/ObjectField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45b9485b4ba64564b30d91e935218d549b6e00/a4/25636971/PropertyField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a8bfa4804234695888f9129fe33846c46ae00/34/e5f662bf/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a8bfa4804234695888f9129fe33846c46ae00/98/ce8dbcf1/Environment.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5f6624f7c0774baf9929fa741e09861010fc00/26/26b8400a/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/91/9b329ab7/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c0c221501f3a41f8ac0af9d6a9dc9ff335fd90/91/05a13498/SortedSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc61ba37583d47bc957110bffa4cd12c1f4200/17/b69fee63/LayoutDataStore.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Modifier/CombatModifierFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Editor/ModifierPropertyDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Modifier/ModifierType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gabri/OneDrive/Documentos/Unity Projects/playtest-magic-music-girls/Assets/Scripts/Combat/CombatManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gabri/OneDrive/Documentos/Unity Projects/playtest-magic-music-girls/Assets/Scripts/Combat/CombatManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/EnemyUnit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/Events/SelectionChangedEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealingSkill.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,6 +91,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/Selection/ByHealthSelectionStrategy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/Selection/ITargetSelectionStrategy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/Selection/TargetSelectionStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gabri/OneDrive/Documentos/Unity Projects/playtest-magic-music-girls/Assets/Scripts/Combat/Skills/Baquetada.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gabri/OneDrive/Documentos/Unity Projects/playtest-magic-music-girls/Assets/Scripts/Combat/Skills/Baquetada.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/TransformExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -139,10 +161,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7372">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8052">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="7372" />
+      <option name="pid" value="8052" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -167,6 +189,7 @@
       <workItem from="1742391011696" duration="21337000" />
       <workItem from="1742433911870" duration="5946000" />
       <workItem from="1742479521450" duration="13744000" />
+      <workItem from="1742512691172" duration="14419000" />
     </task>
     <servers />
   </component>
@@ -194,24 +217,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs</url>
-          <line>79</line>
-          <properties documentPath="C:\Users\gabri\OneDrive\Documentos\Unity Projects\playtest-magic-music-girls\Assets\Scripts\Combat\CombatManager.cs" containingFunctionPresentation="Method 'ExecuteAction'">
-            <startOffsets>
-              <option value="2583" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2601" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -6,9 +6,9 @@ public class DamageSkill : Skill
 {
     public override TargetType TargetType => TargetType.Opposite;
 
-    public override SelectionFlags SelectionFlags => SelectionFlags.Alive;
+    public override SelectionFlags MandatoryFlags => SelectionFlags.Alive;
 
-    public override SelectionFlags UnselectableFlags => 0;
+    public override SelectionFlags ForbiddenFlags => 0;
 
     public override void ExecuteForTarget(Unit unit, Unit target)
     {

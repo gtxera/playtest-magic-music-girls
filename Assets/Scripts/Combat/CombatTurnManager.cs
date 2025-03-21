@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 public class CombatTurnManager
 {
@@ -28,12 +27,14 @@ public class CombatTurnManager
 
         CreateRemainingTurnOrder();
         
-        EventBus.Instance.Publish(new CombatTurnPassedEvent(_remainingTurnOrder.Min, CurrentTurn));
+        EventBus.Instance.Publish(new CombatTurnPassedEvent(_remainingTurnOrder.Min, null, CurrentTurn));
     }
 
     public void AddToOrder(Unit unit)
     {
         _turnOrder.Add(unit);
+        
+        _remainingTurnOrder.Add(unit);
     }
 
     public void RemoveFromOrder(Unit unit)
@@ -58,7 +59,7 @@ public class CombatTurnManager
         }
 
         var next = _remainingTurnOrder.Min;
-        EventBus.Instance.Publish(new CombatTurnPassedEvent(next, CurrentTurn));
+        EventBus.Instance.Publish(new CombatTurnPassedEvent(next, previous, CurrentTurn));
     }
 
     private void CreateRemainingTurnOrder() => _remainingTurnOrder = new SortedSet<Unit>(_turnOrder, new UnitTurnOrderComparer());

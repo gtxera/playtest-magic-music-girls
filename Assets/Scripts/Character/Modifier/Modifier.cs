@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public abstract class Modifier
 {
-    [field: SerializeField]
     public string Identifier { get; private set; }
 
     [field: SerializeField]
@@ -12,7 +12,32 @@ public abstract class Modifier
     
     [field: SerializeField]
     public float ModifyValue { get; private set; }
+    
+    [field: SerializeField]
+    public int Duration { get; private set; }
 
+    private Unit _creator;
+    private Unit _holder;
+    private int _turnOfCreation;
+
+    public Modifier CreateCopy(string identifier, Unit creator, Unit holder, int currentTurn)
+    {
+        var modifier = CreateCopy();
+
+        modifier.ModifyValue = ModifyValue;
+        modifier.Identifier = identifier;
+        modifier.Duration = Duration;
+        modifier.Type = Type;
+        
+        modifier._creator = creator;
+        modifier._holder = holder;
+        modifier._turnOfCreation = currentTurn;
+
+        return modifier;
+    }
+
+    protected abstract Modifier CreateCopy();
+    
     public float GetValueToAdd(float valueToModify, ModifyParameters parameters)
     {
         if (!ShouldModify(parameters))
@@ -26,7 +51,7 @@ public abstract class Modifier
             _ => throw new ArgumentOutOfRangeException()
         };
     }
-
+    
     protected virtual float GetValueFromParameter(float initialValue, ModifyParameters parameters)
     {
         return 0;
@@ -34,6 +59,14 @@ public abstract class Modifier
 
     protected abstract bool ShouldModify(ModifyParameters parameters);
 
+    public bool IsFinished(Unit unit, int currentTurn)
+    {
+        if (Duration <= 0)
+            return false;
+
+        return _turnOfCreation + Duration >= currentTurn && unit == _holder;
+    }
+    
     public override bool Equals(object obj)
     {
         if (obj is not Modifier modifier) 

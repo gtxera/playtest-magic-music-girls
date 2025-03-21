@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class SkillCooldowns
 {
-    private readonly IEnumerable<SkillCooldown> _skillCooldowns;
+    private readonly SkillCooldown[] _skillCooldowns;
 
     public SkillCooldowns(IEnumerable<Skill> skills)
     {
-        _skillCooldowns = skills.Select(s => new SkillCooldown(s));
+        Debug.Log("CRIADO");
+        _skillCooldowns = skills.Select(s => new SkillCooldown(s)).ToArray();
     }
 
     public IEnumerable<SkillCooldown> GetSkills() => _skillCooldowns;
@@ -22,6 +23,8 @@ public class SkillCooldowns
             skill.UpdateCooldown();
         }
     }
+
+    public SkillCooldown GetCooldown(Skill skill) => _skillCooldowns.First(s => s.Skill == skill);
 }
 
 public class SkillCooldown

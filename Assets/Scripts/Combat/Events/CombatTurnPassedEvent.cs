@@ -3,11 +3,13 @@ using UnityEngine;
 public class CombatTurnPassedEvent : IEvent
 {
     public readonly int Turn;
-    public readonly Unit Unit;
+    public readonly Unit Next;
+    public readonly Unit Previous;
 
-    public CombatTurnPassedEvent(Unit unit, int turn)
+    public CombatTurnPassedEvent(Unit next, Unit previous, int turn)
     {
-        Unit = unit;
+        Next = next;
+        Previous = previous;
         Turn = turn;
     }
 }

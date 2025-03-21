@@ -22,6 +22,8 @@ MonoBehaviour:
     <Health>k__BackingField: 50
   Skills:
   - {fileID: 11400000, guid: a87aab42bea5d6048a96ead8203d03c1, type: 2}
+  - {fileID: 11400000, guid: e959af7ea2e7a6149b8e6a4766b2edaf, type: 2}
+  - {fileID: 11400000, guid: a93d818e1ec9cf042916fa10b5bb105d, type: 2}
   interfaceBigBackground: {fileID: 0}
   interfaceSmallBackground: {fileID: 0}
   interfaceBigFrame: {fileID: 0}

@@ -47,7 +47,7 @@ public class EnemyUnit : Unit
     {
         CombatTargetSelector.Instance.AutoSelect(skill.TargetSelectionStrategy);
         await UniTask.WaitForSeconds(0.5f);
-        await CombatTargetSelector.Instance.ConfirmSelection();
+        UniTask.RunOnThreadPool(() => CombatTargetSelector.Instance.ConfirmSelection());
     }
 
     private Skill GetSkillToUse(List<Skill> availableSkills)

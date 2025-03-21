@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 public class CombatAction
 {
@@ -19,6 +18,8 @@ public class CombatAction
     public async UniTask Do()
     {
         _command.Execute(_unit, _targets);
+     
+        await CombatAnimationsController.Instance.WaitForAnimations();
 
         await UniTask.CompletedTask;
     }

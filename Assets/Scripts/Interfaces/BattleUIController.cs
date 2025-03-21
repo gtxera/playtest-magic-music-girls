@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -57,7 +58,7 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     private CombatPanel _currentPanel;
     private CombatPanel _previousPanel;
 
-    private void Start()
+    private void Awake()
     {
         EventBus.Instance.Subscribe(this);
         energyBar.maxValue = 100;
@@ -141,7 +142,23 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
             descriptionTxt.SetText("Seleção completa!");
         
         else
-            descriptionTxt.SetText($"Pode selecionar ainda {@event.RemainingTargetsCount} {(@event.AllySelection ? "aliados" : "inimigos")}");
+            descriptionTxt.SetText(GetSelectionText(@event.RemainingTargetsCount, @event.AllySelection));
+    }
+
+    private string GetSelectionText(int remainingTargetsCount, bool allySelection)
+    {
+        var builder = new StringBuilder($"Pode selecionar ainda {remainingTargetsCount}");
+
+        if (allySelection)
+        {
+            builder.Append(remainingTargetsCount > 1 ? "aliados" : "aliado");
+        }
+        else
+        {
+            builder.Append(remainingTargetsCount > 1 ? "inimigos" : "inimigo");
+        }
+        
+        return builder.ToString();
     }
 
     private void CancelSelection()
@@ -160,7 +177,7 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
 
     public void Handle(CombatTurnPassedEvent @event)
     {
-        var isAllyTurn = @event.Unit.GetType() == typeof(PartyUnit);
+        var isAllyTurn = @event.Next.GetType() == typeof(PartyUnit);
         _combatPanel.SetActive(isAllyTurn);
         
         GenerateTurnVisualization(@event.Turn);
@@ -168,7 +185,9 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         if (!isAllyTurn) 
             return;
 
-        var unit = (PartyUnit)@event.Unit;
+        var unit = (PartyUnit)@event.Next;
+        
+        descriptionTxt.SetText(string.Empty);
         
         ChangeOptionsPanel(CombatPanel.Options);
         GenerateSkillsButtons(unit);

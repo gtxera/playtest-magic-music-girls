@@ -21,12 +21,12 @@ public class EncounterStarter : MonoBehaviour, IEventListener<CombatEndedEvent>
         if (!other.CompareTag("Player"))
             return;
         
-        CombatManager.Instance.StartCombat(_encounterData);
+        CombatManager.Instance.StartCombat(_encounterData, this);
     }
 
     public void Handle(CombatEndedEvent @event)
     {
-        if (@event.PlayerVictory)
+        if (@event.PlayerVictory && @event.EncounterStarter == this)
             Destroy(gameObject);
     }
 }

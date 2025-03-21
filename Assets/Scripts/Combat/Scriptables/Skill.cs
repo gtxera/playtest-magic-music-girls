@@ -8,8 +8,7 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     [Header("Skill Base Stats")]
     [field: SerializeField]
     public string BaseName { get; private set; }
-    [field: SerializeField]
-    public string BaseDescription { get; private set; }
+    public string _baseDescription { get; private set; }
     [field: SerializeField]
     public float BaseValue { get; private set; }
     [field: SerializeField] 
@@ -30,14 +29,16 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     
     public abstract TargetType TargetType { get; }
 
-    public abstract SelectionFlags SelectionFlags { get; }
+    public abstract SelectionFlags MandatoryFlags { get; }
 
-    public abstract SelectionFlags UnselectableFlags { get; }
+    public abstract SelectionFlags ForbiddenFlags { get; }
 
     [field: SerializeField]
     public TargetSelectionStrategy TargetSelectionStrategy { get; private set; }
     
     public IEnumerable<StatScaling> BaseScalings => _baseScalings;
+
+    public virtual string GetDescription() => _baseDescription;
 
     public float GetScaledValue(Stats stats)
     {
@@ -59,6 +60,8 @@ public abstract class Skill : ScriptableObject, ICombatCommand
             throw new InvalidOperationException(
                 $"A habilidade {BaseName} foi chamada com {targetsCount} alvos e possui um maximo de {MaxTargets}");
 
+        unit.UseSkill(this);
+        
         foreach (var target in targetsArray)
         {
             ExecuteForTarget(unit, target);
@@ -78,12 +81,4 @@ public enum SkillPriorityType
 {
     ChanceFromPriority,
     UseWhenAvailable
-}
-
-[Flags]
-public enum SelectionFlags
-{
-    Alive = 1 << 0,
-    Dead = 1 << 1,
-    FullHealth = 1 << 2
 }

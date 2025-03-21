@@ -31,21 +31,13 @@ public class Modifiers<T> : IEventListener<CombatTurnPassedEvent>, IEventListene
 
     public void Handle(CombatTurnPassedEvent @event)
     {
-        foreach (var modifier in _modifiers)
-        {
-            if (modifier is not CombatModifier combatModifier)
-                continue;
-
-            if (combatModifier.Finished(@event.Unit, @event.Turn))
-                _modifiers.Remove(modifier);
-        }
-
+        foreach (var modifier in _modifiers.Where(m => m.IsFinished(@event.Previous, @event.Turn)).ToArray())
+            _modifiers.Remove(modifier);
     }
 
     public void Handle(CombatEndedEvent @event)
     {
-        foreach (var modifier in _modifiers)
-            if (modifier is CombatModifier)
-                _modifiers.Remove(modifier);
+        foreach (var modifier in _modifiers.Where(modifier => modifier.Duration > 0).ToArray())
+            _modifiers.Remove(modifier);
     }
 }

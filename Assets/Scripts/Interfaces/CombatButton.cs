@@ -7,6 +7,8 @@ public class CombatButton : MonoBehaviour
     public string buttonDescription;
     protected Button Button;
 
+    protected virtual string ButtonDescription => buttonDescription;
+
     private void Awake()
     {
         Button = GetComponent<Button>();

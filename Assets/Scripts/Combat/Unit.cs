@@ -28,6 +28,22 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     public bool IsDead => Health.IsDead;
     protected Health Health => Character.Health;
 
+    public SelectionFlags SelectionFlags
+    {
+        get
+        {
+            SelectionFlags flags = 0;
+
+            if (!IsDead)
+                flags |= SelectionFlags.Alive;
+
+            if (IsAtFullHealth)
+                flags |= SelectionFlags.FullHealth;
+
+            return flags;
+        }
+    }
+
     public event Action<HealthChangedEventArgs> HealthChanged = delegate { };
     public event Action Died = delegate { };
 
@@ -125,9 +141,6 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     
     public void Deselect()
     {
-        if (!CombatTargetSelector.Instance.TryRemoveFromSelection(this))
-            return;
-
         _selectedIndicator.enabled = false;
     }
 
@@ -150,17 +163,25 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         if (!_isHovering)
             return;
         
+        if (!CombatTargetSelector.Instance.TryRemoveFromSelection(this))
+            return;
+        
         Deselect();
         _selectionIndicator.enabled = true;
     }
 
     public void Handle(CombatTurnPassedEvent @event)
     {
-        if (@event.Unit != this)
+        if (@event.Next != this)
             return;
         
         _skillCooldowns.UpdateCooldowns();
         UniTask.RunOnThreadPool(OnUnitTurn);
+    }
+
+    public void UseSkill(Skill skill)
+    {
+        _skillCooldowns.GetCooldown(skill).Use();
     }
 
     private void OnHealthChanged(HealthChangedEventArgs args) => HealthChanged.Invoke(args);

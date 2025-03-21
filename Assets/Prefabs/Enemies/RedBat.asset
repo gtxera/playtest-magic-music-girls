@@ -17,7 +17,7 @@ MonoBehaviour:
   <BaseStats>k__BackingField:
     <Emotion>k__BackingField: 5
     <Virtuosity>k__BackingField: 5
-    <Endurance>k__BackingField: 5
+    <Endurance>k__BackingField: 0
     <Tempo>k__BackingField: 5
     <Health>k__BackingField: 20
   Skills:

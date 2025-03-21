@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CombatManager : SingletonBehaviour<CombatManager>
 {
@@ -14,7 +15,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
     private List<EnemyUnit> _enemyUnits = new();
     private List<PartyUnit> _partyUnits = new();
 
-    private CombatTurnManager _combatTurnManager;
+    private CombatTurnManager _combatTurnManager = new();
 
     private EncounterData _encounterData;
 
@@ -24,22 +25,21 @@ public class CombatManager : SingletonBehaviour<CombatManager>
     public IEnumerable<Unit> RemainingTurnOrder => _combatTurnManager.RemainingTurnOrder;
 
     public int CurrentTurn => _combatTurnManager.CurrentTurn;
-    
-    protected override void Awake()
-    {
-        base.Awake();
-        _combatTurnManager = new CombatTurnManager();
-    }
 
-    public void StartCombat(EncounterData encounterData)
+    private EncounterStarter _encounterStarter;
+
+    public void StartCombat(EncounterData encounterData, EncounterStarter encounterStarter)
     {
         LevelRoot.Instance.Disable();
 
+        _combatTurnManager = new CombatTurnManager();
+        
         gameObject.SetActive(true);
         
         Input.Instance.SetInputContext(InputContext.Combat);
         
         _encounterData = encounterData;
+        _encounterStarter = encounterStarter;
         
         foreach (var enemyUnitPrefab in encounterData.Enemies)
         {
@@ -47,8 +47,8 @@ public class CombatManager : SingletonBehaviour<CombatManager>
             var enemyUnit = Instantiate(enemyUnitPrefab, freePosition.transform.position, Quaternion.identity);
             freePosition.Occupy(enemyUnit);
             
-            enemyUnit.Died += () => RemoveDeadUnit(enemyUnit);
-            enemyUnit.Revived += () => AddRevivedUnit(enemyUnit);
+            enemyUnit.Died += () => _combatTurnManager.RemoveFromOrder(enemyUnit);
+            enemyUnit.Revived += () => _combatTurnManager.AddToOrder(enemyUnit);
             
             enemyUnit.Initialize();
             
@@ -60,9 +60,9 @@ public class CombatManager : SingletonBehaviour<CombatManager>
             var freePosition = _partyPositions.First(x => !x.IsOccupied);
             var partyUnit = Instantiate(partyCharacter.PartyUnitPrefab, freePosition.transform.position, Quaternion.identity);
             freePosition.Occupy(partyUnit);
-
-            partyUnit.Died += () => RemoveDeadUnit(partyUnit);
-            partyUnit.Revived += () => AddRevivedUnit(partyUnit);
+            
+            partyUnit.Died += () => _combatTurnManager.RemoveFromOrder(partyUnit);
+            partyUnit.Revived += () => _combatTurnManager.AddToOrder(partyUnit);
             
             partyUnit.Initialize();
             
@@ -78,10 +78,12 @@ public class CombatManager : SingletonBehaviour<CombatManager>
      
         await UniTask.SwitchToMainThread();
         await action.Do();
-        await CombatAnimationsController.Instance.WaitForAnimations();
-        
+
         if (CheckCombatEnded(out var playerVictory))
+        {
+            await UniTask.SwitchToMainThread();
             FinishCombat(playerVictory);
+        }
 
         else
             _combatTurnManager.NextTurn();
@@ -94,46 +96,28 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
     private void FinishCombat(bool playerVictory)
     {
-        EventBus.Instance.Publish(new CombatEndedEvent(playerVictory, GetExperienceReward(), GetMoneyReward(), GetLoot()));
+        if (!playerVictory)
+        {
+            SceneManager.LoadScene(0);
+            PersistentSingletonBehaviour.ClearAll();
+        }
+        
+        EventBus.Instance.Publish(new CombatEndedEvent(playerVictory, GetExperienceReward(), GetMoneyReward(), _encounterStarter, GetLoot()));
         ResetCombat();
-        gameObject.SetActive(false);
         LevelRoot.Instance.Enable();
         Input.Instance.SetInputContext(InputContext.Player);
-    }
-
-    private void RemoveDeadUnit(EnemyUnit unit)
-    {
-        _enemyUnits.Remove(unit);
-        _combatTurnManager.RemoveFromOrder(unit);
-    }
-
-    private void AddRevivedUnit(EnemyUnit unit)
-    {
-        _enemyUnits.Add(unit);
-        _combatTurnManager.AddToOrder(unit);
-    }
-
-    private void RemoveDeadUnit(PartyUnit unit)
-    {
-        _partyUnits.Remove(unit);
-        _combatTurnManager?.RemoveFromOrder(unit);
-    }
-
-    private void AddRevivedUnit(PartyUnit unit)
-    {
-        _partyUnits.Add(unit);
-        _combatTurnManager.AddToOrder(unit);
+        gameObject.SetActive(false);
     }
 
     private bool CheckCombatEnded(out bool playerVictory)
     {
-        if (_enemyUnits.Count == 0)
+        if (_enemyUnits.All(e => e.IsDead))
         {
             playerVictory = true;
             return true;
         }
 
-        if (_partyUnits.Count == 0)
+        if (_partyUnits.All(p => p.IsDead))
         {
             playerVictory = false;
             return true;
@@ -155,10 +139,9 @@ public class CombatManager : SingletonBehaviour<CombatManager>
             Destroy(unit.gameObject);
         }
         _partyUnits.Clear();
-
-        _combatTurnManager = new CombatTurnManager();
-
+        
         _encounterData = null;
+        _encounterStarter = null;
     }
 
     private float GetExperienceReward()

@@ -10,7 +10,9 @@ public class SkillsButton : CombatButton
     [SerializeField] TextMeshProUGUI attackName;
     
     private Unit _unit;
-    
+
+    protected override string ButtonDescription => GetDescription();
+
     public void Initialize(SkillCooldown skillCooldown, Unit unit)
     {
         _skillCooldown = skillCooldown;
@@ -19,10 +21,9 @@ public class SkillsButton : CombatButton
         Button = GetComponent<Button>();
         battleUIController = FindFirstObjectByType<BattleUIController>();
         
-        buttonDescription = GetDescription();
         attackName.text = _skillCooldown.Skill.BaseName;
         Button.onClick.AddListener(OnClick);
-        Button.enabled = _skillCooldown.Available;
+        Button.interactable = _skillCooldown.Available;
     }
 
     private void OnClick()
@@ -33,7 +34,7 @@ public class SkillsButton : CombatButton
 
     private string GetDescription()
     {
-        var builder = new StringBuilder(_skillCooldown.Skill.BaseDescription);
+        var builder = new StringBuilder(_skillCooldown.Skill.GetDescription());
         builder.AppendLine();
 
         builder.Append(_skillCooldown.GetUseIntervalText());

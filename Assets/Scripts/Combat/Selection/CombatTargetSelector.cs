@@ -10,8 +10,8 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
     private Unit _unit;
     private Type _unitType;
 
-    private bool _deadUnitSelection;
-    private bool _canSelectFullHealth;
+    private SelectionFlags _mandatoryFlags;
+    private SelectionFlags _forbiddenFlags;
 
     private bool _selecting;
 
@@ -24,7 +24,8 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
     {
         _skill = skill;
         _unit = unit;
-        _deadUnitSelection = _skill.DeadTarget;
+        _mandatoryFlags = skill.MandatoryFlags;
+        _forbiddenFlags = skill.ForbiddenFlags;
         _unitType = GetSelectionType(_unit.GetType(), _skill.TargetType);
         _targetCount = skill.MaxTargets;
 
@@ -46,7 +47,7 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
         if (!_selecting)
             Debug.LogError("Tentou selecionar quando não havia seleção ativa");
 
-        var selection = selectionStrategy.GetSelection(GetAvailableSelection(), SelectionCount);
+        var selection = selectionStrategy.GetSelection(GetAvailableSelection(), _targetCount);
 
         foreach (var unit in selection)
             unit.Select();
@@ -57,7 +58,7 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
         if (!_selecting || IsSelected(unit) || IsSelectionFull)
             return false;
 
-        return unit.GetType() == _unitType && unit.IsDead == _deadUnitSelection;
+        return unit.GetType() == _unitType && unit.SelectionFlags.HasAllFlags(_mandatoryFlags) && !unit.SelectionFlags.HasAnyFlag(_forbiddenFlags);
     }
 
     public bool IsSelected(Unit unit)
@@ -94,6 +95,10 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
         _selecting = false;
         _skill = null;
         _unit = null;
+
+        foreach (var unit in _selection)
+            unit.Deselect();
+        
         _selection.Clear();
     }
 
@@ -102,7 +107,7 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
         await UniTask.SwitchToMainThread();
         foreach (var unit in _selection)
             unit.HideSelection();
-
+        
         var action = new CombatAction(_unit, _selection, _skill);
         CancelSelection();
         await CombatManager.Instance.ExecuteAction(action);

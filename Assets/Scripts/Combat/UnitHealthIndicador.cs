@@ -22,7 +22,7 @@ public class UnitHealthIndicador : MonoBehaviour
         _unit.HealthChanged += OnHealthChanged;
         _healthBar.maxValue = _unit.Stats.Health;
         _healthBar.value = _unit.CurrentHealth;
-        _healthText.SetText(GetHealthText(_unit.Stats.Health));
+        _healthText.SetText(GetHealthText(_unit.CurrentHealth));
     }
 
     private void OnHealthChanged(HealthChangedEventArgs args)
