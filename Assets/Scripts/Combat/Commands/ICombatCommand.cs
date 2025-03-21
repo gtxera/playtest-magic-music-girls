@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 
 public interface ICombatCommand
 {
-    void Execute(Unit unit, IEnumerable<Unit> targets);
+    UniTask Execute(Unit unit, IEnumerable<Unit> targets);
 }

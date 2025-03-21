@@ -46,7 +46,7 @@ public class EnemyUnit : Unit
     private async UniTask StartAction(Skill skill)
     {
         CombatTargetSelector.Instance.AutoSelect(skill.TargetSelectionStrategy);
-        await UniTask.WaitForSeconds(0.5f);
+        await UniTask.WaitForSeconds(2f);
         UniTask.RunOnThreadPool(() => CombatTargetSelector.Instance.ConfirmSelection());
     }
 

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada421966f3b97949bfb0fa5075385b1, type: 3}
+  m_Name: DialogueB 1
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "V\xE1 garoto."
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Voc\xEA foi escolhido para reger as Magic Music Girls e livrar o mundo
+      da cac\xF4fonia."
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Procure pela Lyra, ela far\xE1 parte da sua banda."
+  _event:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

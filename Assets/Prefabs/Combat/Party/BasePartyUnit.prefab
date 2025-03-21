@@ -88,9 +88,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8137223516038129973}
   m_SourcePrefab: {fileID: 100100000, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
---- !u!212 &1611544361855673423 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4651191401121478481, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
+--- !u!95 &2218728148094281245 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5195891311648142595, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
   m_PrefabInstance: {fileID: 6255784521208337182}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &2729590669358989500 stripped
@@ -116,5 +116,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionIndicator: {fileID: 2729590669358989500}
-  _selectedIndicator: {fileID: 1611544361855673423}
+  _selectionIndicatorAnimator: {fileID: 2218728148094281245}
   _characterData: {fileID: 0}

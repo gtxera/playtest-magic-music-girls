@@ -1,6 +1,6 @@
+using System;
 using TMPro;
 using UnityEngine;
-using VContainer;
 
 public class InteractionUI : MonoBehaviour, IEventListener<InteractionInRangeEvent>, IEventListener<InteractionOutOfRangeEvent>, IEventListener<InteractedEvent>
 {
@@ -10,15 +10,16 @@ public class InteractionUI : MonoBehaviour, IEventListener<InteractionInRangeEve
     [SerializeField]
     private TextMeshProUGUI _textMesh;
 
-    private EventBus _eventBus;
-
-    [Inject]
-    private void Inject(EventBus eventBus)
+    private void Awake()
     {
-        _eventBus = eventBus;
-        _eventBus.Subscribe(this);
+        EventBus.Instance.Subscribe(this);
     }
-    
+
+    private void OnDestroy()
+    {
+        EventBus.Instance.Unsubscribe(this);
+    }
+
     private void Show(Interactable interactable)
     {
         _interactionRootElement.SetActive(true);

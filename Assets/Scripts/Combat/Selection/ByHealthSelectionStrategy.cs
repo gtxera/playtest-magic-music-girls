@@ -15,10 +15,9 @@ public class ByHealthSelectionStrategy : TargetSelectionStrategy
     
     protected override Unit GetNextUnit(IEnumerable<Unit> units)
     {
-        var unitWeights = units.ToDictionary(unit => unit, GetHealthSelection);
-        var total = unitWeights.Values.Sum();
+        var unitWeights = units.ToDictionary(unit => unit, unit => GetHealthWeight(GetHealthSelection(unit)));
 
-        var random = Random.Range(0f, total);
+        var random = Random.Range(0f, unitWeights.Values.Sum());
         var priority = 0f;
         
         foreach (var kvp in unitWeights)
@@ -41,12 +40,12 @@ public class ByHealthSelectionStrategy : TargetSelectionStrategy
             _ => throw new ArgumentOutOfRangeException()
         };
     }
-
-    private float GetHealthWeight(float value, float total)
+    
+    private float GetHealthWeight(float value)
     {
         return _order switch
         {
-            SelectionStrategyOrder.Lowest => total - value,
+            SelectionStrategyOrder.Lowest => 1 / value,
             SelectionStrategyOrder.Highest => value,
             _ => throw new ArgumentOutOfRangeException()
         };

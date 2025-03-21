@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada421966f3b97949bfb0fa5075385b1, type: 3}
+  m_Name: DialogueB 14
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: 744c55dbb7725f245a8734510cc70d44, type: 2}
+    _text: "Maestro... voc\xEA finalmente chegou!"
+  - _character: {fileID: 11400000, guid: 744c55dbb7725f245a8734510cc70d44, type: 2}
+    _text: Obrigada por me salvar.
+  - _character: {fileID: 11400000, guid: 744c55dbb7725f245a8734510cc70d44, type: 2}
+    _text: "Imagino que voc\xEA deva ter muitas perguntas mas poderei te responder
+      no caminho, agora devemos ir at\xE9 a cidade!"
+  _event:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

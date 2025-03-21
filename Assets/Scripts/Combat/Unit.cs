@@ -8,9 +8,9 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
 {
     [SerializeField]
     private SpriteRenderer _selectionIndicator;
-    
+
     [SerializeField]
-    private SpriteRenderer _selectedIndicator;
+    private Animator _selectionIndicatorAnimator;
 
     private bool _isHovering;
 
@@ -90,7 +90,6 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     public void Initialize()
     {
         _selectionIndicator.enabled = false;
-        _selectedIndicator.enabled = false;
         
         EventBus.Instance.Subscribe(this);
         RegisterHealthCallbacks();
@@ -114,19 +113,31 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
 
     private void OnMouseEnter()
     {
-        var combatTargetSelector = CombatTargetSelector.Instance;
-        
         _isHovering = true;
         
-        if (!combatTargetSelector.IsSelectable(this)) 
+        if (!CombatTargetSelector.Instance.IsSelectable(this)) 
             return;
+
+        if (CombatTargetSelector.Instance.IsAllyOfSelection(this))
+        {
+            _selectionIndicatorAnimator.Play("Ally");
+        }
+        else
+        {
+            _selectionIndicatorAnimator.Play("Enemy");
+        }
         
         _selectionIndicator.enabled = true;
+        _selectionIndicator.color = new Color(1, 1, 1, 0.6f);
     }
 
     private void OnMouseExit()
     {
         _isHovering = false;
+        
+        if (!CombatTargetSelector.Instance.IsSelectable(this)) 
+            return;
+        
         _selectionIndicator.enabled = false;
     }
 
@@ -134,25 +145,36 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     {
         if (!CombatTargetSelector.Instance.TryAddToSelection(this))
             return;
+        
+        if (CombatTargetSelector.Instance.IsAllyOfSelection(this))
+        {
+            _selectionIndicatorAnimator.Play("Ally");
+        }
+        else
+        {
+            _selectionIndicatorAnimator.Play("Enemy");
+        }
 
-        _selectionIndicator.enabled = false;
-        _selectedIndicator.enabled = true;
+        _selectionIndicator.enabled = true;
+        _selectionIndicator.color = Color.white;
     }
     
     public void Deselect()
     {
-        _selectedIndicator.enabled = false;
+        _selectionIndicator.enabled = false;
     }
 
     public void HideSelection()
     {
         _selectionIndicator.enabled = false;
-        _selectedIndicator.enabled = false;
     }
     
     private void OnSelect(InputAction.CallbackContext _)
     {
         if (!_isHovering)
+            return;
+        
+        if (!CombatTargetSelector.Instance.TryAddToSelection(this))
             return;
         
         Select();
@@ -166,8 +188,7 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         if (!CombatTargetSelector.Instance.TryRemoveFromSelection(this))
             return;
         
-        Deselect();
-        _selectionIndicator.enabled = true;
+        _selectionIndicator.color = new Color(1, 1, 1, 0.6f);
     }
 
     public void Handle(CombatTurnPassedEvent @event)

@@ -53,6 +53,11 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
             unit.Select();
     }
 
+    public bool IsAllyOfSelection(Unit unit)
+    {
+        return unit.GetType() == _unit.GetType();
+    }
+
     public bool IsSelectable(Unit unit)
     {
         if (!_selecting || IsSelected(unit) || IsSelectionFull)

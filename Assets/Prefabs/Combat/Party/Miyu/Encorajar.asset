@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2525fbb1565c85045ae9693a242cbfa8, type: 3}
+  m_Name: Encorajar
+  m_EditorClassIdentifier: 
+  <BaseName>k__BackingField: Encorajar
+  _baseDescription: O som do teclado encoraja seus aliados, aumentando o dano causado
+    por eles.
+  <BaseValue>k__BackingField: 10
+  <MaxTargets>k__BackingField: 2
+  _baseScalings:
+  - <Stat>k__BackingField: 0
+    <Scaling>k__BackingField: 0.2
+  <EvolvedSkill>k__BackingField: {fileID: 0}
+  <CooldownInTurns>k__BackingField: 4
+  <PriorityType>k__BackingField: 0
+  <Priority>k__BackingField: 0
+  <TargetSelectionStrategy>k__BackingField: {fileID: 0}
+  _targetType: 0
+  _modifier:
+    rid: 8655338429319741518
+  references:
+    version: 2
+    RefIds:
+    - rid: 8655338429319741518
+      type: {class: DamageDealerModifier, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: 1
+        <Duration>k__BackingField: 3

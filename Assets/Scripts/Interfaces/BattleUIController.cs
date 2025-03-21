@@ -1,13 +1,13 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class BattleUIController : MonoBehaviour, IEventListener<SelectionChangedEvent>, IEventListener<CombatTurnPassedEvent>
+public class BattleUIController : MonoBehaviour, IEventListener<SelectionChangedEvent>, IEventListener<CombatTurnPassedEvent>, IEventListener<CombatEndedEvent>
 {
     [Header("UI Variables")]
     [SerializeField]
@@ -44,6 +44,12 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     [SerializeField]
     private int _maximumPortraits;
 
+    [SerializeField]
+    private GameObject _skillShowerPanel;
+
+    [SerializeField]
+    private TextMeshProUGUI _skillShowerText;
+
     [Header("Target Selection")]
     [SerializeField]
     private Button _confirmButton;
@@ -58,6 +64,22 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     private CombatPanel _currentPanel;
     private CombatPanel _previousPanel;
 
+    [Header("Finish")]
+    [SerializeField]
+    private GameObject _victoryPanel;
+
+    [SerializeField]
+    private GameObject _defeatPanel;
+
+    [SerializeField]
+    private Button _victoryButton;
+
+    [SerializeField]
+    private Button _defeatButton;
+
+    [SerializeField]
+    private TextMeshProUGUI _victoryText;
+
     private void Awake()
     {
         EventBus.Instance.Subscribe(this);
@@ -70,6 +92,17 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         descriptionTxt.SetText(string.Empty);
         
         _skipButton.onClick.AddListener(CombatManager.Instance.SkipTurn);
+        
+        _victoryButton.onClick.AddListener(() =>
+        {
+            _victoryPanel.SetActive(false);
+            CombatManager.Instance.FinishCombat();
+        });
+        _defeatButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene(0);
+            PersistentSingletonBehaviour.ClearAll();
+        });
     }
 
     #region EnergyBar Update Methods
@@ -246,6 +279,30 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         var portrait = Instantiate(portraitObject, RoundOrderContent);
         portrait.GetComponent<Image>().sprite = unit.Icon;
         newPortraitCount++;
+    }
+
+    public void Handle(CombatEndedEvent @event)
+    {
+        _combatPanel.SetActive(false);
+        
+        if (!@event.PlayerVictory)
+        {
+            _defeatPanel.SetActive(true);
+            return;
+        }
+        
+        _victoryPanel.SetActive(true);
+        _victoryText.SetText($"Você ganhou {Formatting.GetFloatText(@event.ExperienceReward)} pontos de experiência e {Formatting.GetFloatText(@event.MoneyReward)} moedas");
+    }
+
+    public async UniTask ShowSkillSelection(Skill skill)
+    {
+        await UniTask.SwitchToMainThread();
+        _skillShowerPanel.SetActive(true);
+        _skillShowerText.SetText(skill.BaseName);
+        await UniTask.WaitForSeconds(1f);
+        await UniTask.SwitchToMainThread();
+        _skillShowerPanel.SetActive(false);
     }
 }
 

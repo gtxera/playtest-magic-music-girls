@@ -17,10 +17,8 @@ public class CombatAction
 
     public async UniTask Do()
     {
-        _command.Execute(_unit, _targets);
+        await _command.Execute(_unit, _targets);
      
         await CombatAnimationsController.Instance.WaitForAnimations();
-
-        await UniTask.CompletedTask;
     }
 }

@@ -13,6 +13,9 @@ public class PartyUnit : Unit
     private void Awake()
     {
         Character = Party.Instance.GetFromData(_characterData);
+        
+        if (IsDead)
+            Heal(5);
     }
     
     protected override UniTask OnUnitTurn()

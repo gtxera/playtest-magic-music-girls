@@ -8,13 +8,13 @@ public abstract class TargetSelectionStrategy : ScriptableObject, ITargetSelecti
     {
         var unitList = units.ToList();
         var selection = new List<Unit>();
-        
-        do
+
+        while (unitList.Count > 0 && selection.Count < targetCount)
         {
             var next = GetNextUnit(unitList);
             unitList.Remove(next);
             selection.Add(next);
-        } while (unitList.Count > 0 || selection.Count < targetCount);
+        }
 
         return selection;
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public abstract class Skill : ScriptableObject, ICombatCommand
@@ -8,7 +9,10 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     [Header("Skill Base Stats")]
     [field: SerializeField]
     public string BaseName { get; private set; }
-    public string _baseDescription { get; private set; }
+
+    [field: SerializeField]
+    public string _baseDescription;
+    
     [field: SerializeField]
     public float BaseValue { get; private set; }
     [field: SerializeField] 
@@ -23,9 +27,9 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     
     [field: SerializeField]
     public SkillPriorityType PriorityType { get; private set; }
-    
-    [field: SerializeField]
-    public int Priority { get; private set; }
+
+    [field: SerializeField] 
+    public int Priority { get; private set; } = 1;
     
     public abstract TargetType TargetType { get; }
 
@@ -52,8 +56,10 @@ public abstract class Skill : ScriptableObject, ICombatCommand
         return finalValue;
     }
 
-    public void Execute(Unit unit, IEnumerable<Unit> targets)
+    public async UniTask Execute(Unit unit, IEnumerable<Unit> targets)
     {
+        await CombatAnimationsController.Instance.ShowSkillSelectionAnimation(this);
+        
         var targetsArray = targets as Unit[] ?? targets.ToArray();
         var targetsCount = targetsArray.Length;
         if (targetsCount > MaxTargets)

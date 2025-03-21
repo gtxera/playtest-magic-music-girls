@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada421966f3b97949bfb0fa5075385b1, type: 3}
+  m_Name: Initial
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: 58c4c9e7620124c4a83a319ce2701824, type: 2}
+    _text: O barulho das ondas ocupava a mente de Shinjuku.
+  - _character: {fileID: 11400000, guid: 58c4c9e7620124c4a83a319ce2701824, type: 2}
+    _text: "Fazia tempos que esse som era o mais mel\xF3dico que ele escutava."
+  - _character: {fileID: 11400000, guid: 58c4c9e7620124c4a83a319ce2701824, type: 2}
+    _text: "Afinal, que outra melodia poderia ser tocada num mundo onde n\xE3o havia
+      mais m\xFAsica?"
+  _event:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

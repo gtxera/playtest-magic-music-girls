@@ -47,3 +47,4 @@ MonoBehaviour:
   _initialCharacters:
   - {fileID: 11400000, guid: 79d25f4d091547240b6130aea57a5984, type: 2}
   - {fileID: 11400000, guid: 43e609dc0184b344ea51194c50cf9335, type: 2}
+  - {fileID: 11400000, guid: f2f07247dcd24f64abb81960272e66f3, type: 2}

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f22935286dc6142aa621796abb3165, type: 3}
+  m_Name: Miyu
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Miyu
+  <Icon>k__BackingField: {fileID: 9062248772717205084, guid: 4c31f1e0b6ddb544990414b44c32ffa5, type: 3}
+  <BaseStats>k__BackingField:
+    <Emotion>k__BackingField: 10
+    <Virtuosity>k__BackingField: 4
+    <Endurance>k__BackingField: 20
+    <Tempo>k__BackingField: 5
+    <Health>k__BackingField: 30
+  Skills:
+  - {fileID: 11400000, guid: 67311d8d4e8a3104b9b4929acf30570e, type: 2}
+  - {fileID: 11400000, guid: 58efdc1b4b810194e9371f723bab810f, type: 2}
+  - {fileID: 11400000, guid: 5ac0f168b0cbf1149bc8e5c5c7934774, type: 2}
+  interfaceBigBackground: {fileID: 0}
+  interfaceSmallBackground: {fileID: 0}
+  interfaceBigFrame: {fileID: 0}
+  interfaceSmallFrame: {fileID: 0}
+  interfaceThinFrame: {fileID: 0}
+  characterSelectionFrame: {fileID: 0}
+  description: 
+  <CombatPrefab>k__BackingField: {fileID: 1486543858697804513, guid: c4a2772eab0edce458523ee633e5957c, type: 3}
+  <StatsGrowth>k__BackingField:
+    <Emotion>k__BackingField: 0
+    <Virtuosity>k__BackingField: 0
+    <Endurance>k__BackingField: 0
+    <Tempo>k__BackingField: 0
+    <Health>k__BackingField: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada421966f3b97949bfb0fa5075385b1, type: 3}
+  m_Name: DialogueB 12
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: e8af14ac744e9814a83f871cfb674ee1, type: 2}
+    _text: Eu vi uma das musicista para a direita
+  - _character: {fileID: 11400000, guid: e8af14ac744e9814a83f871cfb674ee1, type: 2}
+    _text: "Ela parecia em perigo, corra para salv\xE1-la!"
+  _event:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

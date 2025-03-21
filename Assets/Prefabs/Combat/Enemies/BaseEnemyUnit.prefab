@@ -69,9 +69,9 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8300264546424034210, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
   m_PrefabInstance: {fileID: 8815565552252209024}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &4241115166824706257 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4651191401121478481, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
+--- !u!95 &3624462804946956931 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5195891311648142595, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
   m_PrefabInstance: {fileID: 8815565552252209024}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7926944750729328270 stripped
@@ -92,5 +92,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionIndicator: {fileID: 677607616045012002}
-  _selectedIndicator: {fileID: 4241115166824706257}
+  _selectionIndicatorAnimator: {fileID: 3624462804946956931}
   <Data>k__BackingField: {fileID: 0}

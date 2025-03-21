@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b2df3e00ccd08428c8a7fb417dcbfe, type: 3}
   m_Name: Boss1
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Bat Boss
-  <Icon>k__BackingField: {fileID: 6899642474719578219, guid: 6666b900743856542b449266a14ff80f, type: 3}
+  <Name>k__BackingField: Grande Gato
+  <Icon>k__BackingField: {fileID: 7526814577169580027, guid: 91ce34bfaebc6954ca87ad5cdfd615f4, type: 3}
   <BaseStats>k__BackingField:
     <Emotion>k__BackingField: 0
     <Virtuosity>k__BackingField: 0
     <Endurance>k__BackingField: 0
     <Tempo>k__BackingField: 0
     <Health>k__BackingField: 0
-  <StatsGrowth>k__BackingField:
-    <Emotion>k__BackingField: 0
-    <Virtuosity>k__BackingField: 0
-    <Endurance>k__BackingField: 0
-    <Tempo>k__BackingField: 0
-    <Health>k__BackingField: 0
+  Skills: []

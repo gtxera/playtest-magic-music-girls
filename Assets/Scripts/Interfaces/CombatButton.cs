@@ -17,7 +17,7 @@ public class CombatButton : MonoBehaviour
 
     public void ChangeDescription()
     {
-        battleUIController.ChangeOptionDescription(buttonDescription);
+        battleUIController.ChangeOptionDescription(ButtonDescription);
     }
 
     public void ClearDescription()

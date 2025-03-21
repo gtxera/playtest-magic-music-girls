@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class UnitHealthIndicador : MonoBehaviour
 {
     [SerializeField]
+    private UnitHealthChangedText _changedTextPrefab;
+
+    [SerializeField]
+    private Canvas _rootCanvas;
+    
+    [SerializeField]
     private Unit _unit;
 
     [SerializeField]
@@ -30,6 +36,9 @@ public class UnitHealthIndicador : MonoBehaviour
         var toHealth = args.To;
         var fromHealth = args.From;
         var animationHealth = fromHealth;
+
+        var changeText = Instantiate(_changedTextPrefab, _rootCanvas.transform);
+        changeText.Show(args.Change, _healthUpdateDuration);
 
         _healthBar.DOValue(toHealth, _healthUpdateDuration);
         DOTween.To(() => animationHealth, health => animationHealth = health, toHealth, _healthUpdateDuration)

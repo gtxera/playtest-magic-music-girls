@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75dfa72fd46a6a931755349153ad9, type: 3}
+  m_Name: Mordida Cat
+  m_EditorClassIdentifier: 
+  <BaseName>k__BackingField: Mordida
+  _baseDescription: 
+  <BaseValue>k__BackingField: 5
+  <MaxTargets>k__BackingField: 1
+  _baseScalings:
+  - <Stat>k__BackingField: 1
+    <Scaling>k__BackingField: 0.66
+  <EvolvedSkill>k__BackingField: {fileID: 0}
+  <CooldownInTurns>k__BackingField: 0
+  <PriorityType>k__BackingField: 0
+  <Priority>k__BackingField: 1
+  <TargetSelectionStrategy>k__BackingField: {fileID: 11400000, guid: b3197c399bedafe49af6c557fc1bb40b, type: 2}

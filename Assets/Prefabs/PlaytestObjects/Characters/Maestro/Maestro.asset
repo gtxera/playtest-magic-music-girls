@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b2df3e00ccd08428c8a7fb417dcbfe, type: 3}
   m_Name: Maestro
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Maestro
+  <Name>k__BackingField: Shinjuku
   <Icon>k__BackingField: {fileID: -5936540791382142956, guid: 1106078bb08344a43af91cecc1e476fd, type: 3}
   <BaseStats>k__BackingField:
     <Emotion>k__BackingField: 0

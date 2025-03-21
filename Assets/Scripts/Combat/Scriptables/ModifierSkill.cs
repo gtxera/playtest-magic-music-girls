@@ -18,7 +18,7 @@ public class ModifierSkill : Skill
 
     public override void ExecuteForTarget(Unit unit, Unit target)
     {
-        target.AddModifier(_modifier.CreateCopy(BaseName, unit, target, CombatManager.Instance.CurrentTurn));
+        target.AddModifier(_modifier.CreateCopy(BaseName, GetScaledValue(unit.Stats), unit, target, CombatManager.Instance.CurrentTurn));
     }
 
     public override string GetDescription()

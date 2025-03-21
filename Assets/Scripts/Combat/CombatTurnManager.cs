@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class CombatTurnManager
 {
@@ -8,6 +9,9 @@ public class CombatTurnManager
     public int CurrentTurn { get; private set; } = 1;
     public IEnumerable<Unit> TurnOrder => _turnOrder;
     public IEnumerable<Unit> RemainingTurnOrder => _remainingTurnOrder;
+
+    private List<Unit> _revivedUnits = new();
+    private HashSet<Unit> _unitsWhoPlayed = new();
 
     public CombatTurnManager()
     {
@@ -34,7 +38,7 @@ public class CombatTurnManager
     {
         _turnOrder.Add(unit);
         
-        _remainingTurnOrder.Add(unit);
+        _revivedUnits.Add(unit);
     }
 
     public void RemoveFromOrder(Unit unit)
@@ -51,14 +55,19 @@ public class CombatTurnManager
     {
         var previous = _remainingTurnOrder.Min;
         _remainingTurnOrder.Remove(previous);
+        
+        foreach (var unit in _revivedUnits.Where(unit => !_unitsWhoPlayed.Contains(unit)))
+            _remainingTurnOrder.Add(unit);
 
         if (_remainingTurnOrder.Count == 0)
         {
             CreateRemainingTurnOrder();
+            _unitsWhoPlayed.Clear();
             CurrentTurn++;
         }
 
         var next = _remainingTurnOrder.Min;
+        _unitsWhoPlayed.Add(next);
         EventBus.Instance.Publish(new CombatTurnPassedEvent(next, previous, CurrentTurn));
     }
 
@@ -76,6 +85,11 @@ public class UnitTurnOrderComparer : IComparer<Unit>
         if (y == null)
             return 1;
 
-        return x.Stats.Tempo.CompareTo(y.Stats.Tempo) * -1;
+        var tempoComparison = x.Stats.Tempo.CompareTo(y.Stats.Tempo) * -1;
+
+        if (tempoComparison != 0)
+            return tempoComparison;
+        
+        return x == y ? 0 : -1;
     }
 }

@@ -26,9 +26,9 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
     public int CurrentTurn => _combatTurnManager.CurrentTurn;
 
-    private EncounterStarter _encounterStarter;
+    private Component _encounterStarter;
 
-    public void StartCombat(EncounterData encounterData, EncounterStarter encounterStarter)
+    public void StartCombat(EncounterData encounterData, Component encounterStarter)
     {
         LevelRoot.Instance.Disable();
 
@@ -82,7 +82,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
         if (CheckCombatEnded(out var playerVictory))
         {
             await UniTask.SwitchToMainThread();
-            FinishCombat(playerVictory);
+            NotifyCombatEnded(playerVictory);
         }
 
         else
@@ -94,19 +94,17 @@ public class CombatManager : SingletonBehaviour<CombatManager>
         _combatTurnManager.NextTurn();
     }
 
-    private void FinishCombat(bool playerVictory)
+    public void FinishCombat()
     {
-        if (!playerVictory)
-        {
-            SceneManager.LoadScene(0);
-            PersistentSingletonBehaviour.ClearAll();
-        }
-        
-        EventBus.Instance.Publish(new CombatEndedEvent(playerVictory, GetExperienceReward(), GetMoneyReward(), _encounterStarter, GetLoot()));
         ResetCombat();
         LevelRoot.Instance.Enable();
         Input.Instance.SetInputContext(InputContext.Player);
         gameObject.SetActive(false);
+    }
+
+    private void NotifyCombatEnded(bool playerVictory)
+    {
+        EventBus.Instance.Publish(new CombatEndedEvent(playerVictory, GetExperienceReward(), GetMoneyReward(), _encounterStarter, GetLoot()));
     }
 
     private bool CheckCombatEnded(out bool playerVictory)

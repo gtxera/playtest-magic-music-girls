@@ -6,12 +6,10 @@ public class Input : PersistentSingletonBehaviour<Input>
     private InputActions _inputActions;
 
     [SerializeField]
-    private InputContext _inputContext;
+    private InputContext _inputContext = InputContext.Player;
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
-        
         _inputActions = new InputActions();
     }
 

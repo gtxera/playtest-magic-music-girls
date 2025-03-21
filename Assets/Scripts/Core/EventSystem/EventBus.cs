@@ -8,7 +8,7 @@ public class EventBus : PersistentSingletonBehaviour<EventBus>
     {
         _listeners.RemoveAll(l => l == null);
         
-        foreach (var listener in _listeners)
+        foreach (var listener in _listeners.ToArray())
         {
             if (listener is IEventListener<TEvent> typedListener)
             {

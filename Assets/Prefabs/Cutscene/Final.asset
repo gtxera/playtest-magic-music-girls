@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada421966f3b97949bfb0fa5075385b1, type: 3}
+  m_Name: Final
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Voc\xEA n\xE3o tem aula hoje?"
+  - _character: {fileID: 11400000, guid: 69a21a492eb7e9a41936fef31abe72f0, type: 2}
+    _text: "Tenho. Eu j\xE1 vou."
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "N\xE3o se atrase e traga p\xE3o na volta, por favor."
+  - _character: {fileID: 11400000, guid: 69a21a492eb7e9a41936fef31abe72f0, type: 2}
+    _text: "Sim, vov\xF4..."
+  - _character: {fileID: 11400000, guid: 58c4c9e7620124c4a83a319ce2701824, type: 2}
+    _text: O velho Kazuma percebeu uma certa dor na voz de seu neto.
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Shinjuku... Eu sei que o mundo n\xE3o \xE9 mais como antes."
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Eu tamb\xE9m sinto falta da m\xFAsica, da cor, da alegria."
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Mas n\xF3s devemos seguir fortes, ou\xE7a o ritmo do seu cora\xE7\xE3o."
+  - _character: {fileID: 11400000, guid: 4b3ffdf3692608a469ac73f3b2492e87, type: 2}
+    _text: "Isso ningu\xE9m nunca vai tirar de voc\xEA."
+  - _character: {fileID: 11400000, guid: 69a21a492eb7e9a41936fef31abe72f0, type: 2}
+    _text: "Obrigado, v\xF4."
+  _event:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

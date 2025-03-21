@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57834e79f94994f4c82aa3c0b9387f43, type: 3}
+  m_Name: Blue Bat
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Blue Bat
+  <Icon>k__BackingField: {fileID: 5652800836234472363, guid: 6666b900743856542b449266a14ff80f, type: 3}
+  <BaseStats>k__BackingField:
+    <Emotion>k__BackingField: 2
+    <Virtuosity>k__BackingField: 2
+    <Endurance>k__BackingField: 12
+    <Tempo>k__BackingField: 3
+    <Health>k__BackingField: 35
+  Skills:
+  - {fileID: 11400000, guid: 94eb6c96727b67946b4b69f6de7e63ea, type: 2}
+  <Level>k__BackingField: 3
+  <ExperienceReward>k__BackingField: 15
+  <MoneyReward>k__BackingField: 7.5

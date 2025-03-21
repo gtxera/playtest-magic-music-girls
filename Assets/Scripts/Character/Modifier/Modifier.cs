@@ -10,7 +10,6 @@ public abstract class Modifier
     [field: SerializeField]
     public ModifierType Type { get; private set; }
     
-    [field: SerializeField]
     public float ModifyValue { get; private set; }
     
     [field: SerializeField]
@@ -20,11 +19,11 @@ public abstract class Modifier
     private Unit _holder;
     private int _turnOfCreation;
 
-    public Modifier CreateCopy(string identifier, Unit creator, Unit holder, int currentTurn)
+    public Modifier CreateCopy(string identifier, float modifyValue, Unit creator, Unit holder, int currentTurn)
     {
         var modifier = CreateCopy();
 
-        modifier.ModifyValue = ModifyValue;
+        modifier.ModifyValue = modifyValue;
         modifier.Identifier = identifier;
         modifier.Duration = Duration;
         modifier.Type = Type;
@@ -46,7 +45,7 @@ public abstract class Modifier
         return Type switch
         {
             ModifierType.Simple => ModifyValue,
-            ModifierType.PercentageOfBaseValue => valueToModify * ModifyValue,
+            ModifierType.PercentageOfBaseValue => valueToModify * (ModifyValue / 100),
             ModifierType.FromParameter => GetValueFromParameter(valueToModify, parameters),
             _ => throw new ArgumentOutOfRangeException()
         };
