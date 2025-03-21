@@ -18,7 +18,7 @@ MonoBehaviour:
   <MaxTargets>k__BackingField: 3
   _baseScalings:
   - <Stat>k__BackingField: 1
-    <Scaling>k__BackingField: 0.2
+    <Scaling>k__BackingField: 0.4
   <EvolvedSkill>k__BackingField: {fileID: 0}
   <CooldownInTurns>k__BackingField: 2
   <PriorityType>k__BackingField: 0

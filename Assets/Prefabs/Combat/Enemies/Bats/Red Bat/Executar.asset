@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <BaseName>k__BackingField: Executar
   _baseDescription: 
-  <BaseValue>k__BackingField: 10
+  <BaseValue>k__BackingField: 8
   <MaxTargets>k__BackingField: 1
   _baseScalings:
   - <Stat>k__BackingField: 1

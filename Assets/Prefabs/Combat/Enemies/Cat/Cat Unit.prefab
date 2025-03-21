@@ -87,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 7387667646220860913, guid: a353ae23d21b1264799015df74bc9d6c, type: 3}
       propertyPath: <Data>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 36546614b3673ce49b0c876809ec5282, type: 2}
+      objectReference: {fileID: 11400000, guid: e00943dacc2e3b140a70e4731b80fe43, type: 2}
     - target: {fileID: 7926944750729328270, guid: a353ae23d21b1264799015df74bc9d6c, type: 3}
       propertyPath: m_Name
       value: Cat Unit

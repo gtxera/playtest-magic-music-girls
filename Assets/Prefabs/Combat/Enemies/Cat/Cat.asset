@@ -19,7 +19,7 @@ MonoBehaviour:
     <Virtuosity>k__BackingField: 12
     <Endurance>k__BackingField: 4
     <Tempo>k__BackingField: 10
-    <Health>k__BackingField: 0
+    <Health>k__BackingField: 75
   Skills:
   - {fileID: 11400000, guid: d18c3999d46ea5042953a00d7196b8cb, type: 2}
   - {fileID: 11400000, guid: 6813c64b6a676894386b5322a3cf4e85, type: 2}

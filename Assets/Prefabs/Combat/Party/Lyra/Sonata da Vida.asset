@@ -20,7 +20,7 @@ MonoBehaviour:
   - <Stat>k__BackingField: 0
     <Scaling>k__BackingField: 0.2
   <EvolvedSkill>k__BackingField: {fileID: 0}
-  <CooldownInTurns>k__BackingField: 0
+  <CooldownInTurns>k__BackingField: 5
   <PriorityType>k__BackingField: 0
   <Priority>k__BackingField: 0
   <TargetSelectionStrategy>k__BackingField: {fileID: 0}

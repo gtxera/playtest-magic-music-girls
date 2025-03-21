@@ -60,10 +60,9 @@ public class DialogueController : SingletonBehaviour<DialogueController>
             return;
         
         _dialoguePresenter.EndDialogue();
+        _input.SetInputContext(InputContext.Player);
         _eventBus.Publish(new DialogueFinishedEvent(_currentDialogue));
         _currentDialogue = null;
-        _input.Remove(_dialogueActions);
-        _input.SetInputContext(InputContext.Player);
     }
 
     private void OnSkip(InputAction.CallbackContext _)

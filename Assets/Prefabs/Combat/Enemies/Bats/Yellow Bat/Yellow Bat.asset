@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Yellow Bat
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Yellow Bat
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 8227617134307365503, guid: 6666b900743856542b449266a14ff80f, type: 3}
   <BaseStats>k__BackingField:
     <Emotion>k__BackingField: 8
     <Virtuosity>k__BackingField: 4
