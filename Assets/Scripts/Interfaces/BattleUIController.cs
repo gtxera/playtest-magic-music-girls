@@ -61,6 +61,13 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     [SerializeField]
     private SkillsButton _skillsButtonPrefab;
 
+    [Header("Items")]
+    [SerializeField]
+    private RectTransform _itemsParent;
+
+    [SerializeField]
+    private ItemButton _itemButtonPrefab;
+
     private CombatPanel _currentPanel;
     private CombatPanel _previousPanel;
 
@@ -224,6 +231,7 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         
         ChangeOptionsPanel(CombatPanel.Options);
         GenerateSkillsButtons(unit);
+        GenerateItemButtons(unit);
         ChangeCharacterPortrait(unit.Icon);
     }
 
@@ -235,6 +243,17 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         {
             var skillButton = Instantiate(_skillsButtonPrefab, attackSelection.transform);
             skillButton.Initialize(skill, unit);
+        }
+    }
+
+    private void GenerateItemButtons(Unit unit)
+    {
+        _itemsParent.DestroyAllChildren();
+
+        foreach (var item in Inventory.Instance.GetInventory<ConsumableItem>())
+        {
+            var itemButton = Instantiate(_itemButtonPrefab, _itemsParent);
+            itemButton.Initialize(item.Item, unit);
         }
     }
 
@@ -295,11 +314,11 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         _victoryText.SetText($"Você ganhou {Formatting.GetFloatText(@event.ExperienceReward)} pontos de experiência e {Formatting.GetFloatText(@event.MoneyReward)} moedas");
     }
 
-    public async UniTask ShowSkillSelection(Skill skill)
+    public async UniTask ShowSkillSelection(ICombatCommand command)
     {
         await UniTask.SwitchToMainThread();
         _skillShowerPanel.SetActive(true);
-        _skillShowerText.SetText(skill.BaseName);
+        _skillShowerText.SetText(command.Name);
         await UniTask.WaitForSeconds(1f);
         await UniTask.SwitchToMainThread();
         _skillShowerPanel.SetActive(false);

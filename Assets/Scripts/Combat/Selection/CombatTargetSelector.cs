@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
 {
-    private Skill _skill;
+    private ICombatCommand _command;
     private Unit _unit;
     private Type _unitType;
 
@@ -20,13 +20,13 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
     private int SelectionCount => _selection.Count;
     private bool IsSelectionFull => _selection.Count == _targetCount;
     
-    public bool TryStartSelection(Skill skill, Unit unit)
+    public bool TryStartSelection(ICombatCommand skill, Unit unit)
     {
-        _skill = skill;
+        _command = skill;
         _unit = unit;
         _mandatoryFlags = skill.MandatoryFlags;
         _forbiddenFlags = skill.ForbiddenFlags;
-        _unitType = GetSelectionType(_unit.GetType(), _skill.TargetType);
+        _unitType = GetSelectionType(_unit.GetType(), _command.TargetType);
         _targetCount = skill.MaxTargets;
 
         _selecting = true;
@@ -98,7 +98,7 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
     public void CancelSelection()
     {
         _selecting = false;
-        _skill = null;
+        _command = null;
         _unit = null;
 
         foreach (var unit in _selection)
@@ -113,7 +113,7 @@ public class CombatTargetSelector : SingletonBehaviour<CombatTargetSelector>
         foreach (var unit in _selection)
             unit.HideSelection();
         
-        var action = new CombatAction(_unit, _selection, _skill);
+        var action = new CombatAction(_unit, _selection, _command);
         CancelSelection();
         await CombatManager.Instance.ExecuteAction(action);
     }

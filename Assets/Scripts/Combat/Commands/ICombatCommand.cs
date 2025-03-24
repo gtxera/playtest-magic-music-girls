@@ -3,5 +3,10 @@ using Cysharp.Threading.Tasks;
 
 public interface ICombatCommand
 {
-    UniTask Execute(Unit unit, IEnumerable<Unit> targets);
+    void Execute(Unit unit, IEnumerable<Unit> targets);
+    TargetType TargetType { get; }
+    SelectionFlags MandatoryFlags { get; }
+    SelectionFlags ForbiddenFlags { get; }
+    int MaxTargets { get; }
+    string Name { get; }
 }

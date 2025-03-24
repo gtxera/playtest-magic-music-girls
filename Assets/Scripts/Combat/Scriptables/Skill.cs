@@ -42,6 +42,8 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     
     public IEnumerable<StatScaling> BaseScalings => _baseScalings;
 
+    public string Name => BaseName;
+
     public virtual string GetDescription() => _baseDescription;
 
     public float GetScaledValue(Stats stats)
@@ -56,10 +58,8 @@ public abstract class Skill : ScriptableObject, ICombatCommand
         return finalValue;
     }
 
-    public async UniTask Execute(Unit unit, IEnumerable<Unit> targets)
-    {
-        await CombatAnimationsController.Instance.ShowSkillSelectionAnimation(this);
-        
+    public void Execute(Unit unit, IEnumerable<Unit> targets)
+    {        
         var targetsArray = targets as Unit[] ?? targets.ToArray();
         var targetsCount = targetsArray.Length;
         if (targetsCount > MaxTargets)

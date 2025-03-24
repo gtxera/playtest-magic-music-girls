@@ -11,9 +11,9 @@ public class CombatAnimationsController : SingletonBehaviour<CombatAnimationsCon
         await UniTask.WaitUntil(() => _animations.Count == 0);
     }
 
-    public async UniTask ShowSkillSelectionAnimation(Skill skill)
+    public async UniTask ShowSkillSelectionAnimation(ICombatCommand command)
     {
-        await FindFirstObjectByType<BattleUIController>().ShowSkillSelection(skill);
+        await FindFirstObjectByType<BattleUIController>().ShowSkillSelection(command);
     }
 
     public void AddAnimation(CombatAnimation animation)

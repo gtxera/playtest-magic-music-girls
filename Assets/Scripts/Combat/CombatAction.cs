@@ -17,7 +17,9 @@ public class CombatAction
 
     public async UniTask Do()
     {
-        await _command.Execute(_unit, _targets);
+        await CombatAnimationsController.Instance.ShowSkillSelectionAnimation(_command);
+
+        _command.Execute(_unit, _targets);
      
         await CombatAnimationsController.Instance.WaitForAnimations();
     }

@@ -1,12 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class Inventory : PersistentSingletonBehaviour<Inventory>, IEventListener<CombatEndedEvent>
 {
-    private Dictionary<Item, int> _inventory;
+    [SerializeField]
+    private Item[] _startingItems;
+
+    private Dictionary<Item, int> _inventory = new();
 
     public float Money { get; private set; }
+
+    private void Awake()
+    {
+        _inventory = _startingItems.ToDictionary(item => item, _ => 1);
+    }
 
     public void Add(Item item, int count)
     {
@@ -50,10 +59,10 @@ public class Inventory : PersistentSingletonBehaviour<Inventory>, IEventListener
         Money += amount;
     }
 
-    public IEnumerable<InventorySlot> GetInventory<T>(SortMode sortMode = SortMode.Name, bool ascending = true) where T : Item
+    public IEnumerable<InventorySlot<TItem>> GetInventory<TItem>(SortMode sortMode = SortMode.Name, bool ascending = true) where TItem : Item
     {
         var category = _inventory
-            .Where(kvp => kvp.Key is T);
+            .Where(kvp => kvp.Key is TItem);
 
         var filtered = sortMode switch
         {
@@ -63,8 +72,10 @@ public class Inventory : PersistentSingletonBehaviour<Inventory>, IEventListener
             _ => throw new ArgumentOutOfRangeException(nameof(sortMode), sortMode, null)
         };
 
-        return filtered.Select(kvp => new InventorySlot(kvp.Key, kvp.Value));
+        return filtered.Select(kvp => new InventorySlot<TItem>((TItem)kvp.Key, kvp.Value));
     }
+
+    public int GetItemCount(Item item) => _inventory[item];
 
     public void Handle(CombatEndedEvent @event)
     {
@@ -87,18 +98,18 @@ public class Inventory : PersistentSingletonBehaviour<Inventory>, IEventListener
     }
 }
 
-public class InventorySlot
+public class InventorySlot<TItem> where TItem : Item
 {
-    public readonly Item Item;
+    public readonly TItem Item;
     public readonly int Count;
 
-    public InventorySlot(Item item, int count)
+    public InventorySlot(TItem item, int count)
     {
         Item = item;
         Count = count;
     }
 
-    public InventorySlot(Item item)
+    public InventorySlot(TItem item)
     {
         Item = item;
         Count = 1;
@@ -106,7 +117,7 @@ public class InventorySlot
 
     public override bool Equals(object obj)
     {
-        if (obj is not InventorySlot slot || this is null)
+        if (obj is not InventorySlot<TItem> slot || this is null)
         {
             return false;
         }

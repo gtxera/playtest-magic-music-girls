@@ -18,6 +18,8 @@ public abstract class Item : ScriptableObject
 
     public float SellValue => Value * 0.2f;
 
+    public abstract void Use(Character character);
+
     public override bool Equals(object other)
     {
         if (other is not Item item || ReferenceEquals(this, null))
