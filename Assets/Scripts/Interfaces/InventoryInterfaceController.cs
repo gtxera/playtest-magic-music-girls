@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +11,8 @@ public class InventoryInterfaceController : MonoBehaviour
     [SerializeField] Button characterButton;
     [SerializeField] GameObject abilityTreeScreen;
     [SerializeField] Button abilityTreeButton;
+    [SerializeField] GameObject collectionScreen;
+    [SerializeField] Button collectionButton;
 
     [Header("Inventory Screen Elements")]
     [SerializeField] GameObject allItemsPanel;
@@ -52,6 +53,11 @@ public class InventoryInterfaceController : MonoBehaviour
     [SerializeField] Image itemsPanelFrame;
     [SerializeField] Image charSelectionFrame;
 
+    [Header("Collection Screen Elements")]
+    [SerializeField] TextMeshProUGUI comboDescriptionTxt;
+    [SerializeField] GameObject comboDescPrefab;
+    [SerializeField] Transform combosLocation;
+
 
 
 
@@ -72,6 +78,8 @@ public class InventoryInterfaceController : MonoBehaviour
         characterButton.interactable = index != 1;
         abilityTreeScreen.SetActive(index == 2);
         abilityTreeButton.interactable = index != 2;
+        collectionScreen.SetActive(index == 3);
+        collectionButton.interactable= index != 3;
     }
     #endregion
 
@@ -149,4 +157,15 @@ public class InventoryInterfaceController : MonoBehaviour
     }
     #endregion
 
+    #region CollectionSettings
+    public void ChangeComboDescription(string _comboDescription)
+    {
+        comboDescriptionTxt.text = _comboDescription;
+    }
+
+    public void UpdateCombosContent()
+    {
+
+    }
+    #endregion
 }
