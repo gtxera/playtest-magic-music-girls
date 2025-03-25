@@ -53,6 +53,10 @@ public class InventoryInterfaceController : MonoBehaviour
     [SerializeField] Image itemsPanelFrame;
     [SerializeField] Image charSelectionFrame;
 
+    [Header("Ability Tree Elements")]
+    [SerializeField] TextMeshProUGUI abilityDescriptionTxt;
+    [SerializeField] GameObject abilityDescContent;
+
     [Header("Collection Screen Elements")]
     [SerializeField] TextMeshProUGUI comboDescriptionTxt;
     [SerializeField] GameObject comboDescPrefab;
@@ -168,4 +172,10 @@ public class InventoryInterfaceController : MonoBehaviour
 
     }
     #endregion
+
+    public void UpdateAbilityDescription(string _comboAbilityDescription, bool _activeContent)
+    {
+        abilityDescContent.SetActive(_activeContent);
+        abilityDescriptionTxt.text = _comboAbilityDescription;
+    }
 }
