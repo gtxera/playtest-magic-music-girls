@@ -63,19 +63,19 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         Health.Revived -= OnRevived;
     }
 
-    public virtual void DealDamage(Unit target, float initialDamage)
+    public virtual float DealDamage(Unit target, float initialDamage)
     {
-        Debug.Log(Character.DealDamage(target.Character, initialDamage));
+        return Character.DealDamage(target.Character, initialDamage);
     }
 
-    public virtual void Heal(float heal)
+    public virtual float Heal(Unit target, float heal)
     {
-        Character.Heal(heal);
+        return Character.HealOhter(target.Character, heal);
     }
 
-    public virtual void AddModifier(Modifier modifier)
+    public virtual void AddModifier(Unit target, Modifier modifier)
     {
-        Character.AddModifier(modifier);
+        target.Character.AddModifier(modifier);
     }
 
     public IEnumerable<SkillCooldown> GetSkillsCooldowns() => _skillCooldowns.GetSkills();
@@ -202,7 +202,12 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
 
     public void UseSkill(Skill skill)
     {
-        _skillCooldowns.GetCooldown(skill).Use();
+        if (!skill.IsEvolvedSkill)
+            _skillCooldowns.GetCooldown(skill).Use();
+        else
+        {
+            CombatManager.Instance.ComboManager.GenerateEmotion(skill.ComboEmotion);
+        }
     }
 
     private void OnHealthChanged(HealthChangedEventArgs args) => HealthChanged.Invoke(args);

@@ -19,6 +19,6 @@ public class ReviveItem : ConsumableItem
 
     protected override void Execute(Unit unit, Unit target)
     {
-        target.Heal(_healthOnRevive);
+        unit.Heal(target, _healthOnRevive);
     }
 }

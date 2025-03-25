@@ -19,6 +19,6 @@ public class HealingItem : ConsumableItem
 
     protected override void Execute(Unit unit, Unit target)
     {
-        target.Heal(_healingAmount);
+        unit.Heal(target, _healingAmount);
     }
 }

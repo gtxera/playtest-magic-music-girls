@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class CombatManager : SingletonBehaviour<CombatManager>
 {
@@ -18,6 +18,8 @@ public class CombatManager : SingletonBehaviour<CombatManager>
     private CombatTurnManager _combatTurnManager = new();
 
     private EncounterData _encounterData;
+
+    public CombatComboManager ComboManager { get; private set; } = new();
 
     public IEnumerable<Unit> Units => _enemyUnits.Select(e => e as Unit).Concat(_partyUnits.Select(p => p as Unit));
 
@@ -40,7 +42,9 @@ public class CombatManager : SingletonBehaviour<CombatManager>
         
         _encounterData = encounterData;
         _encounterStarter = encounterStarter;
-        
+
+        ComboManager = new CombatComboManager();
+
         foreach (var enemyUnitPrefab in encounterData.Enemies)
         {
             var freePosition = _enemyPositions.First(x => !x.IsOccupied);
@@ -85,8 +89,31 @@ public class CombatManager : SingletonBehaviour<CombatManager>
             NotifyCombatEnded(playerVictory);
         }
 
+        await HandleCombo(action.Unit);
+
+        if (CheckCombatEnded(out playerVictory))
+        {
+            await UniTask.SwitchToMainThread();
+            NotifyCombatEnded(playerVictory);
+        }
+
         else
             _combatTurnManager.NextTurn();
+    }
+
+    private async UniTask HandleCombo(Unit unit)
+    {
+        if (unit.GetType() != typeof(PartyUnit))
+            return;
+
+        if (!ComboManager.HasComboReady(out var combo))
+            return;
+
+        if (!CombatTargetSelector.Instance.TryStartSelection(combo.Skill, unit))
+            return;
+
+        CombatTargetSelector.Instance.AutoSelect(combo.Skill.TargetSelectionStrategy);
+        await CombatTargetSelector.Instance.ConfirmSelection();
     }
 
     public void SkipTurn()

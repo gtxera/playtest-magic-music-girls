@@ -63,7 +63,7 @@ public abstract class Modifier
         if (Duration <= 0)
             return false;
 
-        return _turnOfCreation + Duration >= currentTurn && unit == _holder;
+        return (_turnOfCreation + Duration >= currentTurn && unit == _holder) || _holder.IsDead;
     }
     
     public override bool Equals(object obj)

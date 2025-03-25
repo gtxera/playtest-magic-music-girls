@@ -44,6 +44,12 @@ public abstract class Skill : ScriptableObject, ICombatCommand
 
     public string Name => BaseName;
 
+    [field: SerializeField]
+    public ComboEmotion ComboEmotion { get; private set; }
+
+    [field: SerializeField]
+    public bool IsEvolvedSkill { get; private set; }
+
     public virtual string GetDescription() => _baseDescription;
 
     public float GetScaledValue(Stats stats)
@@ -59,7 +65,7 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     }
 
     public void Execute(Unit unit, IEnumerable<Unit> targets)
-    {        
+    {   
         var targetsArray = targets as Unit[] ?? targets.ToArray();
         var targetsCount = targetsArray.Length;
         if (targetsCount > MaxTargets)
@@ -74,7 +80,7 @@ public abstract class Skill : ScriptableObject, ICombatCommand
         }
     }
 
-    public abstract void ExecuteForTarget(Unit unit, Unit target);
+    protected abstract void ExecuteForTarget(Unit unit, Unit target);
 }
 
 public enum TargetType

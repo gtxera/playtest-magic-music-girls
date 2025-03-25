@@ -8,6 +8,8 @@ public class CombatAction
     private readonly IEnumerable<Unit> _targets;
     private readonly ICombatCommand _command;
 
+    public Unit Unit => _unit;
+
     public CombatAction(Unit unit, IEnumerable<Unit> targets, ICombatCommand command)
     {
         _unit = unit;

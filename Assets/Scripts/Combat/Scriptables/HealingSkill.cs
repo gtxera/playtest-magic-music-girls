@@ -12,6 +12,6 @@ public class HealingSkill : Skill
 
     public override void ExecuteForTarget(Unit unit, Unit target)
     {
-        target.Heal(GetScaledValue(unit.Stats));
+        unit.Heal(target, GetScaledValue(unit.Stats));
     }
 }

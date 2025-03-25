@@ -15,7 +15,7 @@ public class PartyUnit : Unit
         Character = Party.Instance.GetFromData(_characterData);
         
         if (IsDead)
-            Heal(5);
+            Character.HealRaw(5);
     }
     
     protected override UniTask OnUnitTurn()

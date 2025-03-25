@@ -1,10 +1,14 @@
+using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public abstract class Character
 {
     private readonly DamageMitigator _damageMitigator;
     private readonly DamageDealer _damageDealer;
+    private readonly HealingDealer _healingDealer;
+    private readonly HealingReceiver _healingReceiver;
     
     protected Character(CharacterData characterData)
     {
@@ -15,6 +19,8 @@ public abstract class Character
 
         _damageMitigator = new DamageMitigator(Stats);
         _damageDealer = new DamageDealer(Stats);
+        _healingDealer = new HealingDealer(Stats);
+        _healingReceiver = new HealingReceiver(Stats);
     }
 
     public CharacterData CharacterData { get; }
@@ -40,13 +46,26 @@ public abstract class Character
         Health.Damage(damage);
     }
 
-    public void Heal(float heal)
+    public float HealOhter(Character target, float initialHeal)
+    {
+        return target.Heal(_healingDealer.CalculateHeal(initialHeal));
+    }
+
+    public float Heal(float heal)
+    {
+        var actualHeal = _healingReceiver.CalculateHeal(heal);
+        Health.Heal(actualHeal);
+        return actualHeal;
+    }
+
+    public void HealRaw(float heal)
     {
         Health.Heal(heal);
     }
 
     public void AddModifier(Modifier modifier)
     {
+        float baseValue;
         switch (modifier)
         {
             case StatModifier statModifier:
@@ -61,9 +80,12 @@ public abstract class Character
                 _damageMitigator.AddModifier(damageMitigatorModifier);
                 break;
             
-            default:
-                Debug.LogError("Tipo de modificador nao implementado");
+            case HealingDealerModifier healingModifier:
+                _healingDealer.AddModifier(healingModifier);
                 break;
+
+            default:
+                throw new NotImplementedException("Modificador nao implementado");
         }
     }
 
