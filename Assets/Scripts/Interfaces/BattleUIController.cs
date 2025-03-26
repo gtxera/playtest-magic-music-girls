@@ -20,6 +20,7 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     [SerializeField] GameObject backBtn;
     [SerializeField] TextMeshProUGUI descriptionTxt;
     [SerializeField] Image characterPortrait;
+    [SerializeField] Button upgradeAbilityBtn;
 
     [SerializeField]
     private Button _skipButton;
