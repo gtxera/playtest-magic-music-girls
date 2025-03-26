@@ -7,6 +7,8 @@ public class ComboTreeBtn : MonoBehaviour
 
     [SerializeField] string description;
 
+    private bool picked;
+
     private InventoryInterfaceController inventoryController;
 
     private Button self;
@@ -19,24 +21,27 @@ public class ComboTreeBtn : MonoBehaviour
 
     public void MouseEnterBtn()
     {
-        if (self.interactable == false) return;
+        if (picked) return;
         inventoryController.UpdateAbilityDescription(description, true);
     }
 
     public void MouseLeaveBtn()
     {
-        if (self.interactable == false) return;
+        if (picked) return;
         inventoryController.UpdateAbilityDescription(description, false);
     }
 
     public void ChooseAbility()
     {
-        for (int i = 0; i < nextBtns.Length; i++)
-        {
-            nextBtns[i].interactable = true;
+        if ( nextBtns != null)
+        {   
+            for (int i = 0; i < nextBtns.Length; i++)
+            {
+                nextBtns[i].interactable = true;
+            }
         }
         self.interactable = false;
-
+        picked = true;
         inventoryController.UpdateAbilityDescription(description, false);
     }
 }
