@@ -19,8 +19,10 @@ MonoBehaviour:
   _baseScalings:
   - <Stat>k__BackingField: 1
     <Scaling>k__BackingField: 0.5
-  <EvolvedSkill>k__BackingField: {fileID: 0}
+  <EvolvedSkill>k__BackingField: {fileID: 11400000, guid: 5fc587ef29931874aa8690a6dbc1f45f, type: 2}
   <CooldownInTurns>k__BackingField: 3
   <PriorityType>k__BackingField: 0
   <Priority>k__BackingField: 0
   <TargetSelectionStrategy>k__BackingField: {fileID: 0}
+  <ComboEmotion>k__BackingField: 0
+  <IsEvolvedSkill>k__BackingField: 0

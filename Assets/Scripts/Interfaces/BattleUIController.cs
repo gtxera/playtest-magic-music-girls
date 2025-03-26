@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -88,6 +89,9 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     [SerializeField]
     private TextMeshProUGUI _victoryText;
 
+    public event Action<bool> EvolvedStateChanged = delegate { };
+    private bool _evolvedState;
+
     private void Awake()
     {
         EventBus.Instance.Subscribe(this);
@@ -110,6 +114,11 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         {
             SceneManager.LoadScene(0);
             PersistentSingletonBehaviour.ClearAll();
+        });
+        upgradeAbilityBtn.onClick.AddListener(() =>
+        {
+            _evolvedState = !_evolvedState;
+            EvolvedStateChanged.Invoke(_evolvedState);
         });
     }
 
@@ -145,6 +154,7 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         attackSelection.SetActive(panel == CombatPanel.Skills);
         itemsSelection.SetActive(panel == CombatPanel.Items);
         _selectionPanel.SetActive(panel == CombatPanel.Selection);
+        ShowEnergyButton();
     }
 
     public void ChangeCharacterPortrait(Sprite newImage)
@@ -226,6 +236,7 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         if (!isAllyTurn) 
             return;
 
+        _evolvedState = false;
         var unit = (PartyUnit)@event.Next;
         
         descriptionTxt.SetText(string.Empty);
@@ -299,6 +310,11 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         var portrait = Instantiate(portraitObject, RoundOrderContent);
         portrait.GetComponent<Image>().sprite = unit.Icon;
         newPortraitCount++;
+    }
+
+    private void ShowEnergyButton()
+    {
+        upgradeAbilityBtn.gameObject.SetActive(_currentPanel == CombatPanel.Skills && CombatManager.Instance.ComboManager.IsEnergyFull);
     }
 
     public void Handle(CombatEndedEvent @event)

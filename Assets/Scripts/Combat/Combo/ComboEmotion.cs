@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum ComboEmotion
 {
-    Happyness,
+    Happiness,
     Sadness,
     Anger,
     Love

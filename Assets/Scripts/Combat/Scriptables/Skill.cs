@@ -48,7 +48,7 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     public ComboEmotion ComboEmotion { get; private set; }
 
     [field: SerializeField]
-    public bool IsEvolvedSkill { get; private set; }
+    public SkillType SkillType { get; private set; }
 
     public virtual string GetDescription() => _baseDescription;
 
@@ -93,4 +93,11 @@ public enum SkillPriorityType
 {
     ChanceFromPriority,
     UseWhenAvailable
+}
+
+public enum SkillType
+{
+    Normal,
+    Evolved,
+    Combo
 }

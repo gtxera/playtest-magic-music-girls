@@ -112,6 +112,8 @@ public class CombatManager : SingletonBehaviour<CombatManager>
         if (!CombatTargetSelector.Instance.TryStartSelection(combo.Skill, unit))
             return;
 
+        ComboManager.UseCombo(combo);
+
         CombatTargetSelector.Instance.AutoSelect(combo.Skill.TargetSelectionStrategy);
         await UniTask.WaitForSeconds(1f);
         await CombatTargetSelector.Instance.ConfirmSelection();

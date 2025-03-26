@@ -22,7 +22,7 @@ public class Combo : ScriptableObject
 
     private Dictionary<ComboEmotion, int> _comboDictionary;
 
-    private IReadOnlyDictionary<ComboEmotion, int> ComboDefinition
+    public IReadOnlyDictionary<ComboEmotion, int> ComboDefinition
     {
         get
         {

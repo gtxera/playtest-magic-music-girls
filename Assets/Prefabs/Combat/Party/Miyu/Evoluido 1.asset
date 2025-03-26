@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75dfa72fd46a6a931755349153ad9, type: 3}
-  m_Name: Baquetada
+  m_Name: Evoluido 1
   m_EditorClassIdentifier: 
-  <BaseName>k__BackingField: Baquetada
+  <BaseName>k__BackingField: Evoluido 1
   _baseDescription: 
-  <BaseValue>k__BackingField: 100
+  <BaseValue>k__BackingField: 5
   <MaxTargets>k__BackingField: 1
   _baseScalings: []
   <EvolvedSkill>k__BackingField: {fileID: 0}
   <CooldownInTurns>k__BackingField: 0
   <PriorityType>k__BackingField: 0
-  <Priority>k__BackingField: 0
+  <Priority>k__BackingField: 1
   <TargetSelectionStrategy>k__BackingField: {fileID: 0}
-  <ComboEmotion>k__BackingField: 0
-  <IsEvolvedSkill>k__BackingField: 0
+  <ComboEmotion>k__BackingField: 3
+  <IsEvolvedSkill>k__BackingField: 1

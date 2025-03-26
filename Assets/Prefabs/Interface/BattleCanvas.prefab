@@ -2516,6 +2516,7 @@ RectTransform:
   - {fileID: 1667162226825952138}
   - {fileID: 1247592715023901580}
   - {fileID: 7680022362381656720}
+  - {fileID: 4581050717940661436}
   m_Father: {fileID: 3427799555603185733}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3017,7 +3018,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4581050717940661436}
   - {fileID: 1777196519599520961}
   - {fileID: 8414693892316275427}
   - {fileID: 3417637284343905325}
@@ -5400,7 +5400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4581050717940661436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5415,13 +5415,13 @@ RectTransform:
   m_Children:
   - {fileID: 1048742807625645640}
   - {fileID: 8636188475235002192}
-  m_Father: {fileID: 3598613052932437886}
+  m_Father: {fileID: 8033002725695288720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.35731256, y: 0.26200002}
-  m_AnchorMax: {x: 0.4621875, y: 0.30848145}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 80}
+  m_SizeDelta: {x: 201.43497, y: 42.20517}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5291345732974217472
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5503,19 +5503,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7767082200712374917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6304294723024486409}
-        m_TargetAssemblyTypeName: BattleUIController, Assembly-CSharp
-        m_MethodName: ChangeOptionsPanel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &8743132461776533835
 MonoBehaviour:
   m_ObjectHideFlags: 0

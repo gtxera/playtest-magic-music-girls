@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2976357a220267d45ba8d5b56388488f, type: 3}
+  m_Name: Super Dano
+  m_EditorClassIdentifier: 
+  _firstEmotion: 0
+  _secondEmotion: 1
+  _thirdEmotion: 2
+  _fourthEmotion: 3
+  <Skill>k__BackingField: {fileID: 11400000, guid: 8802e819ab6f1b9499df6102dc2d6861, type: 2}

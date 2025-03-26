@@ -202,11 +202,16 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
 
     public void UseSkill(Skill skill)
     {
-        if (!skill.IsEvolvedSkill)
-            _skillCooldowns.GetCooldown(skill).Use();
-        else
+        switch (skill.SkillType)
         {
-            CombatManager.Instance.ComboManager.GenerateEmotion(skill.ComboEmotion);
+            case SkillType.Normal:
+                _skillCooldowns.GetCooldown(skill).Use();
+                break;
+            case SkillType.Evolved:
+                CombatManager.Instance.ComboManager.GenerateEmotion(skill.ComboEmotion);
+                break;
+            case SkillType.Combo:
+                break;
         }
     }
 
