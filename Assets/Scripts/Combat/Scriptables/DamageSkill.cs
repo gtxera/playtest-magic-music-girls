@@ -10,7 +10,7 @@ public class DamageSkill : Skill
 
     public override SelectionFlags ForbiddenFlags => 0;
 
-    public override void ExecuteForTarget(Unit unit, Unit target)
+    protected override void ExecuteForTarget(Unit unit, Unit target)
     {
         unit.DealDamage(target, GetScaledValue(unit.Stats));
     }

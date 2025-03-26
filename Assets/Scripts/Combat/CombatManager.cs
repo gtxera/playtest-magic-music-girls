@@ -113,6 +113,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
             return;
 
         CombatTargetSelector.Instance.AutoSelect(combo.Skill.TargetSelectionStrategy);
+        await UniTask.WaitForSeconds(1f);
         await CombatTargetSelector.Instance.ConfirmSelection();
     }
 

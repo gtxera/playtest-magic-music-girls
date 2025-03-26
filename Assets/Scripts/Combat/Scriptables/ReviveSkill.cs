@@ -10,7 +10,7 @@ public class ReviveSkill : Skill
 
     public override SelectionFlags ForbiddenFlags => SelectionFlags.Alive;
 
-    public override void ExecuteForTarget(Unit unit, Unit target)
+    protected override void ExecuteForTarget(Unit unit, Unit target)
     {
         unit.Heal(target, GetScaledValue(unit.Stats));
     }

@@ -16,7 +16,7 @@ public class ModifierSkill : Skill
     [SerializeReference]
     private Modifier _modifier;
 
-    public override void ExecuteForTarget(Unit unit, Unit target)
+    protected override void ExecuteForTarget(Unit unit, Unit target)
     {
         unit.AddModifier(target, _modifier.CreateCopy(BaseName, GetScaledValue(unit.Stats), unit, target, CombatManager.Instance.CurrentTurn));
     }

@@ -10,7 +10,7 @@ public class HealingSkill : Skill
 
     public override SelectionFlags ForbiddenFlags => SelectionFlags.FullHealth;
 
-    public override void ExecuteForTarget(Unit unit, Unit target)
+    protected override void ExecuteForTarget(Unit unit, Unit target)
     {
         unit.Heal(target, GetScaledValue(unit.Stats));
     }
