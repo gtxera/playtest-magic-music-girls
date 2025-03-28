@@ -1,6 +1,7 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EmotionComboIndicator : MonoBehaviour
 {
@@ -20,12 +21,13 @@ public class EmotionComboIndicator : MonoBehaviour
     public void Initialize(ComboEmotion emotion)
     {
         Emotion = emotion;
-        transform.DOScale(Vector3.one, _popInDuration).SetEase(Ease.InOutBounce);
+        transform.DOScale(Vector3.one, _popInDuration).SetEase(Ease.OutElastic);
+        GetComponent<Image>().sprite = EmotionIcons.Instance.GetEmotionIcon(Emotion);
     }
 
     public void Remove(Action endAnimationCallback)
     {
-        var tween = transform.DOScale(Vector3.zero, _popInDuration).SetEase(Ease.InOutBounce);
+        var tween = transform.DOScale(Vector3.zero, _popOutDuration).SetEase(Ease.InElastic);
         tween.onComplete += endAnimationCallback.Invoke;
     }
 }

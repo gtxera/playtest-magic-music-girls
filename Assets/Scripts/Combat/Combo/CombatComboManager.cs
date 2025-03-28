@@ -8,9 +8,9 @@ public class CombatComboManager
     private Dictionary<ComboEmotion, int> _emotions = new()
     {
         {ComboEmotion.Happiness, 0},
-        {ComboEmotion.Love, 0},
-        {ComboEmotion.Anger, 0},
-        {ComboEmotion.Sadness, 0}
+        {ComboEmotion.Love, 1},
+        {ComboEmotion.Anger, 1},
+        {ComboEmotion.Sadness, 1}
     };
 
     private float _energy = 1f;
@@ -45,7 +45,10 @@ public class CombatComboManager
     public void UseCombo(Combo combo)
     {
         _rollbackPoint = new Dictionary<ComboEmotion, int>(_emotions);
-        _emotions = _emotions.Except(combo.ComboDefinition).ToDictionary(x => x.Key, x => x.Value);
+
+        foreach (var kvp in combo.ComboDefinition)
+            _emotions[kvp.Key] -= kvp.Value;
+        
         EmotionsChanged.Invoke(_emotions);
     }
 

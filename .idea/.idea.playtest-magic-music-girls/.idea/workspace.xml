@@ -5,45 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4c57ee-39ac-4ba5-ac9e-9c0dad4f2d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Events/CharacterRemovedFromPartyEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Events/CharacterRemovedFromPartyEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Skills/SkillSelection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Skills/SkillSelection.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Events/CombatStartedEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Events/CombatStartedEvent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.playtest-magic-music-girls/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.playtest-magic-music-girls/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/CharacterRoundOrderImage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/CharacterRoundOrderImage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Akane/Akane.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Akane/Akane.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Akane/Evoluido.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Akane/Evoluido.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Evoluido.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Evoluido.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Lyra.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Lyra.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Miyu/Evoluido 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Miyu/Evoluido 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Miyu/Evoluido.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Miyu/Evoluido.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Enemies/Bats/Blue Bat/Blue Bat.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Enemies/Bats/Blue Bat/Blue Bat.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Enemies/Bats/Red Bat/Red Bat.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Enemies/Bats/Red Bat/Red Bat.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Enemies/Bats/Yellow Bat/Yellow Bat.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Enemies/Bats/Yellow Bat/Yellow Bat.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Miyu/Miyu.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Miyu/Miyu.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interface/BattleCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interface/BattleCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestScenes/SceneB.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestScenes/SceneB.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/EnemyCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/EnemyCharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/EnemyCharacterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/EnemyCharacterData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Events/LevelGainedEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Events/LevelGainedEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Party.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Party.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PartyCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PartyCharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PartyCharacterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PartyCharacterData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Skills/SkillsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Skills/SkillsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatAnimationsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatAnimationsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Combo/CombatComboManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Combo/CombatComboManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/EnemyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/EnemyUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/PartyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/PartyUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/DamageSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/DamageSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealingSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/HealingSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ModifierSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ModifierSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ReviveSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ReviveSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/Skill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitHealthIndicador.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitHealthIndicador.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/SuperDano.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/SuperDano.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/BattleUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/BattleUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/EmotionComboIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/EmotionComboIndicator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +148,7 @@
       <workItem from="1742433911870" duration="5946000" />
       <workItem from="1742479521450" duration="13744000" />
       <workItem from="1742512691172" duration="14419000" />
-      <workItem from="1743174000768" duration="9790000" />
+      <workItem from="1743174000768" duration="11386000" />
     </task>
     <servers />
   </component>
@@ -218,6 +192,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Interfaces/BattleUIController.cs</url>
+          <line>357</line>
+          <properties documentPath="C:\Users\gabri\OneDrive\Documentos\Unity Projects\playtest-magic-music-girls\Assets\Scripts\Interfaces\BattleUIController.cs" containingFunctionPresentation="Method 'OnEmotionsChanged'">
+            <startOffsets>
+              <option value="10426" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10506" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -20,10 +20,10 @@ MonoBehaviour:
     <Endurance>k__BackingField: 5
     <Tempo>k__BackingField: 6
     <Health>k__BackingField: 20
-  Skills:
-  - {fileID: 11400000, guid: 94eb6c96727b67946b4b69f6de7e63ea, type: 2}
-  - {fileID: 11400000, guid: 4af4a9d38014bc3458118eeb91d6ac5e, type: 2}
-  - {fileID: 11400000, guid: da361a330dddfd94f838da783061a88f, type: 2}
   <Level>k__BackingField: 0
   <ExperienceReward>k__BackingField: 10
   <MoneyReward>k__BackingField: 5
+  _skills:
+  - {fileID: 11400000, guid: 94eb6c96727b67946b4b69f6de7e63ea, type: 2}
+  - {fileID: 11400000, guid: da361a330dddfd94f838da783061a88f, type: 2}
+  - {fileID: 11400000, guid: 4af4a9d38014bc3458118eeb91d6ac5e, type: 2}

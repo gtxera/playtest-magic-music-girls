@@ -30,6 +30,8 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
     private Component _encounterStarter;
 
+    private bool _combatEnded;
+
     public void StartCombat(EncounterData encounterData, Component encounterStarter)
     {
         LevelRoot.Instance.Disable();
@@ -39,6 +41,8 @@ public class CombatManager : SingletonBehaviour<CombatManager>
         gameObject.SetActive(true);
         
         Input.Instance.SetInputContext(InputContext.Combat);
+        
+        EventBus.Instance.Publish(new CombatStartedEvent());
         
         _encounterData = encounterData;
         _encounterStarter = encounterStarter;
@@ -89,13 +93,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
         await HandleCombo(action.Unit);
 
-        if (CheckCombatEnded(out playerVictory))
-        {
-            await UniTask.SwitchToMainThread();
-            NotifyCombatEnded(playerVictory);
-        }
-
-        else
+        if (!_combatEnded)
             _combatTurnManager.NextTurn();
     }
 
@@ -132,6 +130,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
     private void NotifyCombatEnded(bool playerVictory)
     {
+        _combatEnded = true;
         EventBus.Instance.Publish(new CombatEndedEvent(playerVictory, GetExperienceReward(), GetMoneyReward(), _encounterStarter, GetLoot()));
     }
 
@@ -169,6 +168,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
         _encounterData = null;
         _encounterStarter = null;
         ComboManager = new CombatComboManager();
+        _combatEnded = false;
     }
 
     private float GetExperienceReward()

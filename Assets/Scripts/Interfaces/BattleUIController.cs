@@ -9,7 +9,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class BattleUIController : MonoBehaviour, IEventListener<SelectionChangedEvent>, IEventListener<CombatTurnPassedEvent>, IEventListener<CombatEndedEvent>
+public class BattleUIController : MonoBehaviour, 
+    IEventListener<SelectionChangedEvent>,
+    IEventListener<CombatTurnPassedEvent>,
+    IEventListener<CombatEndedEvent>,
+    IEventListener<CombatStartedEvent>
 {
     [Header("UI Variables")]
     [SerializeField]
@@ -132,9 +136,6 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
             _evolvedState = !_evolvedState;
             EvolvedStateChanged.Invoke(_evolvedState);
         });
-
-        combatManager.ComboManager.EmotionsChanged += OnEmotionsChanged;
-        combatManager.ComboManager.EnergyChanged += OnEnergyChanged;
     }
 
     #region Options Update Methods
@@ -346,7 +347,7 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
 
     private void OnEnergyChanged(float energy)
     {
-        energyBar.DOValue(energy, _energyAnimationDuration).SetEase(Ease.OutExpo);
+        energyBar.DOValue(energy, _energyAnimationDuration).SetEase(Ease.OutCirc);
         CombatAnimationsController.Instance.AddAnimation(_energyAnimationDuration);
     }
 
@@ -378,6 +379,14 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
                 }
             }
         }
+    }
+
+    public void Handle(CombatStartedEvent @event)
+    {
+        _emotionIndicatorContent.DestroyAllChildren();
+        
+        CombatManager.Instance.ComboManager.EmotionsChanged += OnEmotionsChanged;
+        CombatManager.Instance.ComboManager.EnergyChanged += OnEnergyChanged;
     }
 }
 
