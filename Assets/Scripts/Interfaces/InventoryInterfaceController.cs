@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryInterfaceController : MonoBehaviour
+public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfaceController>
 {
     [Header("General Interface Elements")]
     [SerializeField] GameObject inventoryScreen;
@@ -55,6 +55,7 @@ public class InventoryInterfaceController : MonoBehaviour
 
     [Header("Ability Tree Elements")]
     [SerializeField] TextMeshProUGUI abilityDescriptionTxt;
+    [SerializeField] TextMeshProUGUI abilityNameText;
     [SerializeField] GameObject abilityDescContent;
 
     [Header("Collection Screen Elements")]
@@ -173,9 +174,15 @@ public class InventoryInterfaceController : MonoBehaviour
     }
     #endregion
 
-    public void UpdateAbilityDescription(string _comboAbilityDescription, bool _activeContent)
+    public void ShowAbilityDescription(string skillDescription, string skillName)
     {
-        abilityDescContent.SetActive(_activeContent);
-        abilityDescriptionTxt.text = _comboAbilityDescription;
+        abilityDescContent.SetActive(true);
+        abilityDescriptionTxt.text = skillDescription;
+        abilityNameText.SetText(skillName);
+    }
+
+    public void HideAbilityDescription()
+    {
+        abilityDescContent.SetActive(false);
     }
 }

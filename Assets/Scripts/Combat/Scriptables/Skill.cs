@@ -11,7 +11,7 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     public string BaseName { get; private set; }
 
     [field: SerializeField]
-    public string _baseDescription;
+    private string _baseDescription;
     
     [field: SerializeField]
     public float BaseValue { get; private set; }
@@ -30,6 +30,9 @@ public abstract class Skill : ScriptableObject, ICombatCommand
 
     [field: SerializeField] 
     public int Priority { get; private set; } = 1;
+
+    [field: SerializeField]
+    public Sprite Icon { get; private set; }
     
     public abstract TargetType TargetType { get; }
 

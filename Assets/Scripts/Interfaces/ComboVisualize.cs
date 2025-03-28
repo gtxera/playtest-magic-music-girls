@@ -3,32 +3,24 @@ using UnityEngine.UI;
 
 public class ComboVisualize : MonoBehaviour
 {
-    [SerializeField] string description;
+    [SerializeField] Image[] _images;
 
-    [SerializeField] Sprite emotionIcon1;
-    [SerializeField] Sprite emotionIcon2;
-    [SerializeField] Sprite emotionIcon3;
-    [SerializeField] Sprite emotionIcon4;
+    private Combo _combo;
 
-    [SerializeField] Image image1;
-    [SerializeField] Image image2;
-    [SerializeField] Image image3;
-    [SerializeField] Image image4;
-
-    public InventoryInterfaceController inventory;
-
-    private void Awake()
+    public void Initialize(Combo combo)
     {
-        inventory = FindObjectOfType<InventoryInterfaceController>();
-
-        image1.sprite = emotionIcon1;
-        image2.sprite = emotionIcon2;
-        image3.sprite = emotionIcon3;
-        image4.sprite = emotionIcon4;
+        _combo = combo;
+        var index = 0;
+        foreach (var kvp in combo.ComboDefinition)
+        {
+            var sum = index + kvp.Value;
+            for (var i = index; index < sum; i++)
+                _images[i].sprite = EmotionIcons.Instance.GetEmotionIcon(kvp.Key);
+        }
     }
 
     public void ChangeDescription()
     {
-        inventory.ChangeComboDescription(description);
+        InventoryInterfaceController.Instance.ChangeComboDescription(_combo.Description);
     }
 }

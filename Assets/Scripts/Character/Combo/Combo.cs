@@ -20,6 +20,10 @@ public class Combo : ScriptableObject
     [field: SerializeField]
     public Skill Skill { get; private set; }
 
+    public string Name => Skill.Name;
+    public string Description => Skill.GetDescription();
+    public Sprite Icon => Skill.Icon;
+
     private Dictionary<ComboEmotion, int> _comboDictionary;
 
     public IReadOnlyDictionary<ComboEmotion, int> ComboDefinition

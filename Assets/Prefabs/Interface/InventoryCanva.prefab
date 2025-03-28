@@ -8111,6 +8111,7 @@ MonoBehaviour:
   itemsPanelFrame: {fileID: 5322121920931839413}
   charSelectionFrame: {fileID: 1851615440155171589}
   abilityDescriptionTxt: {fileID: 6875378189474311766}
+  abilityNameText: {fileID: 0}
   abilityDescContent: {fileID: 8169030891824290532}
   comboDescriptionTxt: {fileID: 2558387640016201154}
   comboDescPrefab: {fileID: 35977687154332160, guid: 16f910e7b88913246a5ed40c1b6bb40d, type: 3}
