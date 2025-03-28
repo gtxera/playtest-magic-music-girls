@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,8 +29,17 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
 
     [Header("Energy Bar Controls")]
     [SerializeField] Slider energyBar;
-    [SerializeField] float energyBarSpeed;
-    private float energyValue;
+
+    [SerializeField]
+    private float _energyAnimationDuration;
+
+    [SerializeField]
+    private EmotionComboIndicator _emotionComboIndicatorPrefab;
+
+    [SerializeField]
+    private Transform _emotionIndicatorContent;
+
+    private List<EmotionComboIndicator> _emotionsIndicators = new();
 
     [Header("Round Order Variables")]
     private List<GameObject> portraitsOnRoundOrder;
@@ -95,15 +105,17 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
     private void Awake()
     {
         EventBus.Instance.Subscribe(this);
-        energyBar.maxValue = 100;
-        //energyBar.value = energyBar.maxValue;
+        energyBar.maxValue = 1;
+        energyBar.value = 1;
+
+        var combatManager = CombatManager.Instance;
         
         _cancelButton.onClick.AddListener(CancelSelection);
         _confirmButton.onClick.AddListener(ConfirmSelection);
         
         descriptionTxt.SetText(string.Empty);
         
-        _skipButton.onClick.AddListener(CombatManager.Instance.SkipTurn);
+        _skipButton.onClick.AddListener(combatManager.SkipTurn);
         
         _victoryButton.onClick.AddListener(() =>
         {
@@ -120,19 +132,10 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
             _evolvedState = !_evolvedState;
             EvolvedStateChanged.Invoke(_evolvedState);
         });
-    }
 
-    #region EnergyBar Update Methods
-    public void UpdateEnergyBar(float value)
-    {
-        energyValue = value;
+        combatManager.ComboManager.EmotionsChanged += OnEmotionsChanged;
+        combatManager.ComboManager.EnergyChanged += OnEnergyChanged;
     }
-
-    public void IncrementEnergyBarValue(float value)
-    {
-        energyValue = Mathf.Min(value + energyValue, energyBar.maxValue);
-    }
-    #endregion
 
     #region Options Update Methods
     public void ChangeOptionDescription(string description)
@@ -339,6 +342,42 @@ public class BattleUIController : MonoBehaviour, IEventListener<SelectionChanged
         await UniTask.WaitForSeconds(1f);
         await UniTask.SwitchToMainThread();
         _skillShowerPanel.SetActive(false);
+    }
+
+    private void OnEnergyChanged(float energy)
+    {
+        energyBar.DOValue(energy, _energyAnimationDuration).SetEase(Ease.OutExpo);
+        CombatAnimationsController.Instance.AddAnimation(_energyAnimationDuration);
+    }
+
+    private void OnEmotionsChanged(IReadOnlyDictionary<ComboEmotion, int> emotions)
+    { 
+        foreach (var kvp in emotions)
+        {
+            var indicators = _emotionsIndicators.Where(i => i.Emotion == kvp.Key).ToArray();
+            
+            if (indicators.Length == kvp.Value)
+                continue;
+            if (indicators.Length < kvp.Value)
+            {
+                var difference = kvp.Value - indicators.Length;
+                for (int i = 0; i < difference; i++)
+                {
+                    var indicator = Instantiate(_emotionComboIndicatorPrefab, _emotionIndicatorContent);
+                    indicator.Initialize(kvp.Key);
+                    _emotionsIndicators.Add(indicator);
+                }
+            }
+            else if (indicators.Length > kvp.Value)
+            {
+                var difference = indicators.Length - kvp.Value;
+                foreach (var indicator in indicators.Take(difference))
+                {
+                    _emotionsIndicators.Remove(indicator);
+                    indicator.Remove(() => Destroy(indicator.gameObject));
+                }
+            }
+        }
     }
 }
 

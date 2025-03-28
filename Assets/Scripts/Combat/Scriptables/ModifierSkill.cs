@@ -6,6 +6,9 @@ public class ModifierSkill : Skill
 {
     [SerializeField]
     private TargetType _targetType;
+
+    [SerializeField]
+    private float _energyGenerated;
     
     public override TargetType TargetType => _targetType;
 
@@ -16,9 +19,16 @@ public class ModifierSkill : Skill
     [SerializeReference]
     private Modifier _modifier;
 
-    protected override void ExecuteForTarget(Unit unit, Unit target)
+    protected override float ExecuteForTarget(Unit unit, Unit target)
     {
-        unit.AddModifier(target, _modifier.CreateCopy(BaseName, GetScaledValue(unit.Stats), unit, target, CombatManager.Instance.CurrentTurn));
+        var modifier = _modifier.CreateCopy(
+            BaseName,
+            GetScaledValue(unit.Stats),
+            unit,
+            target,
+            CombatManager.Instance.CurrentTurn);
+        
+        return unit.AddModifier(target, modifier, _energyGenerated);
     }
 
     public override string GetDescription()

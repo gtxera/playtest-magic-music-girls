@@ -20,10 +20,6 @@ MonoBehaviour:
     <Endurance>k__BackingField: 20
     <Tempo>k__BackingField: 5
     <Health>k__BackingField: 100
-  Skills:
-  - {fileID: 11400000, guid: 67311d8d4e8a3104b9b4929acf30570e, type: 2}
-  - {fileID: 11400000, guid: 58efdc1b4b810194e9371f723bab810f, type: 2}
-  - {fileID: 11400000, guid: 5ac0f168b0cbf1149bc8e5c5c7934774, type: 2}
   interfaceBigBackground: {fileID: 0}
   interfaceSmallBackground: {fileID: 0}
   interfaceBigFrame: {fileID: 0}
@@ -38,3 +34,9 @@ MonoBehaviour:
     <Endurance>k__BackingField: 0
     <Tempo>k__BackingField: 0
     <Health>k__BackingField: 0
+  <EnergyGenerationPercentages>k__BackingField:
+    <DamagePercentage>k__BackingField: 1
+    <HealingPercentage>k__BackingField: 1
+    <ModifierPercentage>k__BackingField: 1
+  _startingSkills:
+  - {fileID: 11400000, guid: 67311d8d4e8a3104b9b4929acf30570e, type: 2}

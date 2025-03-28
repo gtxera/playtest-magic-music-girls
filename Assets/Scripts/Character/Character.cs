@@ -101,6 +101,4 @@ public abstract class Character
     {
         return CharacterData.GetHashCode();
     }
-
-    public abstract IEnumerable<Skill> GetSkills();
 }

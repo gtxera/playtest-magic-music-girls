@@ -73,19 +73,17 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         return Character.HealOhter(target.Character, heal);
     }
 
-    public virtual void AddModifier(Unit target, Modifier modifier)
+    public virtual float AddModifier(Unit target, Modifier modifier, float energy)
     {
         target.Character.AddModifier(modifier);
+        return energy;
     }
 
     public IEnumerable<SkillCooldown> GetSkillsCooldowns() => _skillCooldowns.GetSkills();
 
     protected IEnumerable<Skill> GetAvailableSkills() => _skillCooldowns.GetAvailableSkills();
 
-    private IEnumerable<Skill> GetSkills()
-    {
-        return Character.GetSkills();
-    }
+    protected abstract IEnumerable<Skill> GetSkills();
 
     public void Initialize()
     {
@@ -211,8 +209,14 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
                 CombatManager.Instance.ComboManager.GenerateEmotion(skill.ComboEmotion);
                 break;
             case SkillType.Combo:
+            case SkillType.Item:
                 break;
         }
+    }
+
+    public float GetPercentageOfMaxHealth(float value)
+    {
+        return value / Health.MaxHealth;
     }
 
     private void OnHealthChanged(HealthChangedEventArgs args) => HealthChanged.Invoke(args);

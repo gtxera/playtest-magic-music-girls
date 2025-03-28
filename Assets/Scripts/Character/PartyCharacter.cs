@@ -7,8 +7,11 @@ public class PartyCharacter : Character, IEventListener<LevelGainedEvent>
 
     private readonly PartyUnit _partyUnitPrefab;
 
+    public readonly PartyCharacterData PartyCharacterData;
+
     public PartyCharacter(PartyCharacterData characterData, Party party) : base(characterData)
     {
+        PartyCharacterData = characterData;
         _party = party;
         _partyUnitPrefab = characterData.CombatPrefab;
         EventBus.Instance.Subscribe(this);
@@ -18,13 +21,8 @@ public class PartyCharacter : Character, IEventListener<LevelGainedEvent>
 
     public PartyUnit PartyUnitPrefab => _partyUnitPrefab;
 
-    public override IEnumerable<Skill> GetSkills()
-    {
-        return CharacterData.Skills;
-    }
-
     public void Handle(LevelGainedEvent @event)
     {
-        
+        BaseStats.SetForLevel(@event.LevelAfter, CharacterData.BaseStats, PartyCharacterData.StatsGrowth);
     }
 }

@@ -16,6 +16,12 @@ public class EnemyUnit : Unit
     {
         Character = new EnemyCharacter(Data);
     }
+
+    protected override IEnumerable<Skill> GetSkills()
+    {
+        return Data.Skills;
+    }
+
     protected override async UniTask OnUnitTurn()
     {
         await UniTask.WaitForSeconds(1f);

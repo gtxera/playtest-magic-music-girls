@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &36327394893126578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8643770459790619931}
+  - component: {fileID: -5602850960627312690}
+  m_Layer: 0
+  m_Name: EmotionIcons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8643770459790619931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36327394893126578}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5602850960627312690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36327394893126578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9cc6a491ac2ac41967071f3ee1d9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _emotionImages:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 8265776398744803615, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
+    - Key: 1
+      Value: {fileID: -3814250724779180482, guid: c1f29f1703f056d4b988bbfcd0fd4750, type: 3}
+    - Key: 2
+      Value: {fileID: -1991328516684540973, guid: e761612b94dd4e64490b5695e28c6eac, type: 3}
+    - Key: 3
+      Value: {fileID: -2390530264172843182, guid: 92122c1a0b7f99a4b8546e43fb1cd0c0, type: 3}

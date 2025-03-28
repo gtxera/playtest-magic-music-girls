@@ -42,9 +42,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
         
         _encounterData = encounterData;
         _encounterStarter = encounterStarter;
-
-        ComboManager = new CombatComboManager();
-
+        
         foreach (var enemyUnitPrefab in encounterData.Enemies)
         {
             var freePosition = _enemyPositions.First(x => !x.IsOccupied);
@@ -170,6 +168,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
         
         _encounterData = null;
         _encounterStarter = null;
+        ComboManager = new CombatComboManager();
     }
 
     private float GetExperienceReward()

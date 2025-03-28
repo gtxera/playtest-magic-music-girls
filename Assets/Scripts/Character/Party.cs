@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatEndedEvent>
 {
@@ -21,9 +22,9 @@ public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatE
             do
             {
                 level++;
-                experience = LevelCalculator.GetXpRequirementFor(level);
+                experience += LevelCalculator.GetXpRequirementFor(level);
             }
-            while (experience < Experience);
+            while (experience <= Experience);
 
             return level;
         }
@@ -40,11 +41,14 @@ public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatE
     {
         var character = new PartyCharacter(characterData, this);
         _characters.Add(character);
+        EventBus.Instance.Publish(new CharacterAddedToPartyEvent(character));
     }
 
     public void RemoveCharacter(PartyCharacterData characterData)
     {
-        _characters.RemoveWhere(c => c.CharacterData == characterData);
+        var character = GetFromData(characterData);
+        _characters.Remove(character);
+        EventBus.Instance.Publish(new CharacterRemovedFromPartyEvent(character));
     }
 
     public void AddXp(float xp)
@@ -70,11 +74,17 @@ public class Party : PersistentSingletonBehaviour<Party>, IEventListener<CombatE
         AddXp(@event.ExperienceReward);
     }
 
-    private void Start()
+    private void Awake()
     {
         foreach (var data in _initialCharacters)
         {
             AddCharacter(data);
         }
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current[Key.Space].wasPressedThisFrame)
+            AddXp(100);
     }
 }

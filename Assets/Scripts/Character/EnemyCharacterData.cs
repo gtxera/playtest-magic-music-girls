@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyCharacterData", menuName = "Scriptable Objects/EnemyCharacterData")]
@@ -11,4 +12,9 @@ public class EnemyCharacterData : CharacterData
 
     [field: SerializeField]
     public float MoneyReward { get; private set; }
+
+    [SerializeField]
+    private Skill[] _skills;
+
+    public IEnumerable<Skill> Skills => _skills;
 }

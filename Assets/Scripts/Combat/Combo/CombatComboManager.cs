@@ -5,14 +5,20 @@ using UnityEngine;
 
 public class CombatComboManager
 {
-    private Dictionary<ComboEmotion, int> _emotions = new();
+    private Dictionary<ComboEmotion, int> _emotions = new()
+    {
+        {ComboEmotion.Happiness, 0},
+        {ComboEmotion.Love, 0},
+        {ComboEmotion.Anger, 0},
+        {ComboEmotion.Sadness, 0}
+    };
 
-    private float _energy = 100f;
+    private float _energy = 1f;
 
     public event Action<float> EnergyChanged = delegate { };
     public event Action<IReadOnlyDictionary<ComboEmotion, int>> EmotionsChanged = delegate { };
 
-    public bool IsEnergyFull => _energy >= 100f;
+    public bool IsEnergyFull => _energy >= 1f;
 
     private Dictionary<ComboEmotion, int> _rollbackPoint;
 
@@ -25,9 +31,8 @@ public class CombatComboManager
     public void GenerateEmotion(ComboEmotion emotion)
     {
         ConsumeEnergy();
-
-        if (!_emotions.TryAdd(emotion, 1))
-            _emotions[emotion] += 1;
+        
+        _emotions[emotion] += 1;
 
         EmotionsChanged.Invoke(_emotions);
     }

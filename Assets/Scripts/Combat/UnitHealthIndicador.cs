@@ -48,7 +48,7 @@ public class UnitHealthIndicador : MonoBehaviour
                 _healthText.SetText(GetHealthText(animationHealth));
             });
 
-        CombatAnimationsController.Instance.AddAnimation(new CombatAnimation(_healthUpdateDuration));
+        CombatAnimationsController.Instance.AddAnimation(_healthUpdateDuration);
     }
 
     private string GetHealthText(float health) => Mathf.CeilToInt(health).ToString();

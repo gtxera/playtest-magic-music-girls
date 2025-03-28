@@ -73,14 +73,28 @@ public abstract class Skill : ScriptableObject, ICombatCommand
                 $"A habilidade {BaseName} foi chamada com {targetsCount} alvos e possui um maximo de {MaxTargets}");
 
         unit.UseSkill(this);
-        
+
+        var energy = 0f;
         foreach (var target in targetsArray)
         {
-            ExecuteForTarget(unit, target);
+            energy += ExecuteForTarget(unit, target);
         }
+        
+        GenerateEnergy(unit, energy);
     }
 
-    protected abstract void ExecuteForTarget(Unit unit, Unit target);
+    protected abstract float ExecuteForTarget(Unit unit, Unit target);
+
+    private void GenerateEnergy(Unit unit, float energy)
+    {
+        if (unit.GetType() != typeof(PartyUnit))
+            return;
+        
+        if (SkillType is not (SkillType.Normal or SkillType.Item))
+            return;
+        
+        CombatManager.Instance.ComboManager.GenerateEnergy(energy);
+    }
 }
 
 public enum TargetType
@@ -99,5 +113,6 @@ public enum SkillType
 {
     Normal,
     Evolved,
-    Combo
+    Combo,
+    Item
 }

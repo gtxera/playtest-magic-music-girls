@@ -11,9 +11,4 @@ public class EnemyCharacter : Character
     }
 
     public override int Level => _level;
-    
-    public override IEnumerable<Skill> GetSkills()
-    {
-        return CharacterData.Skills;
-    }
 }
