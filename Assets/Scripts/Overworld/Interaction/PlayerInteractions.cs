@@ -25,11 +25,21 @@ public class PlayerInteractions : MonoBehaviour
     private void OnInteract(InputAction.CallbackContext _)
     {
         _interactable?.Interact();
+        _eventBus.Publish(new InteractionOutOfRangeEvent(_interactable));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<Interactable>(out _interactable))
+        if (other.TryGetComponent<Interactable>(out _interactable) && _interactable.CanInteract)
+            _eventBus.Publish(new InteractionInRangeEvent(_interactable));
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (_interactable != null && _interactable.CanInteract)
+            return;
+        
+        if (other.TryGetComponent<Interactable>(out _interactable) && _interactable.CanInteract)
             _eventBus.Publish(new InteractionInRangeEvent(_interactable));
     }
 
