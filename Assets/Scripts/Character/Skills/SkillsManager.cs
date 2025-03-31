@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class SkillsManager : PersistentSingletonBehaviour<SkillsManager>, 
     IEventListener<CharacterAddedToPartyEvent>,
@@ -9,6 +10,8 @@ public class SkillsManager : PersistentSingletonBehaviour<SkillsManager>,
 
     public SkillSelection GetSelection(PartyCharacter character) => _skillStates[character].SkillSelection;
     public IEnumerable<Skill> GetAvailable(PartyCharacter character) => _skillStates[character].AvailableSkills;
+    public int GetSkillPoints(PartyCharacter character) => _skillStates[character].SkillPoints;
+    public bool IsUnlocked(PartyCharacter character, Skill skill) => _skillStates[character].AvailableSkills.Contains(skill);
 
     private void Awake()
     {
