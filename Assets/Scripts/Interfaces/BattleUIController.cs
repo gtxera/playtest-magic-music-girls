@@ -110,7 +110,7 @@ public class BattleUIController : MonoBehaviour,
     {
         EventBus.Instance.Subscribe(this);
         energyBar.maxValue = 1;
-        energyBar.value = 1;
+        energyBar.value = 0;
 
         var combatManager = CombatManager.Instance;
         

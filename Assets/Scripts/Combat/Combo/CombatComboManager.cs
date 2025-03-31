@@ -8,12 +8,12 @@ public class CombatComboManager
     private Dictionary<ComboEmotion, int> _emotions = new()
     {
         {ComboEmotion.Happiness, 0},
-        {ComboEmotion.Love, 1},
-        {ComboEmotion.Anger, 1},
-        {ComboEmotion.Sadness, 1}
+        {ComboEmotion.Love, 0},
+        {ComboEmotion.Anger, 0},
+        {ComboEmotion.Sadness, 0}
     };
 
-    private float _energy = 1f;
+    private float _energy = 0f;
 
     public event Action<float> EnergyChanged = delegate { };
     public event Action<IReadOnlyDictionary<ComboEmotion, int>> EmotionsChanged = delegate { };

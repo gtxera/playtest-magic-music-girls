@@ -15,9 +15,7 @@ public class PianoPuzzle : Interactable
     [SerializeField]
     private UnityEvent _onPuzzleComplete;
 
-    [SerializeField]
     private bool _inProgress;
-    [SerializeField]
     private bool _playingMelody;
     private bool _finished;
 

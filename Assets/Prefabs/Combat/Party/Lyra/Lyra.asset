@@ -19,7 +19,7 @@ MonoBehaviour:
     <Virtuosity>k__BackingField: 3
     <Endurance>k__BackingField: 25
     <Tempo>k__BackingField: 4
-    <Health>k__BackingField: 100
+    <Health>k__BackingField: 35
   interfaceBigBackground: {fileID: 0}
   interfaceSmallBackground: {fileID: 0}
   interfaceBigFrame: {fileID: 0}
@@ -40,3 +40,5 @@ MonoBehaviour:
     <ModifierPercentage>k__BackingField: 1
   _startingSkills:
   - {fileID: 11400000, guid: e8900490cfd930a4caf2376a234fb8ad, type: 2}
+  - {fileID: 11400000, guid: ce1069c97f2fd074a94b8f9a20857a18, type: 2}
+  - {fileID: 11400000, guid: f40041f3990f4164ca9f93b5a018c315, type: 2}
