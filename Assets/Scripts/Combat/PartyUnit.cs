@@ -7,6 +7,9 @@ public class PartyUnit : Unit
     [SerializeField]
     private PartyCharacterData _characterData;
 
+    [SerializeField]
+    private string _instrumentKey;
+
     private PartyCharacter _partyCharacter;
 
     public override Sprite Icon => _characterData.Icon;
@@ -36,9 +39,14 @@ public class PartyUnit : Unit
         return energy;
     }
 
-    public override float AddModifier(Unit target, Modifier modifier, float energy)
+    public override float AddModifier(Unit target, Modifier modifier, float energy, string animationKey)
     {
-        return base.AddModifier(target, modifier, energy) * _characterData.EnergyGenerationPercentages.ModifierPercentage;
+        return base.AddModifier(target, modifier, energy, animationKey) * _characterData.EnergyGenerationPercentages.ModifierPercentage;
+    }
+
+    public void PlayMusic(float duration)
+    {
+        CombatMusic.Instance.PlayInstrument(_instrumentKey, duration);
     }
 
     protected override IEnumerable<Skill> GetSkills()

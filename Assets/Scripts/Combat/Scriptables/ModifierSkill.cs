@@ -9,6 +9,9 @@ public class ModifierSkill : Skill
 
     [SerializeField]
     private float _energyGenerated;
+
+    [SerializeField]
+    private string _targetAnimationKey;
     
     public override TargetType TargetType => _targetType;
 
@@ -28,7 +31,7 @@ public class ModifierSkill : Skill
             target,
             CombatManager.Instance.CurrentTurn);
         
-        return unit.AddModifier(target, modifier, _energyGenerated);
+        return unit.AddModifier(target, modifier, _energyGenerated, _targetAnimationKey);
     }
 
     public override string GetDescription()

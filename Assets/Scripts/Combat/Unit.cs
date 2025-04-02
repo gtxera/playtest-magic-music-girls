@@ -12,6 +12,9 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
     [SerializeField]
     private Animator _selectionIndicatorAnimator;
 
+    [SerializeField]
+    private UnitAnimations _animations;
+
     private bool _isHovering;
 
     private InputActions.ICombatActions _combatActionsCallbacks;
@@ -73,8 +76,9 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
         return Character.HealOhter(target.Character, heal);
     }
 
-    public virtual float AddModifier(Unit target, Modifier modifier, float energy)
+    public virtual float AddModifier(Unit target, Modifier modifier, float energy, string animationKey)
     {
+        target._animations.Play(animationKey);
         target.Character.AddModifier(modifier);
         return energy;
     }
@@ -200,6 +204,8 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
 
     public void UseSkill(Skill skill)
     {
+        _animations.Play(skill.AnimationKey);
+        
         switch (skill.SkillType)
         {
             case SkillType.Normal:
@@ -209,6 +215,9 @@ public abstract class Unit : MonoBehaviour, IEventListener<CombatTurnPassedEvent
                 CombatManager.Instance.ComboManager.GenerateEmotion(skill.ComboEmotion);
                 break;
             case SkillType.Combo:
+                foreach (var unit in CombatManager.Instance.AlivePartyUnits)
+                    unit._animations.Play(skill.AnimationKey);
+                break;
             case SkillType.Item:
                 break;
         }

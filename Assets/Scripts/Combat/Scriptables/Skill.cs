@@ -53,6 +53,9 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     [field: SerializeField]
     public SkillType SkillType { get; private set; }
 
+    [field: SerializeField]
+    public string AnimationKey { get; private set; }
+
     public virtual string GetDescription() => _baseDescription;
 
     public float GetScaledValue(Stats stats)

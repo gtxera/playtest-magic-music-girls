@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasePartyUnit
       objectReference: {fileID: 0}
+    - target: {fileID: 2256299229124564228, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
+      propertyPath: _unit
+      value: 
+      objectReference: {fileID: 8137223516038129973}
     - target: {fileID: 4118801787915744060, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -117,4 +121,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectionIndicator: {fileID: 2729590669358989500}
   _selectionIndicatorAnimator: {fileID: 2218728148094281245}
+  _animations: {fileID: 5304957586451695130}
   _characterData: {fileID: 0}
+--- !u!114 &5304957586451695130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2256299229124564228, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
+  m_PrefabInstance: {fileID: 6255784521208337182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4792963091383263760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd8f26957245154c8dfb37f265118f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

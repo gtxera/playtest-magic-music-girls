@@ -1,3 +1,6 @@
+using System;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +17,34 @@ public class MainMenuInterfaceController : MonoBehaviour
     [SerializeField] Button audioBtn; 
     [SerializeField] Button controlsBtn; 
     [SerializeField] Button othersBtn;
+
+    [SerializeField]
+    private TitleLetter[] _letters;
+
+    [SerializeField]
+    private Animator _animator;
+
+    [SerializeField]
+    private Image _background;
+
+    private void Start()
+    {
+        _background.material.SetFloat("_Scale", 0f);
+        UniTask.RunOnThreadPool(StartAnimation);
+    }
+
+    private async UniTask StartAnimation()
+    {
+        await UniTask.WhenAll(_letters.Select(l => l.StartAnimation()));
+        
+        var material = _background.material;
+        material.DOFloat(1f, "_Scale", 1.5f).OnComplete(() =>
+        {
+            _animator.Play("Start");
+            foreach (var letter in _letters)
+                letter.StartBounce();
+        });
+    }
 
     public void ChangeScreen(int index)
     {

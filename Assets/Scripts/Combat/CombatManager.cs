@@ -22,6 +22,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
     public CombatComboManager ComboManager { get; private set; } = new();
 
     public IEnumerable<Unit> Units => _enemyUnits.Select(e => e as Unit).Concat(_partyUnits.Select(p => p as Unit));
+    public IEnumerable<PartyUnit> AlivePartyUnits => _partyUnits.Where(unit => !unit.IsDead);
 
     public IEnumerable<Unit> TurnOrder => _combatTurnManager.TurnOrder;
     public IEnumerable<Unit> RemainingTurnOrder => _combatTurnManager.RemainingTurnOrder;

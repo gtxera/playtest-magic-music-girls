@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEnemyUnit
       objectReference: {fileID: 0}
+    - target: {fileID: 2256299229124564228, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
+      propertyPath: _unit
+      value: 
+      objectReference: {fileID: 7387667646220860913}
+    - target: {fileID: 2256299229124564228, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
+      propertyPath: _damageColor.r
+      value: 12.844465
+      objectReference: {fileID: 0}
     - target: {fileID: 7965549987623280840, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
       propertyPath: _unit
       value: 
@@ -74,6 +82,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5195891311648142595, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
   m_PrefabInstance: {fileID: 8815565552252209024}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7284803399921226372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2256299229124564228, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
+  m_PrefabInstance: {fileID: 8815565552252209024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7926944750729328270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd8f26957245154c8dfb37f265118f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7926944750729328270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1465082103626969358, guid: d31d511d563e7b945820e5b6d70152fc, type: 3}
@@ -93,4 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectionIndicator: {fileID: 677607616045012002}
   _selectionIndicatorAnimator: {fileID: 3624462804946956931}
+  _animations: {fileID: 7284803399921226372}
   <Data>k__BackingField: {fileID: 0}
