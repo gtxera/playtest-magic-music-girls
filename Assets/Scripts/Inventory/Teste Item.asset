@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Item de Teste
   <Description>k__BackingField: Item de teste hahaha.
-  <Sprite>k__BackingField: {fileID: 0}
+  <Sprite>k__BackingField: {fileID: 464286532193615490, guid: 1106078bb08344a43af91cecc1e476fd, type: 3}
   <Value>k__BackingField: 0
   _healingAmount: 20

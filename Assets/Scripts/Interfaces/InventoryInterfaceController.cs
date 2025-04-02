@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,21 +17,17 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
     [SerializeField] Button collectionButton;
 
     [Header("Inventory Screen Elements")]
-    [SerializeField] GameObject allItemsPanel;
-    [SerializeField] GameObject allItemsContent;
-    [SerializeField] GameObject consumablePanel;
-    [SerializeField] GameObject consumableContent;
-    [SerializeField] GameObject equipablePanel;
-    [SerializeField] GameObject equipableContent;
+    [SerializeField] GameObject itemsContent;
     [SerializeField] TextMeshProUGUI tittleTxt;
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemDescription;
     [SerializeField] TextMeshProUGUI itemEffects;
     [SerializeField] string[] inventoryTittles;
-    [SerializeField] GameObject itemBtn;
+    [SerializeField] ItemBtn itemBtnPrefab;
     private int currentPanelIndex;
 
     [Header("Character Screen Elements")]
+    [SerializeField] CharacterSelectionButton _characterSelectionButtonPrefab;
     [SerializeField] GameObject characterInfosPanel;
     [SerializeField] Button characterInfoBtn;
     [SerializeField] GameObject charAbilityTreePanel;
@@ -39,9 +37,12 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
     [SerializeField] Image characterSplash;
     [SerializeField] TextMeshProUGUI charNameTxt;
     [SerializeField] TextMeshProUGUI charDescriptionTxt;
-    [SerializeField] TextMeshProUGUI statsTxt;
+    [SerializeField] TextMeshProUGUI emotionTxt;
+    [SerializeField] TextMeshProUGUI virtuosityTxt;
+    [SerializeField] TextMeshProUGUI enduranceTxt;
     [SerializeField] TextMeshProUGUI lifeTxt;
     [SerializeField] TextMeshProUGUI speedTxt;
+    [SerializeField] TextMeshProUGUI lvlTxt;
     [SerializeField] TextMeshProUGUI expTxt;
     //objetos de mudança na visual da interface
     [SerializeField] Image inventoryPanelFrame;
@@ -63,7 +64,8 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
     [SerializeField] GameObject comboDescPrefab;
     [SerializeField] Transform combosLocation;
 
-
+    [SerializeField]
+    private int _currentInventory;
 
 
     private void Start()
@@ -72,6 +74,8 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
         UpdateInventoryPanel(currentPanelIndex);
         ChangeInfoPanel(true);
         ChangeScreen(0);
+        GenerateItemButtons();
+        GenerateCharacterSelectionButtons();
     }
 
     #region GeneralInventorySettings
@@ -113,22 +117,39 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
 
     public void UpdateInventoryPanel(int index)
     { 
-        allItemsPanel.SetActive(index == 0);
-        consumablePanel.SetActive(index == 1);
-        equipablePanel.SetActive(index == 2);
-
         tittleTxt.text = inventoryTittles[index];
+        _currentInventory = index;
+        GenerateItemButtons();
     }
 
-    public void UpdateItemInfos(Item _item)
+    public void SetItemInfos(Item _item)
     {
-        itemName.name = _item.name;
-        itemDescription.text = _item.Description;
+        itemName.SetText(_item.name);
+        itemDescription.SetText(_item.Description);
     }
 
-    public void UpdateInventory(Item _item)
+    public void ClearItemInfos()
     {
-        //if(_item.GetComponent<>)
+        itemName.SetText(string.Empty);
+        itemDescription.SetText(string.Empty);
+    }
+
+    private void GenerateItemButtons()
+    {
+        itemsContent.transform.DestroyAllChildren();
+
+        IEnumerable<InventorySlot<Item>> items = _currentInventory switch
+        {
+            0 => Inventory.Instance.GetInventory<Item>(),
+            1 => Inventory.Instance.GetInventory<ConsumableItem>().Select(slot => (InventorySlot<Item>)slot),
+            _ => Inventory.Instance.GetInventory<Item>(),
+        };
+
+        foreach (var slot in items)
+        {
+            var button = Instantiate(itemBtnPrefab, itemsContent.transform);
+            button.Initialize(slot.Item, slot.Count);
+        }
     }
     #endregion
 
@@ -141,24 +162,47 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
         charAbilityTreeBtn.interactable = isToInfoPanel;
     }
 
-    public void UpdateCharactersInfos(PartyCharacterData _character)
+    public void UpdateCharactersInfos(PartyCharacter character)
     {
-        characterSplash.sprite = _character.Icon;
-        charNameTxt.text = "Nome: " + _character.name;
-        charDescriptionTxt.text = "Descrição: " + _character.description;
-        statsTxt.text = "Status: ";// + _charStats;
-        lifeTxt.text = "Vida: ";// +  _charLife;
-        speedTxt.text = "Velocidade: ";// + _charSpeed;
-        expTxt.text = "Experiência: ";// + _charExp;
+        var data = character.PartyCharacterData;
+        characterSplash.sprite = data.Icon;
+        charNameTxt.SetText($"Nome: {data.Name}");
+        charDescriptionTxt.SetText($"Descrição: {data.description}");
+        virtuosityTxt.SetText($"Virtuosidade: {character.Stats.Virtuosity}");
+        emotionTxt.SetText($"Emoção: {character.Stats.Emotion}");
+        lifeTxt.SetText($"Vida: {character.Health.CurrentHealth}/{character.Stats.Health}");
+        speedTxt.SetText($"Tempo: {character.Stats.Tempo}");
+        lvlTxt.SetText($"Nível: {Party.Instance.Level}");
+        expTxt.SetText($"Experiência: {Party.Instance.Experience}");
 
-        inventoryPanelFrame.sprite = _character.interfaceSmallFrame;
-        inventoryPanelTittleFrame.sprite = _character.interfaceSmallFrame;
-        inventoryPanelBackground.sprite = _character.interfaceBigBackground;
-        characterPortraitFrame.sprite = _character.interfaceBigFrame;
-        characterPortraitBackground.sprite = _character.interfaceBigBackground;
-        itemsPanelBackground.sprite = _character.interfaceSmallBackground;
-        itemsPanelFrame.sprite = _character.interfaceThinFrame;
-        charSelectionFrame.sprite = _character.characterSelectionFrame;
+        inventoryPanelFrame.sprite = data.interfaceBigFrame;
+        inventoryPanelTittleFrame.sprite = data.interfaceThinFrame;
+        inventoryPanelBackground.sprite = data.interfaceBigBackground;
+        characterPortraitFrame.sprite = data.interfaceBigFrame;
+        characterPortraitBackground.sprite = data.interfaceBigBackground;
+        itemsPanelBackground.sprite = data.interfaceSmallBackground;
+        itemsPanelFrame.sprite = data.interfaceThinFrame;
+        charSelectionFrame.sprite = data.characterSelectionFrame;
+    }
+
+    private void GenerateCharacterSelectionButtons()
+    {
+        characterSelectionContent.transform.DestroyAllChildren();
+
+        var characters = Party.Instance.Characters;
+
+        var loadedInfo = false;
+        foreach (var character in characters)
+        {
+            var button = Instantiate(_characterSelectionButtonPrefab, characterSelectionContent.transform);
+            button.Initialize(character);
+
+            if (!loadedInfo)
+            {
+                UpdateCharactersInfos(character);
+                loadedInfo = true;
+            }
+        }
     }
     #endregion
 

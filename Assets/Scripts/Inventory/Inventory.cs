@@ -129,4 +129,9 @@ public class InventorySlot<TItem> where TItem : Item
     {
         return Item.GetHashCode();
     }
+
+    public static implicit operator InventorySlot<Item>(InventorySlot<TItem> slot)
+    {
+        return new InventorySlot<Item>(slot.Item, slot.Count);
+    }
 }

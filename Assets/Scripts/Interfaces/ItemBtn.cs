@@ -1,23 +1,32 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemBtn : MonoBehaviour
+public class ItemBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private InventoryInterfaceController inventory;
-    public Item item;
+    private Item _item;
 
-    private void Awake()
+    [SerializeField]
+    private Image _icon;
+
+    [SerializeField]
+    private TextMeshProUGUI _countText;
+
+    public void Initialize(Item item, int count)
     {
-        inventory = FindFirstObjectByType<InventoryInterfaceController>();
+        _item = item;
+        _icon.sprite = item.Sprite;
+        _countText.SetText($"x{count}");
     }
 
-    private void Start()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        if(item != null) gameObject.GetComponent<Image>().sprite = item.Sprite;
+        InventoryInterfaceController.Instance.SetItemInfos(_item);
     }
 
-    public void ChangeInfos()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        inventory.UpdateItemInfos(item);
+        InventoryInterfaceController.Instance.ClearItemInfos();
     }
 }

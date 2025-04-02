@@ -20,12 +20,12 @@ MonoBehaviour:
     <Endurance>k__BackingField: 25
     <Tempo>k__BackingField: 4
     <Health>k__BackingField: 35
-  interfaceBigBackground: {fileID: 0}
-  interfaceSmallBackground: {fileID: 0}
-  interfaceBigFrame: {fileID: 0}
-  interfaceSmallFrame: {fileID: 0}
-  interfaceThinFrame: {fileID: 0}
-  characterSelectionFrame: {fileID: 0}
+  interfaceBigBackground: {fileID: -4270363932870340098, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
+  interfaceSmallBackground: {fileID: 8265776398744803615, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
+  interfaceBigFrame: {fileID: -6196195864090325156, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
+  interfaceSmallFrame: {fileID: -7011962882165760539, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
+  interfaceThinFrame: {fileID: 772147365422991775, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
+  characterSelectionFrame: {fileID: 772147365422991775, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
   description: 
   <CombatPrefab>k__BackingField: {fileID: 1486543858697804513, guid: d245cf905283e1a48ae5a03aec882f9c, type: 3}
   <StatsGrowth>k__BackingField:
