@@ -47,10 +47,10 @@ MonoBehaviour:
   _emotionImages:
     _serializedList:
     - Key: 0
-      Value: {fileID: 8265776398744803615, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
+      Value: {fileID: -2848088007318058735, guid: 1a19b6deed7e0194286aa2380c08f479, type: 3}
     - Key: 1
-      Value: {fileID: -3814250724779180482, guid: c1f29f1703f056d4b988bbfcd0fd4750, type: 3}
+      Value: {fileID: -1410666483, guid: 1a19b6deed7e0194286aa2380c08f479, type: 3}
     - Key: 2
-      Value: {fileID: -1991328516684540973, guid: e761612b94dd4e64490b5695e28c6eac, type: 3}
+      Value: {fileID: -1966867041, guid: 1a19b6deed7e0194286aa2380c08f479, type: 3}
     - Key: 3
-      Value: {fileID: -2390530264172843182, guid: 92122c1a0b7f99a4b8546e43fb1cd0c0, type: 3}
+      Value: {fileID: 2135929554, guid: 1a19b6deed7e0194286aa2380c08f479, type: 3}

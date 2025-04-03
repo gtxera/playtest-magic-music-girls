@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 6ff3050937893d544bbd283ad8839217
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8280317105597257299
+    second: "anima\xE7\xE3o.lyre-Sheet_0"
+  - first:
+      213: -3368518791057902925
+    second: "anima\xE7\xE3o.lyre-Sheet_1"
+  - first:
+      213: -7435908294803857233
+    second: "anima\xE7\xE3o.lyre-Sheet_2"
+  - first:
+      213: -1555386520645231487
+    second: "anima\xE7\xE3o.lyre-Sheet_3"
+  - first:
+      213: 6240423382884837186
+    second: "anima\xE7\xE3o.lyre-Sheet_4"
+  - first:
+      213: -2560605904389474339
+    second: "anima\xE7\xE3o.lyre-Sheet_5"
+  - first:
+      213: -4128586242534288920
+    second: "anima\xE7\xE3o.lyre-Sheet_6"
+  - first:
+      213: 7139958782345674858
+    second: "anima\xE7\xE3o.lyre-Sheet_7"
+  - first:
+      213: 5778439688023596384
+    second: "anima\xE7\xE3o.lyre-Sheet_8"
+  - first:
+      213: -5900875748515265133
+    second: "anima\xE7\xE3o.lyre-Sheet_9"
+  - first:
+      213: -7224830958663827530
+    second: "anima\xE7\xE3o.lyre-Sheet_10"
+  - first:
+      213: -1137658656725711808
+    second: "anima\xE7\xE3o.lyre-Sheet_11"
+  - first:
+      213: -9076557839547346635
+    second: "anima\xE7\xE3o.lyre-Sheet_12"
+  - first:
+      213: -2036222199377699722
+    second: "anima\xE7\xE3o.lyre-Sheet_13"
+  - first:
+      213: 6771118457673832164
+    second: "anima\xE7\xE3o.lyre-Sheet_14"
+  - first:
+      213: 7711853813396347984
+    second: "anima\xE7\xE3o.lyre-Sheet_15"
+  - first:
+      213: -7335344227577443355
+    second: "anima\xE7\xE3o.lyre-Sheet_16"
+  - first:
+      213: -2623746038660954165
+    second: "anima\xE7\xE3o.lyre-Sheet_17"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 53
+        height: 64
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35617ba598899e270800000000000000
+      internalID: 8280317105597257299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 53
+        height: 63
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2f3c7b10e9041d0800000000000000
+      internalID: -3368518791057902925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 53
+        height: 63
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0e5d19dc85ec890800000000000000
+      internalID: -7435908294803857233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 53
+        height: 63
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c928443382a6ae0800000000000000
+      internalID: -1555386520645231487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 53
+        height: 63
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24764e8e0007a9650800000000000000
+      internalID: 6240423382884837186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 0
+        width: 53
+        height: 63
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7f8132f76e67cd0800000000000000
+      internalID: -2560605904389474339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_6"
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 53
+        height: 63
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1dd25cfa054b6c0800000000000000
+      internalID: -4128586242534288920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_7"
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 0
+        width: 53
+        height: 63
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6005a4feaa361360800000000000000
+      internalID: 7139958782345674858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 0
+        width: 53
+        height: 63
+      alignment: 9
+      pivot: {x: 0.3584906, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d5aa0e744213050800000000000000
+      internalID: 5778439688023596384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_9"
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 0
+        width: 62
+        height: 63
+      alignment: 9
+      pivot: {x: 0.4516129, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395c70a55c0eb1ea0800000000000000
+      internalID: -5900875748515265133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_10"
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 0
+        width: 63
+        height: 63
+      alignment: 9
+      pivot: {x: 0.4603175, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bff89a958e3cbb90800000000000000
+      internalID: -7224830958663827530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_11"
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 0
+        width: 63
+        height: 63
+      alignment: 9
+      pivot: {x: 0.4603175, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0444732ba793630f0800000000000000
+      internalID: -1137658656725711808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_12"
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 0
+        width: 63
+        height: 63
+      alignment: 9
+      pivot: {x: 0.4603175, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5315e7e0cb6990280800000000000000
+      internalID: -9076557839547346635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_13"
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 63
+      alignment: 9
+      pivot: {x: 0.46875, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67cd352b2b2edb3e0800000000000000
+      internalID: -2036222199377699722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_14"
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 0
+        width: 55
+        height: 63
+      alignment: 9
+      pivot: {x: 0.38181818, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e65db1cc58d7fd50800000000000000
+      internalID: 6771118457673832164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_15"
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 0
+        width: 55
+        height: 63
+      alignment: 9
+      pivot: {x: 0.39999998, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c1b332f22060b60800000000000000
+      internalID: 7711853813396347984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_16"
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 0
+        width: 55
+        height: 63
+      alignment: 9
+      pivot: {x: 0.38181818, y: 0.25396827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ebc8021a4f933a90800000000000000
+      internalID: -7335344227577443355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o.lyre-Sheet_17"
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 0
+        width: 55
+        height: 63
+      alignment: 9
+      pivot: {x: 0.38181818, y: 0.23809525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc786c801e4969bd0800000000000000
+      internalID: -2623746038660954165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 28b4ee0839192c24b9b404676f41c9ac
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "anima\xE7\xE3o.lyre-Sheet_0": 8280317105597257299
+      "anima\xE7\xE3o.lyre-Sheet_1": -3368518791057902925
+      "anima\xE7\xE3o.lyre-Sheet_10": -7224830958663827530
+      "anima\xE7\xE3o.lyre-Sheet_11": -1137658656725711808
+      "anima\xE7\xE3o.lyre-Sheet_12": -9076557839547346635
+      "anima\xE7\xE3o.lyre-Sheet_13": -2036222199377699722
+      "anima\xE7\xE3o.lyre-Sheet_14": 6771118457673832164
+      "anima\xE7\xE3o.lyre-Sheet_15": 7711853813396347984
+      "anima\xE7\xE3o.lyre-Sheet_16": -7335344227577443355
+      "anima\xE7\xE3o.lyre-Sheet_17": -2623746038660954165
+      "anima\xE7\xE3o.lyre-Sheet_2": -7435908294803857233
+      "anima\xE7\xE3o.lyre-Sheet_3": -1555386520645231487
+      "anima\xE7\xE3o.lyre-Sheet_4": 6240423382884837186
+      "anima\xE7\xE3o.lyre-Sheet_5": -2560605904389474339
+      "anima\xE7\xE3o.lyre-Sheet_6": -4128586242534288920
+      "anima\xE7\xE3o.lyre-Sheet_7": 7139958782345674858
+      "anima\xE7\xE3o.lyre-Sheet_8": 5778439688023596384
+      "anima\xE7\xE3o.lyre-Sheet_9": -5900875748515265133
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

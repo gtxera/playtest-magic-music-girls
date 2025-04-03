@@ -8,12 +8,12 @@ public class CombatComboManager
     private Dictionary<ComboEmotion, int> _emotions = new()
     {
         {ComboEmotion.Happiness, 0},
-        {ComboEmotion.Love, 0},
-        {ComboEmotion.Anger, 0},
-        {ComboEmotion.Sadness, 0}
+        {ComboEmotion.Love, 1},
+        {ComboEmotion.Anger, 1},
+        {ComboEmotion.Sadness, 1}
     };
 
-    private float _energy = 0f;
+    private float _energy = 1f;
 
     public event Action<float> EnergyChanged = delegate { };
     public event Action<IReadOnlyDictionary<ComboEmotion, int>> EmotionsChanged = delegate { };
@@ -24,7 +24,7 @@ public class CombatComboManager
 
     public void GenerateEnergy(float energy)
     {
-        _energy = Mathf.Min(_energy + energy, 100f);
+        _energy = Mathf.Min(_energy + energy, 1f);
         EnergyChanged.Invoke(_energy);
     }
 

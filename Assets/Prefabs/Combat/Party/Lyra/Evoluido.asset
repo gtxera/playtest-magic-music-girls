@@ -21,6 +21,8 @@ MonoBehaviour:
   <CooldownInTurns>k__BackingField: 0
   <PriorityType>k__BackingField: 0
   <Priority>k__BackingField: 1
+  <Icon>k__BackingField: {fileID: 0}
   <TargetSelectionStrategy>k__BackingField: {fileID: 0}
   <ComboEmotion>k__BackingField: 1
   <SkillType>k__BackingField: 1
+  <AnimationKey>k__BackingField: Playing

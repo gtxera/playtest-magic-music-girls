@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 32300233569704299, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 659d4db15da007b4c83cd898a8153561, type: 2}
     - target: {fileID: 728316481613684110, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.35849056
@@ -84,6 +88,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lyra Unit
       objectReference: {fileID: 0}
+    - target: {fileID: 5304957586451695130, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
+      propertyPath: _animations._serializedList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5304957586451695130, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
+      propertyPath: _animations._serializedList.Array.data[0].Key
+      value: Playing
+      objectReference: {fileID: 0}
+    - target: {fileID: 5304957586451695130, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
+      propertyPath: _animations._serializedList.Array.data[0].Value.<PlaysMusic>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5304957586451695130, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
+      propertyPath: _animations._serializedList.Array.data[0].Value.<AnimationClip>k__BackingField
+      value: 
+      objectReference: {fileID: 7400000, guid: 32f419ae6c5a09344adfa35c04eaf6ec, type: 2}
     - target: {fileID: 7707820296210031716, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.09
@@ -92,6 +112,10 @@ PrefabInstance:
       propertyPath: _characterData
       value: 
       objectReference: {fileID: 11400000, guid: 79d25f4d091547240b6130aea57a5984, type: 2}
+    - target: {fileID: 8137223516038129973, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
+      propertyPath: _instrumentKey
+      value: harp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

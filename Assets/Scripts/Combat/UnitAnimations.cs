@@ -10,7 +10,7 @@ public class UnitAnimations : MonoBehaviour
     private Unit _unit;
 
     [SerializeField]
-    private SerializedDictionary<string, AnimationClip> _animations;
+    private SerializedDictionary<string, AnimationInfo> _animations;
     
     [SerializeField]
     private SpriteRenderer _sprite;
@@ -34,17 +34,17 @@ public class UnitAnimations : MonoBehaviour
 
     public void Play(string animationKey)
     {
-        if (animationKey == string.Empty)
+        if (string.IsNullOrWhiteSpace(animationKey) || !_animations.ContainsKey(animationKey))
             return;
 
-        var animation = _animations[animationKey];
-        _animator.Play(animation.name);
-        CombatAnimationsController.Instance.AddAnimation(animation.length);
+        var animationInfo = _animations[animationKey];
+        var length = animationInfo.AnimationClip.length;
         
-        if (_unit is PartyUnit partyUnit)
-        {
-            
-        }
+        _animator.Play(animationInfo.AnimationClip.name);
+        CombatAnimationsController.Instance.AddAnimation(length);
+        
+        if (animationInfo.PlaysMusic && _unit is PartyUnit partyUnit)
+            partyUnit.PlayMusic(length);
     }
 
     private IEnumerator DamageAnimation()
@@ -67,4 +67,14 @@ public class UnitAnimations : MonoBehaviour
         if (args.Change < 0)
             StartCoroutine(DamageAnimation());
     }
+}
+
+[Serializable]
+public class AnimationInfo
+{
+    [field: SerializeField]
+    public AnimationClip AnimationClip { get; private set; }
+    
+    [field: SerializeField]
+    public bool PlaysMusic { get; private set; }
 }

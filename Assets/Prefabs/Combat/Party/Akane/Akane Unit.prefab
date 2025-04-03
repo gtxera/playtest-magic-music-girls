@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: _characterData
       value: 
       objectReference: {fileID: 11400000, guid: f2f07247dcd24f64abb81960272e66f3, type: 2}
+    - target: {fileID: 8137223516038129973, guid: c34a19667b4cdd543b842ab9b0901c97, type: 3}
+      propertyPath: _instrumentKey
+      value: guitar
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -5,20 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4c57ee-39ac-4ba5-ac9e-9c0dad4f2d0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.playtest-magic-music-girls/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.playtest-magic-music-girls/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-Outline.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-Outline.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/BaseUnit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/BaseUnit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Enemies/BaseEnemyUnit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Enemies/BaseEnemyUnit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/BasePartyUnit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/BasePartyUnit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Akane/Akane Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Akane/Akane Unit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Dedilhado.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Dedilhado.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Evoluido.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Evoluido.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Lyra Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Lyra Unit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Lyra.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Lyra.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Música Curativa.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Música Curativa.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Sonata da Vida.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Lyra/Sonata da Vida.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Miyu/Miyu Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Combat/Party/Miyu/Miyu Unit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interface/InventoryCanva.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interface/InventoryCanva.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Singletons/CombatManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Singletons/CombatManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Singletons/EmotionIcons.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Singletons/EmotionIcons.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaytestScenes/SceneB.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlaytestScenes/SceneB.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/PartyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/PartyUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ModifierSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/ModifierSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Scriptables/Skill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/MainMenuInterfaceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/MainMenuInterfaceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Combo/CombatComboManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Combo/CombatComboManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/SuperDano.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Skills/SuperDano.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAnimations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAnimations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +164,8 @@
       <workItem from="1743443090715" duration="3453000" />
       <workItem from="1743603125985" duration="1441000" />
       <workItem from="1743605799620" duration="8928000" />
+      <workItem from="1743644835281" duration="2207000" />
+      <workItem from="1743649433036" duration="1066000" />
     </task>
     <servers />
   </component>
