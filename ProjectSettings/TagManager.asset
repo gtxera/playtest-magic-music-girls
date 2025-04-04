@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - InteractionOnly
-  - 
+  - Effects
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: CameraSortingLayer
     uniqueID: 3005048711
+    locked: 0
+  - name: Enemy
+    uniqueID: 166888449
     locked: 0
   m_RenderingLayers:
   - Default

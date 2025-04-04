@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: ab015664f93487c46b94e5961e60952a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1633816387596475092
+    second: sprite sheet kei_0
+  - first:
+      213: -9012261556459006950
+    second: sprite sheet kei_1
+  - first:
+      213: 1404338783851502255
+    second: sprite sheet kei_2
+  - first:
+      213: -6848178551075176196
+    second: sprite sheet kei_3
+  - first:
+      213: -5778985669203951809
+    second: sprite sheet kei_4
+  - first:
+      213: -7382638301354112091
+    second: sprite sheet kei_5
+  - first:
+      213: 2235606006377947395
+    second: sprite sheet kei_6
+  - first:
+      213: 7838921261640712375
+    second: sprite sheet kei_7
+  - first:
+      213: 4119624728466827949
+    second: sprite sheet kei_8
+  - first:
+      213: 136772029333246635
+    second: sprite sheet kei_9
+  - first:
+      213: -2307588238680215983
+    second: sprite sheet kei_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sprite sheet kei_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 5
+        width: 43
+        height: 61
+      alignment: 9
+      pivot: {x: 0.6511628, y: 0.24590163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25a91dd6a48359e0800000000000000
+      internalID: -1633816387596475092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 5
+        width: 43
+        height: 61
+      alignment: 9
+      pivot: {x: 0.6511628, y: 0.24590163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a141a580dd30ee280800000000000000
+      internalID: -9012261556459006950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_2
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 5
+        width: 43
+        height: 61
+      alignment: 9
+      pivot: {x: 0.6511628, y: 0.24590163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faad5c3fea63d7310800000000000000
+      internalID: 1404338783851502255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_3
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 5
+        width: 43
+        height: 61
+      alignment: 9
+      pivot: {x: 0.6511628, y: 0.24590163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf007b814e166f0a0800000000000000
+      internalID: -6848178551075176196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_4
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 5
+        width: 43
+        height: 60
+      alignment: 9
+      pivot: {x: 0.6511628, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f7609f62beccfa0800000000000000
+      internalID: -5778985669203951809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_5
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 3
+        width: 43
+        height: 61
+      alignment: 9
+      pivot: {x: 0.6511628, y: 0.26229507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ab489e64999b8990800000000000000
+      internalID: -7382638301354112091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_6
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 2
+        width: 48
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5833334, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30123eb61d7760f10800000000000000
+      internalID: 2235606006377947395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_7
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 2
+        width: 54
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5185185, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b00a56ea5179cc60800000000000000
+      internalID: 7838921261640712375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_8
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 2
+        width: 60
+        height: 72
+      alignment: 9
+      pivot: {x: 0.4666667, y: 0.29166666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa2e242dd8db2930800000000000000
+      internalID: 4119624728466827949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_9
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 2
+        width: 60
+        height: 70
+      alignment: 9
+      pivot: {x: 0.4666667, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba21e9f9f69e5e100800000000000000
+      internalID: 136772029333246635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet kei_10
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 3
+        width: 66
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5151515, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ea89919bcc9ffd0800000000000000
+      internalID: -2307588238680215983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: be4a33229c3ff854cb94178f24ceba92
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sprite sheet kei_0: -1633816387596475092
+      sprite sheet kei_1: -9012261556459006950
+      sprite sheet kei_10: -2307588238680215983
+      sprite sheet kei_2: 1404338783851502255
+      sprite sheet kei_3: -6848178551075176196
+      sprite sheet kei_4: -5778985669203951809
+      sprite sheet kei_5: -7382638301354112091
+      sprite sheet kei_6: 2235606006377947395
+      sprite sheet kei_7: 7838921261640712375
+      sprite sheet kei_8: 4119624728466827949
+      sprite sheet kei_9: 136772029333246635
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

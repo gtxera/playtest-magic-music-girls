@@ -1,0 +1,273 @@
+fileFormatVersion: 2
+guid: 18e827d7410c74a419d5c9a72dbe7f90
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7629553172269532513
+    second: morcego amarelo_0
+  - first:
+      213: -8274503161220204542
+    second: morcego amarelo_1
+  - first:
+      213: 7378221029946322685
+    second: morcego amarelo_2
+  - first:
+      213: -173353913732125406
+    second: morcego amarelo_3
+  - first:
+      213: -976716968202650186
+    second: morcego amarelo_4
+  - first:
+      213: -1090134975003437988
+    second: morcego amarelo_5
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: morcego amarelo_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 8
+        width: 41
+        height: 43
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.093023255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a7beb10d16e1690800000000000000
+      internalID: -7629553172269532513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morcego amarelo_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 9
+        width: 51
+        height: 36
+      alignment: 9
+      pivot: {x: 0.3529412, y: 0.1388889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2087f9e073f0b2d80800000000000000
+      internalID: -8274503161220204542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morcego amarelo_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 11
+        width: 52
+        height: 35
+      alignment: 9
+      pivot: {x: 0.3846154, y: 0.6571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe644c6fe4b46660800000000000000
+      internalID: 7378221029946322685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morcego amarelo_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 11
+        width: 51
+        height: 27
+      alignment: 9
+      pivot: {x: 0.37254903, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22da29fa88f189df0800000000000000
+      internalID: -173353913732125406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morcego amarelo_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 11
+        width: 50
+        height: 25
+      alignment: 9
+      pivot: {x: 0.39999998, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd3f20a7110272f0800000000000000
+      internalID: -976716968202650186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morcego amarelo_5
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 13
+        width: 41
+        height: 16
+      alignment: 9
+      pivot: {x: 0.36585364, y: 1.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54d0b914001fd0f0800000000000000
+      internalID: -1090134975003437988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 787b90c9dc2018048b72189e15313aab
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      morcego amarelo_0: -7629553172269532513
+      morcego amarelo_1: -8274503161220204542
+      morcego amarelo_2: 7378221029946322685
+      morcego amarelo_3: -173353913732125406
+      morcego amarelo_4: -976716968202650186
+      morcego amarelo_5: -1090134975003437988
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

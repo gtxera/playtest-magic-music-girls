@@ -26,7 +26,8 @@ MonoBehaviour:
   interfaceSmallFrame: {fileID: -7011962882165760539, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
   interfaceThinFrame: {fileID: 772147365422991775, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
   characterSelectionFrame: {fileID: 772147365422991775, guid: dad4d93e879502c448664ab1cdbb8ecb, type: 3}
-  description: 
+  description: "Lyra \xE9 a lirista das Magic Music Girls, sua m\xFAsica \xE9 capaz
+    de fechar qualquer ferimento."
   <CombatPrefab>k__BackingField: {fileID: 1486543858697804513, guid: d245cf905283e1a48ae5a03aec882f9c, type: 3}
   <StatsGrowth>k__BackingField:
     <Emotion>k__BackingField: 0
@@ -35,9 +36,9 @@ MonoBehaviour:
     <Tempo>k__BackingField: 0
     <Health>k__BackingField: 0
   <EnergyGenerationPercentages>k__BackingField:
-    <DamagePercentage>k__BackingField: 1
-    <HealingPercentage>k__BackingField: 1
-    <ModifierPercentage>k__BackingField: 1
+    <DamagePercentage>k__BackingField: 0.5
+    <HealingPercentage>k__BackingField: 2
+    <ModifierPercentage>k__BackingField: 1.5
   _startingSkills:
   - {fileID: 11400000, guid: e8900490cfd930a4caf2376a234fb8ad, type: 2}
   - {fileID: 11400000, guid: ce1069c97f2fd074a94b8f9a20857a18, type: 2}

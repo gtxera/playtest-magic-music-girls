@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fe3dcd81-19cf-484d-9d93-4ab7dc7f0ff4}">
+		<property name="assetPath">
+			<value>Piano_La.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.4291836734693877</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{233ed982-e874-428a-bc5a-8ddd79b56eb7}</destination>
+		</relationship>
+	</object>
+</objects>

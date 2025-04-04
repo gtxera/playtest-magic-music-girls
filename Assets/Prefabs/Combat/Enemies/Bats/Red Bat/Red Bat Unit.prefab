@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.29
       objectReference: {fileID: 0}
+    - target: {fileID: 3239473710981107189, guid: a353ae23d21b1264799015df74bc9d6c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d485ac6044aee0d449052de25e96e0d6, type: 2}
     - target: {fileID: 7387667646220860913, guid: a353ae23d21b1264799015df74bc9d6c, type: 3}
       propertyPath: <Data>k__BackingField
       value: 

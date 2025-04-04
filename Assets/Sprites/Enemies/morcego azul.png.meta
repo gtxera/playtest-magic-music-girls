@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: c1f29f1703f056d4b988bbfcd0fd4750
+guid: c9eaeece2fbfee14cb927e3ba86760b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3162331290268764507
-    second: ui. mafuyu_0
+      213: -7884252660635977983
+    second: morcego azul_0
   - first:
-      213: 5043022077422667064
-    second: ui. mafuyu_1
+      213: 4626588082364782098
+    second: morcego azul_1
   - first:
-      213: -8985082956523382907
-    second: ui. mafuyu_2
+      213: -8670989174415018914
+    second: morcego azul_2
   - first:
-      213: -1927179137681698964
-    second: ui. mafuyu_3
+      213: 5943832528097753107
+    second: morcego azul_3
   - first:
-      213: -7086570345871312484
-    second: ui. mafuyu_4
+      213: 9212803781426178334
+    second: morcego azul_4
   - first:
-      213: -7449537544015716598
-    second: ui. mafuyu_5
-  - first:
-      213: -3814250724779180482
-    second: ui. mafuyu_6
+      213: -4624248328951244171
+    second: morcego azul_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,176 +111,137 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui. mafuyu_0
+      name: morcego azul_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 249
-        width: 273
-        height: 192
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 13
+        y: 8
+        width: 41
+        height: 43
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.093023255}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b598292cd8bd2eb20800000000000000
-      internalID: 3162331290268764507
+      spriteID: 1073d5b4af1859290800000000000000
+      internalID: -7884252660635977983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui. mafuyu_1
+      name: morcego azul_1
       rect:
         serializedVersion: 2
-        x: 294
-        y: 312
-        width: 163
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 73
+        y: 9
+        width: 51
+        height: 36
+      alignment: 9
+      pivot: {x: 0.3529412, y: 0.1388889}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8350b3f3cd96cf540800000000000000
-      internalID: 5043022077422667064
+      spriteID: 21698632951f43040800000000000000
+      internalID: 4626588082364782098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui. mafuyu_2
+      name: morcego azul_2
       rect:
         serializedVersion: 2
-        x: 22
-        y: 211
-        width: 244
-        height: 33
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 587d103f7a29e4380800000000000000
-      internalID: -8985082956523382907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui. mafuyu_3
-      rect:
-        serializedVersion: 2
-        x: 291
-        y: 226
-        width: 164
-        height: 62
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c6f40ffe8c84145e0800000000000000
-      internalID: -1927179137681698964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui. mafuyu_4
-      rect:
-        serializedVersion: 2
-        x: 8
+        x: 134
         y: 11
-        width: 271
-        height: 190
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 52
+        height: 35
+      alignment: 9
+      pivot: {x: 0.3846154, y: 0.6571429}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c99f58211d177ad90800000000000000
-      internalID: -7086570345871312484
+      spriteID: e543cb769457aa780800000000000000
+      internalID: -8670989174415018914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui. mafuyu_6
+      name: morcego azul_3
       rect:
         serializedVersion: 2
-        x: 289
-        y: 82
-        width: 160
-        height: 57
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 204
+        y: 11
+        width: 51
+        height: 27
+      alignment: 9
+      pivot: {x: 0.37254903, y: 0.5555556}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3eb241bc2f011bc0800000000000000
-      internalID: -3814250724779180482
+      spriteID: 318bda9413cbc7250800000000000000
+      internalID: 5943832528097753107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morcego azul_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 11
+        width: 50
+        height: 25
+      alignment: 9
+      pivot: {x: 0.39999998, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1968494a347adf70800000000000000
+      internalID: 9212803781426178334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: morcego azul_5
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 13
+        width: 41
+        height: 16
+      alignment: 9
+      pivot: {x: 0.36585364, y: 1.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57adaa725ae53dfb0800000000000000
+      internalID: -4624248328951244171
       vertices: []
       indices: 
       edges: []
@@ -292,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 49fcf7c9003984d448014d7a86625f94
+    spriteID: c0c14c4b4d466a14c819a053eb18b9d1
     internalID: 0
     vertices: []
     indices: 
@@ -302,13 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ui. mafuyu_0: 3162331290268764507
-      ui. mafuyu_1: 5043022077422667064
-      ui. mafuyu_2: -8985082956523382907
-      ui. mafuyu_3: -1927179137681698964
-      ui. mafuyu_4: -7086570345871312484
-      ui. mafuyu_5: -7449537544015716598
-      ui. mafuyu_6: -3814250724779180482
+      morcego azul_0: -7884252660635977983
+      morcego azul_1: 4626588082364782098
+      morcego azul_2: -8670989174415018914
+      morcego azul_3: 5943832528097753107
+      morcego azul_4: 9212803781426178334
+      morcego azul_5: -4624248328951244171
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

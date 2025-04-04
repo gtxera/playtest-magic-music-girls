@@ -12,15 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b2df3e00ccd08428c8a7fb417dcbfe, type: 3}
   m_Name: Random
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: "Aleat\xF3rio assustadoramente parecido com o vov\xF4"
+  <Name>k__BackingField: "Senhor Simp\xE1tico"
   <Icon>k__BackingField: {fileID: -6658306905821588884, guid: 8c8d38799b4ccbc44ba0b1ea58434060, type: 3}
   <BaseStats>k__BackingField:
-    <Emotion>k__BackingField: 0
-    <Virtuosity>k__BackingField: 0
-    <Endurance>k__BackingField: 0
-    <Tempo>k__BackingField: 0
-    <Health>k__BackingField: 0
-  <StatsGrowth>k__BackingField:
     <Emotion>k__BackingField: 0
     <Virtuosity>k__BackingField: 0
     <Endurance>k__BackingField: 0

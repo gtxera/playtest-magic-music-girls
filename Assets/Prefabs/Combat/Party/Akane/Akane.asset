@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Akane
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Akane
-  <Icon>k__BackingField: {fileID: 2796351116789608562, guid: 39664f089705d8b4ebd9b4a821ecab22, type: 3}
+  <Icon>k__BackingField: {fileID: -8695653371762064649, guid: 0c70c0c2ce2c9cd4b96093caec850130, type: 3}
   <BaseStats>k__BackingField:
     <Emotion>k__BackingField: 4
     <Virtuosity>k__BackingField: 10
@@ -26,7 +26,8 @@ MonoBehaviour:
   interfaceSmallFrame: {fileID: -1828777474560754141, guid: e761612b94dd4e64490b5695e28c6eac, type: 3}
   interfaceThinFrame: {fileID: 4558654310262868452, guid: e761612b94dd4e64490b5695e28c6eac, type: 3}
   characterSelectionFrame: {fileID: 4558654310262868452, guid: e761612b94dd4e64490b5695e28c6eac, type: 3}
-  description: 
+  description: "A guitarrista do grupo! Cheia de energia e vontade de trazer a m\xFAsica
+    de volta para o mundo."
   <CombatPrefab>k__BackingField: {fileID: 1707431098634529735, guid: c77bc02856f10254c8c821ed6aad7944, type: 3}
   <StatsGrowth>k__BackingField:
     <Emotion>k__BackingField: 0
@@ -35,8 +36,8 @@ MonoBehaviour:
     <Tempo>k__BackingField: 0
     <Health>k__BackingField: 0
   <EnergyGenerationPercentages>k__BackingField:
-    <DamagePercentage>k__BackingField: 1
-    <HealingPercentage>k__BackingField: 1
+    <DamagePercentage>k__BackingField: 2
+    <HealingPercentage>k__BackingField: 0.5
     <ModifierPercentage>k__BackingField: 1
   _startingSkills:
   - {fileID: 11400000, guid: 0b492706e118c9a45bb2a4bab715052b, type: 2}

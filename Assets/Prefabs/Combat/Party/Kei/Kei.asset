@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f22935286dc6142aa621796abb3165, type: 3}
+  m_Name: Kei
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Kei
+  <Icon>k__BackingField: {fileID: 5068625324453456449, guid: 00fdc9a4338f0b14bb66cb1d49e34f39, type: 3}
+  <BaseStats>k__BackingField:
+    <Emotion>k__BackingField: 10
+    <Virtuosity>k__BackingField: 4
+    <Endurance>k__BackingField: 30
+    <Tempo>k__BackingField: 2
+    <Health>k__BackingField: 50
+  interfaceBigBackground: {fileID: -7086570345871312484, guid: c1f29f1703f056d4b988bbfcd0fd4750, type: 3}
+  interfaceSmallBackground: {fileID: -3814250724779180482, guid: c1f29f1703f056d4b988bbfcd0fd4750, type: 3}
+  interfaceBigFrame: {fileID: 5043022077422667064, guid: c1f29f1703f056d4b988bbfcd0fd4750, type: 3}
+  interfaceSmallFrame: {fileID: -1927179137681698964, guid: c1f29f1703f056d4b988bbfcd0fd4750, type: 3}
+  interfaceThinFrame: {fileID: -8985082956523382907, guid: c1f29f1703f056d4b988bbfcd0fd4750, type: 3}
+  characterSelectionFrame: {fileID: -8985082956523382907, guid: c1f29f1703f056d4b988bbfcd0fd4750, type: 3}
+  description: A doce baterista da banda, Kei prometeu a si mesma que iria proteger
+    a todos.
+  <CombatPrefab>k__BackingField: {fileID: 1486543858697804513, guid: 55e6ef2ba4ab77a49aed56309a8f454e, type: 3}
+  <StatsGrowth>k__BackingField:
+    <Emotion>k__BackingField: 3
+    <Virtuosity>k__BackingField: 3
+    <Endurance>k__BackingField: 5
+    <Tempo>k__BackingField: 2
+    <Health>k__BackingField: 7
+  <EnergyGenerationPercentages>k__BackingField:
+    <DamagePercentage>k__BackingField: 1
+    <HealingPercentage>k__BackingField: 1.5
+    <ModifierPercentage>k__BackingField: 2
+  _startingSkills:
+  - {fileID: 11400000, guid: e2696d6955e7a624c81ae7487010db88, type: 2}
+  - {fileID: 11400000, guid: 8060ba766c669ef498f8df4f3d16dd00, type: 2}
+  - {fileID: 11400000, guid: a39f2e0b710e78249856a135ee8b83d2, type: 2}

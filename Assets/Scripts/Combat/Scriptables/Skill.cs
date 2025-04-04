@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -56,7 +57,14 @@ public abstract class Skill : ScriptableObject, ICombatCommand
     [field: SerializeField]
     public string AnimationKey { get; private set; }
 
-    public virtual string GetDescription() => _baseDescription;
+    public virtual string GetDescription()
+    {
+        var builder = new StringBuilder(_baseDescription);
+        if (SkillType == SkillType.Evolved)
+            builder.AppendLine($"Gera emoção {ComboEmotion.Traduzido()}");
+
+        return builder.ToString();
+    }
 
     public float GetScaledValue(Stats stats)
     {

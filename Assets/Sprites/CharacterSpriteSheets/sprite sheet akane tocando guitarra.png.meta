@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: a1263a36f8b20d94d9f0c643679fc029
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1556227794120123827
+    second: sprite sheet akane tocando guitarra_0
+  - first:
+      213: -4253604719400644029
+    second: sprite sheet akane tocando guitarra_1
+  - first:
+      213: -4602706866709019321
+    second: sprite sheet akane tocando guitarra_2
+  - first:
+      213: -7720325814569816460
+    second: sprite sheet akane tocando guitarra_3
+  - first:
+      213: 2931731517348217351
+    second: sprite sheet akane tocando guitarra_4
+  - first:
+      213: 5023309154930442428
+    second: sprite sheet akane tocando guitarra_5
+  - first:
+      213: 5410574533063640395
+    second: sprite sheet akane tocando guitarra_6
+  - first:
+      213: -2959781292949856769
+    second: sprite sheet akane tocando guitarra_7
+  - first:
+      213: -1042845400451386504
+    second: sprite sheet akane tocando guitarra_8
+  - first:
+      213: 5972416977324580536
+    second: sprite sheet akane tocando guitarra_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 13
+        width: 49
+        height: 54
+      alignment: 9
+      pivot: {x: 0.67346936, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a51e5011b276ae0800000000000000
+      internalID: -1556227794120123827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 13
+        width: 49
+        height: 53
+      alignment: 9
+      pivot: {x: 0.67346936, y: 0.3018868}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34213355b0928f4c0800000000000000
+      internalID: -4253604719400644029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 13
+        width: 49
+        height: 54
+      alignment: 9
+      pivot: {x: 0.67346936, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745ce8cad76ef10c0800000000000000
+      internalID: -4602706866709019321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 13
+        width: 49
+        height: 54
+      alignment: 9
+      pivot: {x: 0.67346936, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ea9406394ebd490800000000000000
+      internalID: -7720325814569816460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 13
+        width: 49
+        height: 53
+      alignment: 9
+      pivot: {x: 0.67346936, y: 0.3018868}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7028b54384a9fa820800000000000000
+      internalID: 2931731517348217351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 13
+        width: 47
+        height: 54
+      alignment: 9
+      pivot: {x: 0.65957445, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0c890df0166b540800000000000000
+      internalID: 5023309154930442428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_6
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 13
+        width: 56
+        height: 54
+      alignment: 9
+      pivot: {x: 0.58928573, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4588021fd8361b40800000000000000
+      internalID: 5410574533063640395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 13
+        width: 56
+        height: 54
+      alignment: 9
+      pivot: {x: 0.58928573, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd90ec789ebce6d0800000000000000
+      internalID: -2959781292949856769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_8
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 13
+        width: 55
+        height: 54
+      alignment: 9
+      pivot: {x: 0.6, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873f17e22a11781f0800000000000000
+      internalID: -1042845400451386504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite sheet akane tocando guitarra_9
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 13
+        width: 55
+        height: 54
+      alignment: 9
+      pivot: {x: 0.6, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be91fff89942e250800000000000000
+      internalID: 5972416977324580536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5005bca32fb09444db5cb73da8b7a7a7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sprite sheet akane tocando guitarra_0: -1556227794120123827
+      sprite sheet akane tocando guitarra_1: -4253604719400644029
+      sprite sheet akane tocando guitarra_2: -4602706866709019321
+      sprite sheet akane tocando guitarra_3: -7720325814569816460
+      sprite sheet akane tocando guitarra_4: 2931731517348217351
+      sprite sheet akane tocando guitarra_5: 5023309154930442428
+      sprite sheet akane tocando guitarra_6: 5410574533063640395
+      sprite sheet akane tocando guitarra_7: -2959781292949856769
+      sprite sheet akane tocando guitarra_8: -1042845400451386504
+      sprite sheet akane tocando guitarra_9: 5972416977324580536
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

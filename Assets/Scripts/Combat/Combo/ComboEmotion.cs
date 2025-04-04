@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum ComboEmotion
@@ -6,4 +7,19 @@ public enum ComboEmotion
     Sadness,
     Anger,
     Love
+}
+
+public static class ComboEmotionExtensions
+{
+    public static string Traduzido(this ComboEmotion comboEmotion)
+    {
+        return comboEmotion switch
+        {
+            ComboEmotion.Happiness => "Felicidade",
+            ComboEmotion.Sadness => "Tristeza",
+            ComboEmotion.Anger => "Raiva",
+            ComboEmotion.Love => "Amor",
+            _ => throw new ArgumentOutOfRangeException(nameof(comboEmotion), comboEmotion, null)
+        };
+    }
 }
