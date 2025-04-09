@@ -8,6 +8,8 @@ public class Input : PersistentSingletonBehaviour<Input>
     [SerializeField]
     private InputContext _inputContext = InputContext.Player;
 
+    public InputContext CurrentContex => _inputContext;
+
     protected void Awake()
     {
         _inputActions = new InputActions();

@@ -9,6 +9,9 @@ public class PartyCharacter : Character, IEventListener<LevelGainedEvent>
 
     public readonly PartyCharacterData PartyCharacterData;
 
+    private EquipmentItem _firstSlot;
+    private EquipmentItem _secondSlot;
+
     public PartyCharacter(PartyCharacterData characterData, Party party) : base(characterData)
     {
         PartyCharacterData = characterData;

@@ -44,7 +44,7 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
     [SerializeField] TextMeshProUGUI speedTxt;
     [SerializeField] TextMeshProUGUI lvlTxt;
     [SerializeField] TextMeshProUGUI expTxt;
-    //objetos de mudança na visual da interface
+    //objetos de mudanï¿½a na visual da interface
     [SerializeField] Image inventoryPanelFrame;
     [SerializeField] Image inventoryPanelTittleFrame;
     [SerializeField] Image inventoryPanelBackground;
@@ -63,9 +63,22 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
     [SerializeField] TextMeshProUGUI comboDescriptionTxt;
     [SerializeField] GameObject comboDescPrefab;
     [SerializeField] Transform combosLocation;
+    [SerializeField] private ComboVisualize _comboVisualizePrefab;
 
     [SerializeField]
     private int _currentInventory;
+
+    public void Show()
+    {
+        PauseManager.Instance.Pause();
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        PauseManager.Instance.Unpause();
+        gameObject.SetActive(false);
+    }
 
 
     private void Start()
@@ -76,6 +89,7 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
         ChangeScreen(0);
         GenerateItemButtons();
         GenerateCharacterSelectionButtons();
+        GenerateCombosContent();
     }
 
     #region GeneralInventorySettings
@@ -140,8 +154,8 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
 
         IEnumerable<InventorySlot<Item>> items = _currentInventory switch
         {
-            0 => Inventory.Instance.GetInventory<Item>(),
             1 => Inventory.Instance.GetInventory<ConsumableItem>().Select(slot => (InventorySlot<Item>)slot),
+            2 => Inventory.Instance.GetInventory<EquipmentItem>().Select(slot => (InventorySlot<Item>)slot),
             _ => Inventory.Instance.GetInventory<Item>(),
         };
 
@@ -167,13 +181,13 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
         var data = character.PartyCharacterData;
         characterSplash.sprite = data.Icon;
         charNameTxt.SetText($"Nome: {data.Name}");
-        charDescriptionTxt.SetText($"Descrição: {data.description}");
+        charDescriptionTxt.SetText($"Descriï¿½ï¿½o: {data.description}");
         virtuosityTxt.SetText($"Virtuosidade: {character.Stats.Virtuosity}");
-        emotionTxt.SetText($"Emoção: {character.Stats.Emotion}");
+        emotionTxt.SetText($"Emoï¿½ï¿½o: {character.Stats.Emotion}");
         lifeTxt.SetText($"Vida: {character.Health.CurrentHealth}/{character.Stats.Health}");
         speedTxt.SetText($"Tempo: {character.Stats.Tempo}");
-        lvlTxt.SetText($"Nível: {Party.Instance.Level}");
-        expTxt.SetText($"Experiência: {Party.Instance.Experience}");
+        lvlTxt.SetText($"Nï¿½vel: {Party.Instance.Level}");
+        expTxt.SetText($"Experiï¿½ncia: {Party.Instance.Experience}");
 
         inventoryPanelFrame.sprite = data.interfaceBigFrame;
         inventoryPanelTittleFrame.sprite = data.interfaceThinFrame;
@@ -212,9 +226,15 @@ public class InventoryInterfaceController : SingletonBehaviour<InventoryInterfac
         comboDescriptionTxt.text = _comboDescription;
     }
 
-    public void UpdateCombosContent()
+    public void GenerateCombosContent()
     {
+        var combos = CombosProvider.Instance.Combos;
 
+        foreach (var combo in combos)
+        {
+            var visualizer = Instantiate(_comboVisualizePrefab, combosLocation);
+            visualizer.Initialize(combo);
+        }
     }
     #endregion
 

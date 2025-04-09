@@ -2,6 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuInterfaceController : MonoBehaviour
@@ -71,5 +72,16 @@ public class MainMenuInterfaceController : MonoBehaviour
         controlsBtn.interactable = index != 1;
         othersPanel.SetActive(index == 2);
         othersBtn.interactable = index != 2;
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(1);
+        DOTween.KillAll();
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

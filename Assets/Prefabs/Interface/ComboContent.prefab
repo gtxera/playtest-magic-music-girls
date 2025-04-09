@@ -98,16 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d08f7d410732814da9e93ac64bb968b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: D
-  emotionIcon1: {fileID: 0}
-  emotionIcon2: {fileID: 0}
-  emotionIcon3: {fileID: 0}
-  emotionIcon4: {fileID: 0}
-  image1: {fileID: 2188097966758298832}
-  image2: {fileID: 6831384223253051179}
-  image3: {fileID: 6553008227236359595}
-  image4: {fileID: 2656259446277627127}
-  inventory: {fileID: 0}
+  _images:
+  - {fileID: 2188097966758298832}
+  - {fileID: 6831384223253051179}
+  - {fileID: 6553008227236359595}
+  - {fileID: 2656259446277627127}
+  _nome: {fileID: 7954825093668812178}
 --- !u!114 &9186233704372180481
 MonoBehaviour:
   m_ObjectHideFlags: 0

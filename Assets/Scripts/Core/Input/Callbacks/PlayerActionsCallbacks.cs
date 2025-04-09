@@ -4,11 +4,13 @@ public class PlayerActionsCallbacks : InputActions.IPlayerActions
 {
     private readonly InputCallbacks _onMove;
     private readonly InputCallbacks _onInteract;
+    private readonly InputCallbacks _onOpenUI;
 
-    private PlayerActionsCallbacks(InputCallbacks onMove, InputCallbacks onInteract)
+    private PlayerActionsCallbacks(InputCallbacks onMove, InputCallbacks onInteract, InputCallbacks onOpenUI)
     {
         _onMove = onMove;
         _onInteract = onInteract;
+        _onOpenUI = onOpenUI;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -20,11 +22,17 @@ public class PlayerActionsCallbacks : InputActions.IPlayerActions
     {
         _onInteract.Call(context);
     }
-    
+
+    public void OnOpenUI(InputAction.CallbackContext context)
+    {
+        _onOpenUI.Call(context);
+    }
+
     public class Builder
     {
         private InputCallbacks _onMove = new();
         private InputCallbacks _onInteract = new();
+        private InputCallbacks _onOpenUI = new();
 
         public Builder OnMove(InputCallback callback, InputActionPhase phase)
         {
@@ -38,9 +46,15 @@ public class PlayerActionsCallbacks : InputActions.IPlayerActions
             return this;
         }
 
+        public Builder OnOpenUI(InputCallback callback, InputActionPhase phase)
+        {
+            _onOpenUI.Add(callback, phase);
+            return this;
+        }
+
         public InputActions.IPlayerActions Build()
         {
-            return new PlayerActionsCallbacks(_onMove, _onInteract);
+            return new PlayerActionsCallbacks(_onMove, _onInteract, _onOpenUI);
         }
     }
 }

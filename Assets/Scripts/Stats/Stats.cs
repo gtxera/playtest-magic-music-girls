@@ -49,6 +49,15 @@ public class Stats
         StatModified.Invoke(args);
     }
 
+    public void RemoveModifier(StatModifier modifier)
+    {
+        _modifiers.Remove(modifier);
+        
+        var args = new StatModifiedEventArgs(modifier.Stat, Get(modifier.Stat));
+        
+        StatModified.Invoke(args);
+    }
+
     private int GetModified(Stat stat, int initialValue)
     {
         var parametes = new Dictionary<string, object>

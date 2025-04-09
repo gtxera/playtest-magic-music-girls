@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour, ICharacterAnimatorInputProvider
         _playerActions = new PlayerActionsCallbacks.Builder()
             .OnMove(OnMovePerformed, InputActionPhase.Performed)
             .OnMove(OnMoveCanceled, InputActionPhase.Canceled)
+            .OnOpenUI(Show, InputActionPhase.Performed)
             .Build();
         _input.Add(_playerActions);
         _input.SetInputContext(InputContext.Player);
@@ -58,4 +59,6 @@ public class PlayerController : MonoBehaviour, ICharacterAnimatorInputProvider
         var position = _rigidbody2D.position + _inputDirection * (_speed * Time.fixedDeltaTime);
         _rigidbody2D.MovePosition(position);
     }
+
+    private void Show(InputAction.CallbackContext _) => InventoryInterfaceController.Instance.Show();
 }

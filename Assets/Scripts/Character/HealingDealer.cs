@@ -20,4 +20,9 @@ public class HealingDealer
     {
         _modifiers.Add(modifier);
     }
+    
+    public void RemoveModifier(HealingDealerModifier modifier)
+    {
+        _modifiers.Remove(modifier);
+    }
 }

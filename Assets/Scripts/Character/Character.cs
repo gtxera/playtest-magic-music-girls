@@ -65,7 +65,6 @@ public abstract class Character
 
     public void AddModifier(Modifier modifier)
     {
-        float baseValue;
         switch (modifier)
         {
             case StatModifier statModifier:
@@ -82,6 +81,31 @@ public abstract class Character
             
             case HealingDealerModifier healingModifier:
                 _healingDealer.AddModifier(healingModifier);
+                break;
+
+            default:
+                throw new NotImplementedException("Modificador nao implementado");
+        }
+    }
+
+    public void RemoveModifier(Modifier modifier)
+    {
+        switch (modifier)
+        {
+            case StatModifier statModifier:
+                Stats.RemoveModifier(statModifier);
+                break;
+            
+            case DamageDealerModifier damageDealerModifier:
+                _damageDealer.RemoveModifier(damageDealerModifier);
+                break;
+            
+            case DamageMitigatorModifier damageMitigatorModifier:
+                _damageMitigator.RemoveModifier(damageMitigatorModifier);
+                break;
+            
+            case HealingDealerModifier healingModifier:
+                _healingDealer.RemoveModifier(healingModifier);
                 break;
 
             default:

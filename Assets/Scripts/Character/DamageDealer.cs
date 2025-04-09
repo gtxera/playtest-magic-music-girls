@@ -18,4 +18,9 @@ public class DamageDealer
     {
         _modifiers.Add(modifier);
     }
+
+    public void RemoveModifier(DamageDealerModifier modifier)
+    {
+        _modifiers.Remove(modifier);
+    }
 }

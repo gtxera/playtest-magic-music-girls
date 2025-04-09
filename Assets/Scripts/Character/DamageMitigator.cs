@@ -22,4 +22,9 @@ public class DamageMitigator
     {
         _modifiers.Add(modifier);
     }
+    
+    public void RemoveModifier(DamageMitigatorModifier modifier)
+    {
+        _modifiers.Remove(modifier);
+    }
 }

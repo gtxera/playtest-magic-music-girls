@@ -45,4 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingItems:
-  - {fileID: 11400000, guid: 80a8e268994d0c54a80174fce90ac0c7, type: 2}
+    _serializedList:
+    - Key: {fileID: 11400000, guid: 80a8e268994d0c54a80174fce90ac0c7, type: 2}
+      Value: 5
+    - Key: {fileID: 11400000, guid: a06f71b5df52ea34b862d863b6fc3aad, type: 2}
+      Value: 2

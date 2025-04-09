@@ -32,6 +32,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
     private Component _encounterStarter;
 
     private bool _combatEnded;
+    private bool _passedThisTurn;
 
     public void StartCombat(EncounterData encounterData, Component encounterStarter)
     {
@@ -81,6 +82,7 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
     public async UniTask ExecuteAction(CombatAction action)
     {
+        _passedThisTurn = false;
         await UniTask.WaitForSeconds(0.5f);
      
         await UniTask.SwitchToMainThread();
@@ -94,8 +96,11 @@ public class CombatManager : SingletonBehaviour<CombatManager>
 
         await HandleCombo(action.Unit);
 
-        if (!_combatEnded)
+        if (!_combatEnded && !_passedThisTurn)
+        {
             _combatTurnManager.NextTurn();
+            _passedThisTurn = true;
+        }
     }
 
     private async UniTask HandleCombo(Unit unit)

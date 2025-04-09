@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 public class Inventory : PersistentSingletonBehaviour<Inventory>, IEventListener<CombatEndedEvent>
 {
     [SerializeField]
-    private Item[] _startingItems;
+    private SerializedDictionary<Item, int> _startingItems;
 
     private Dictionary<Item, int> _inventory = new();
 
@@ -14,7 +15,7 @@ public class Inventory : PersistentSingletonBehaviour<Inventory>, IEventListener
 
     private void Awake()
     {
-        _inventory = _startingItems.ToDictionary(item => item, _ => 1);
+        _inventory = new Dictionary<Item, int>(_startingItems);
     }
 
     public void Add(Item item, int count)

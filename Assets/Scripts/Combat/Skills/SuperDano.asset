@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75dfa72fd46a6a931755349153ad9, type: 3}
   m_Name: SuperDano
   m_EditorClassIdentifier: 
-  <BaseName>k__BackingField: Super Dano Combo
-  _baseDescription: 
+  <BaseName>k__BackingField: "Mix de Emo\xE7\xF5es"
+  _baseDescription: "Uma mistura de todas as emo\xE7\xF5es que a m\xFAsica pode proporcionar"
   <BaseValue>k__BackingField: 50
   <MaxTargets>k__BackingField: 2
   _baseScalings: []

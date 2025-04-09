@@ -110,7 +110,7 @@ public class BattleUIController : MonoBehaviour,
     {
         EventBus.Instance.Subscribe(this);
         energyBar.maxValue = 1;
-        energyBar.value = 1;
+        energyBar.value = 0;
 
         var combatManager = CombatManager.Instance;
         
@@ -387,14 +387,6 @@ public class BattleUIController : MonoBehaviour,
         
         CombatManager.Instance.ComboManager.EmotionsChanged += OnEmotionsChanged;
         CombatManager.Instance.ComboManager.EnergyChanged += OnEnergyChanged;
-        
-        OnEmotionsChanged(new Dictionary<ComboEmotion, int>()
-        {
-            {ComboEmotion.Happiness, 0},
-            {ComboEmotion.Love, 1},
-            {ComboEmotion.Anger, 1},
-            {ComboEmotion.Sadness, 1}
-        });
     }
 }
 

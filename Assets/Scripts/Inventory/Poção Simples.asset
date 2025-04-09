@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12a0c4cd2cd1c5847a6c6475fadf7f12, type: 3}
-  m_Name: Teste Item
+  m_Name: "Po\xE7\xE3o Simples"
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Item de Teste
-  <Description>k__BackingField: Item de teste hahaha.
-  <Sprite>k__BackingField: {fileID: 464286532193615490, guid: 1106078bb08344a43af91cecc1e476fd, type: 3}
-  <Value>k__BackingField: 0
+  <Name>k__BackingField: "Po\xE7\xE3o Simples"
+  <Description>k__BackingField: "Uma simples po\xE7\xE3o de cura"
+  <Sprite>k__BackingField: {fileID: -6007857137893288414, guid: f1e60b063a9895940b0cdbd7536b0921, type: 3}
+  <Value>k__BackingField: 5
   _healingAmount: 20

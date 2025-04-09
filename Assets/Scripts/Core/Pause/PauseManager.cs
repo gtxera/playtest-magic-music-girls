@@ -7,6 +7,8 @@ public class PauseManager : PersistentSingletonBehaviour<PauseManager>
     
     private bool _paused;
 
+    private InputContext _previous;
+
     private bool Paused
     {
         get => _paused;
@@ -35,11 +37,14 @@ public class PauseManager : PersistentSingletonBehaviour<PauseManager>
     public void Pause()
     {
         Paused = true;
+        _previous = Input.Instance.CurrentContex;
+        Input.Instance.SetInputContext(InputContext.UI);
     }
 
     public void Unpause()
     {
         Paused = false;
+        Input.Instance.SetInputContext(_previous);
     }
 
     private void PublishPausedEvent()
